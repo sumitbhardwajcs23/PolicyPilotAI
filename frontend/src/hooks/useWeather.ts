@@ -15,7 +15,7 @@ interface UseWeatherReturn {
 // Simulated weather API call
 // Weather API call to our backend
 const fetchWeatherData = async (lat: number, lng: number): Promise<{ weather: WeatherData; forecast: ForecastDay[] }> => {
-  const response = await axios.get(`${import.meta.env.VITE_API_URL || 'http://localhost:5000/api'}/weather`, {
+  const response = await axios.get(`${import.meta.env.VITE_API_URL || '/api'}/weather`, {
     params: { lat, lng }
   });
   
