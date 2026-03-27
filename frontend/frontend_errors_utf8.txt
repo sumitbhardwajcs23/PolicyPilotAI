@@ -1,0 +1,16 @@
+﻿src/components/auth/Register.tsx(3,10): error TS6133: 'User' is declared but its value is never read.
+src/components/auth/Register.tsx(3,16): error TS6133: 'MapPin' is declared but its value is never read.
+src/components/auth/Register.tsx(3,24): error TS6133: 'Briefcase' is declared but its value is never read.
+src/components/auth/Register.tsx(3,35): error TS6133: 'CreditCard' is declared but its value is never read.
+src/components/auth/Register.tsx(3,47): error TS6133: 'ArrowRight' is declared but its value is never read.
+src/components/auth/Register.tsx(3,70): error TS6133: 'CheckCircle' is declared but its value is never read.
+src/components/dashboard/AdminDashboard.tsx(3,3): error TS6133: 'Users' is declared but its value is never read.
+src/components/dashboard/AdminDashboard.tsx(7,3): error TS6133: 'TrendingUp' is declared but its value is never read.
+src/components/dashboard/AdminDashboard.tsx(8,3): error TS6133: 'TrendingDown' is declared but its value is never read.
+src/components/dashboard/AdminDashboard.tsx(19,26): error TS6133: 'formatDate' is declared but its value is never read.
+src/components/dashboard/AdminDashboard.tsx(20,38): error TS6196: 'Policy' is declared but never used.
+src/components/dashboard/AdminDashboard.tsx(21,84): error TS6133: 'LineChart' is declared but its value is never read.
+src/components/dashboard/AdminDashboard.tsx(21,95): error TS6133: 'Line' is declared but its value is never read.
+src/components/dashboard/AdminDashboard.tsx(190,48): error TS6133: 'entry' is declared but its value is never read.
+src/components/shared/Header.tsx(2,24): error TS6133: 'ChevronDown' is declared but its value is never read.
+src/contexts/AuthContext.tsx(2,21): error TS6196: 'AuthResponse' is declared but never used.
