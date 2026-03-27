@@ -1,0 +1,13 @@
+{
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://policypilotai.onrender.com https://policy-pilot-ai.vercel.app; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https: blob: *.tile.openstreetmap.org; connect-src 'self' https://policypilotai.onrender.com https://policy-pilot-ai-git-main-bhardwajdevid5-6389s-projects.vercel.app http://localhost:5000; font-src 'self' https://fonts.gstatic.com;"
+        }
+      ]
+    }
+  ]
+}
