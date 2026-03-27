@@ -24,7 +24,7 @@ const PORT = process.env.PORT || 5000
 app.use(helmet())
 app.use(cors({
   origin: process.env.NODE_ENV === 'production' 
-    ? ['https://gigshield.in', 'https://www.gigshield.in', 'https://policypilotai.onrender.com'] 
+    ? ['https://gigshield.in', 'https://www.gigshield.in', 'https://policypilotai.onrender.com', 'https://policy-pilot-ai.vercel.app'] 
     : ['http://localhost:5173', 'http://localhost:3000']
 }));
 
