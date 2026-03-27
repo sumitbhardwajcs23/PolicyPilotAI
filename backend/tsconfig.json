@@ -13,7 +13,8 @@
     "paths": {
       "@/*": ["src/*"],
       "@shared/*": ["../shared/*"]
-    }
+    },
+    "rootDir": ".."
   },
   "include": ["src/**/*", "../shared/**/*"],
   "exclude": ["node_modules"]
