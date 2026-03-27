@@ -24,7 +24,7 @@ const PORT = process.env.PORT || 5000
 app.use(helmet())
 app.use(cors({
   origin: process.env.NODE_ENV === 'production' 
-    ? ['https://gigshield.in', 'https://www.gigshield.in'] 
+    ? ['https://gigshield.in', 'https://www.gigshield.in', 'https://policypilotai.onrender.com'] 
     : ['http://localhost:5173', 'http://localhost:3000']
 }));
 
@@ -53,6 +53,16 @@ app.use(morgan(process.env.NODE_ENV === 'production' ? 'combined' : 'dev'))
 
 // Compression
 app.use(compression())
+
+// Root route
+app.get('/', (req, res) => {
+  res.json({
+    success: true,
+    message: 'Welcome to the PolicyPilotAI API',
+    docs: 'https://policypilotai.onrender.com/health',
+    status: 'Running'
+  })
+})
 
 // Health check
 app.get('/health', (req, res) => {
