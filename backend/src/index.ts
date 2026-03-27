@@ -23,9 +23,28 @@ const PORT = process.env.PORT || 5000
 // Security middleware
 app.use(helmet())
 app.use(cors({
-  origin: process.env.NODE_ENV === 'production' 
-    ? ['https://gigshield.in', 'https://www.gigshield.in', 'https://policypilotai.onrender.com', 'https://policy-pilot-ai.vercel.app'] 
-    : ['http://localhost:5173', 'http://localhost:3000']
+  origin: (origin, callback) => {
+    const allowedOrigins = [
+      'https://gigshield.in', 
+      'https://www.gigshield.in', 
+      'https://policypilotai.onrender.com', 
+      'https://policy-pilot-ai.vercel.app',
+      'https://policy-pilot-ai-git-main-bhardwajdevid5-6389s-projects.vercel.app',
+      'http://localhost:5173',
+      'http://localhost:3000'
+    ];
+    
+    // Allow if origin is in allowed list, matches vercel.app subdomain, or if no origin (for local tools)
+    if (!origin || allowedOrigins.includes(origin) || /\.vercel\.app$/.test(origin)) {
+      callback(null, true);
+    } else {
+      console.warn(`CORS blocked for origin: ${origin}`);
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept']
 }));
 
 // Rate limiting
