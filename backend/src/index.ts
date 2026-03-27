@@ -21,7 +21,20 @@ const app = express() // Initialize express application
 const PORT = process.env.PORT || 5000
 
 // Security middleware
-app.use(helmet())
+app.use(helmet({
+  contentSecurityPolicy: {
+    directives: {
+      defaultSrc: ["'self'"],
+      scriptSrc: ["'self'", "'unsafe-inline'", "'unsafe-eval'", "https://policypilotai.onrender.com", "https://policy-pilot-ai.vercel.app"],
+      styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
+      imgSrc: ["'self'", "data:", "https:", "blob:", "*.tile.openstreetmap.org"],
+      connectSrc: ["'self'", "https://policypilotai.onrender.com", "https://policy-pilot-ai-git-main-bhardwajdevid5-6389s-projects.vercel.app", "http://localhost:5000"],
+      fontSrc: ["'self'", "https://fonts.gstatic.com"],
+      objectSrc: ["'none'"],
+      upgradeInsecureRequests: [],
+    },
+  },
+}));
 app.use(cors({
   origin: (origin, callback) => {
     const allowedOrigins = [
