@@ -68,10 +68,19 @@ export function AdminManagement() {
   };
 
   const handleCreate = async () => {
-    if (!form.name) return toast.error('Name is required');
-    if (!form.email && !form.mobile) return toast.error('Email or mobile required');
+    if (!form.name.trim()) return toast.error('Name is required');
+    if (!form.email.trim() && !form.mobile.trim()) return toast.error('Email or mobile required');
     try {
-      await adminApi.createAdmin({ ...form });
+      // Strip empty strings so Zod optional fields work correctly
+      const payload: any = {
+        name: form.name.trim(),
+        role: form.role,
+        permissions: form.permissions,
+      }
+      if (form.email.trim()) payload.email = form.email.trim()
+      if (form.mobile.trim()) payload.mobile = form.mobile.trim()
+
+      await adminApi.createAdmin(payload);
       toast.success('Slave admin created');
       setShowCreateForm(false);
       setForm({ name: '', email: '', mobile: '', role: 'insurer', permissions: [] });

@@ -20,6 +20,23 @@ dotenv.config()
 const app = express() // Initialize express application
 const PORT = process.env.PORT || 5000
 
+// ─── Raw CORS headers — applied FIRST before everything else ─────────────────
+// This is required for AWS Lambda / API Gateway where the framework CORS config
+// is sometimes unreliable. We handle CORS manually at the Express layer.
+app.use((req, res, next) => {
+  const origin = req.headers.origin || '*'
+  res.setHeader('Access-Control-Allow-Origin', origin)
+  res.setHeader('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE,PATCH,OPTIONS')
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type,Authorization,X-Requested-With,Accept,Origin')
+  res.setHeader('Access-Control-Allow-Credentials', 'true')
+
+  // Immediately respond to preflight OPTIONS requests
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end()
+  }
+  next()
+})
+
 // Security middleware
 app.use(helmet({
   contentSecurityPolicy: {

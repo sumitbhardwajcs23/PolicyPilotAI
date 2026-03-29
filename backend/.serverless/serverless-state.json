@@ -141,7 +141,7 @@
             "Properties": {
               "Code": {
                 "S3Bucket": "serverless-framework-deployments-us-east-1-bdc3bd6d-394d",
-                "S3Key": "serverless/policypilotai-backend/dev/1774804458618-2026-03-29T17:14:18.618Z/policypilotai-backend.zip"
+                "S3Key": "serverless/policypilotai-backend/dev/1774806295670-2026-03-29T17:44:55.670Z/policypilotai-backend.zip"
               },
               "Handler": "dist/backend/src/handler.handler",
               "Runtime": "nodejs20.x",
@@ -174,14 +174,14 @@
               "ApiLogGroup"
             ]
           },
-          "ApiLambdaVersionuixUt68Fx6nPUMgxjYpFUgAFHAf1OTg37zEI4XRew4": {
+          "ApiLambdaVersion0hBsI0gnvrEeZOs4c3v3Mz4RxwzQPZ5DUgZj2sVPIHA": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "ApiLambdaFunction"
               },
-              "CodeSha256": "QBOEr5y0KhJ7i3G4jaM2GwV7egcunZdrW5k3eMy34eY="
+              "CodeSha256": "2N7eztuL4tOTpAcewqQ7WJgQaBWjUefoUgvqwc2zXhU="
             }
           },
           "HttpApi": {
@@ -307,7 +307,7 @@
           "ApiLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "ApiLambdaVersionuixUt68Fx6nPUMgxjYpFUgAFHAf1OTg37zEI4XRew4"
+              "Ref": "ApiLambdaVersion0hBsI0gnvrEeZOs4c3v3Mz4RxwzQPZ5DUgZj2sVPIHA"
             },
             "Export": {
               "Name": "sls-policypilotai-backend-dev-ApiLambdaFunctionQualifiedArn"
@@ -367,7 +367,7 @@
         "timeout": 30,
         "runtime": "nodejs20.x",
         "vpc": {},
-        "versionLogicalId": "ApiLambdaVersionuixUt68Fx6nPUMgxjYpFUgAFHAf1OTg37zEI4XRew4"
+        "versionLogicalId": "ApiLambdaVersion0hBsI0gnvrEeZOs4c3v3Mz4RxwzQPZ5DUgZj2sVPIHA"
       }
     },
     "configValidationMode": "warn",
@@ -387,7 +387,7 @@
     "artifact": "D:\\SD\\projects\\Guid wire\\diployment\\M3AWS\\backend\\.serverless\\policypilotai-backend.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/policypilotai-backend/dev/1774804458618-2026-03-29T17:14:18.618Z",
+    "artifactDirectoryName": "serverless/policypilotai-backend/dev/1774806295670-2026-03-29T17:44:55.670Z",
     "artifact": "policypilotai-backend.zip"
   }
 }
