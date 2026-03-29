@@ -124,27 +124,34 @@ app.use((req, res) => {
   })
 })
 
+// Export the app for Lambda/testing
+export { app, connectDB }
+
 const startServer = async () => {
-  await connectDB()
+  try {
+    await connectDB()
+    const server = app.listen(PORT, () => {
+      console.log(`🚀 Policy Pilot AI API server running on port ${PORT}`)
+      console.log(`📊 Environment: ${process.env.NODE_ENV || 'development'}`)
+    })
 
-  const server = app.listen(PORT, () => {
-    console.log(`🚀 Policy Pilot AI API server running on port ${PORT} All thanks to Hanuman Ji`)
-    console.log(`📊 Environment lets GO: ${process.env.NODE_ENV || 'development '}`)
-  })
-
-  server.on('error', (err: NodeJS.ErrnoException) => {
-    if (err.code === 'EADDRINUSE') {
-      console.error(`❌ Port ${PORT} is already in use. Kill the process holding it and restart.`)
-      process.exit(1)
-    } else {
-      throw err
-    }
-  })
+    server.on('error', (err: NodeJS.ErrnoException) => {
+      if (err.code === 'EADDRINUSE') {
+        console.error(`❌ Port ${PORT} is already in use.`)
+        process.exit(1)
+      } else {
+        throw err
+      }
+    })
+  } catch (err) {
+    console.error('❌ Failed to start server:', err)
+    process.exit(1)
+  }
 }
 
-startServer().catch((err) => {
-  console.error('❌ Failed to start server:', err)
-  process.exit(1)
-})
+// Only start the server if NOT running in Lambda (detected by LAMBDA_TASK_ROOT)
+if (!process.env.LAMBDA_TASK_ROOT && process.env.NODE_ENV !== 'test') {
+  startServer()
+}
 
 export default app

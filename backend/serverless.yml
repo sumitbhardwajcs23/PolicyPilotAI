@@ -1,0 +1,19 @@
+service: policypilotai-backend
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  region: us-east-1 # Change to your preferred region
+  memorySize: 512
+  timeout: 30
+  environment:
+    NODE_ENV: production
+    DATABASE_URL: ${env:DATABASE_URL}
+    JWT_SECRET: ${env:JWT_SECRET}
+    # Add other env vars here or in the AWS Console
+
+functions:
+  api:
+    handler: dist/backend/src/handler.handler
+    events:
+      - httpApi: '*' # Using HTTP API (v2) for lower cost and faster performance
