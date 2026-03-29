@@ -10,6 +10,14 @@ provider:
     NODE_ENV: production
     DATABASE_URL: ${env:DATABASE_URL}
     JWT_SECRET: ${env:JWT_SECRET}
+    REFRESH_TOKEN_SECRET: ${env:REFRESH_TOKEN_SECRET}
+    JWT_EXPIRES_IN: 24h
+    SMTP_HOST: smtp.gmail.com
+    SMTP_PORT: "587"
+    SMTP_USER: ${env:SMTP_USER}
+    SMTP_PASS: ${env:SMTP_PASS}
+    SMTP_FROM_NAME: PolicyPilotAI
+    MONGO_FALLBACK: "false"
   httpApi:
     cors:
       allowedOrigins:

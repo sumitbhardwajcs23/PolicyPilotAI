@@ -113,8 +113,36 @@ const isMobileRegex = /^\d{10}$/
 
 const router = Router()
 
-// In-memory OTP store { identifier → { otp, expires } }
-const otpStore = new Map<string, { otp: string; expires: number; purpose: string }>()
+// ─── MongoDB-backed OTP Store (replaces in-memory Map - required for Lambda) ───
+import mongoose from 'mongoose'
+
+const otpSchema = new mongoose.Schema({
+  identifier: { type: String, required: true, index: true },
+  otp: { type: String, required: true },
+  purpose: { type: String, required: true },
+  expires: { type: Date, required: true },
+}, { collection: 'otp_store' })
+otpSchema.index({ expires: 1 }, { expireAfterSeconds: 0 }) // Auto-delete expired OTPs
+
+const OtpModel = mongoose.models.OtpStore || mongoose.model('OtpStore', otpSchema)
+
+const otpStore = {
+  set: async (identifier: string, data: { otp: string; expires: number; purpose: string }) => {
+    await OtpModel.findOneAndUpdate(
+      { identifier },
+      { otp: data.otp, purpose: data.purpose, expires: new Date(data.expires) },
+      { upsert: true, new: true }
+    )
+  },
+  get: async (identifier: string) => {
+    const doc = await OtpModel.findOne({ identifier })
+    if (!doc) return null
+    return { otp: doc.otp, expires: doc.expires.getTime(), purpose: doc.purpose }
+  },
+  delete: async (identifier: string) => {
+    await OtpModel.deleteOne({ identifier })
+  }
+}
 
 const generateOtp = () => Math.floor(100000 + Math.random() * 900000).toString()
 
@@ -185,7 +213,7 @@ router.post('/send-otp', async (req, res, next) => {
     if (!user) throw new AppError(404, 'No account found with this email/mobile. Please sign up.')
 
     const otp = generateOtp()
-    otpStore.set(identifier, { otp, expires: Date.now() + 5 * 60 * 1000, purpose: 'login' })
+    await otpStore.set(identifier, { otp, expires: Date.now() + 5 * 60 * 1000, purpose: 'login' })
 
     if (isEmail) {
       await sendEmail(
@@ -215,7 +243,7 @@ router.post('/verify-otp', async (req, res, next) => {
     const { identifier, otp } = req.body
     if (!identifier || !otp) throw new AppError(400, 'Identifier and OTP required')
 
-    const stored = otpStore.get(identifier)
+    const stored = await otpStore.get(identifier)
     if (!stored || stored.otp !== otp || stored.expires < Date.now()) {
       throw new AppError(400, 'Invalid or expired OTP')
     }
@@ -224,7 +252,7 @@ router.post('/verify-otp', async (req, res, next) => {
     const user = await User.findOne({ $or: [{ email: identifier }, { mobile: identifier }] })
     if (!user) throw new AppError(404, 'User not found')
 
-    otpStore.delete(identifier)
+    await otpStore.delete(identifier)
 
     user.lastLoginAt = new Date()
     await user.save()
@@ -266,7 +294,7 @@ router.post('/send-verification', async (req, res, next) => {
     if (exists) throw new AppError(409, 'An account with this email already exists. Please log in.')
 
     const otp = generateOtp()
-    otpStore.set(email, { otp, expires: Date.now() + 10 * 60 * 1000, purpose: 'verify' })
+    await otpStore.set(email, { otp, expires: Date.now() + 10 * 60 * 1000, purpose: 'verify' })
 
     await sendEmail(
       email,
@@ -298,12 +326,12 @@ router.post('/register', async (req, res, next) => {
     if (mobile && !isMobileRegex.test(mobile)) throw new AppError(400, 'Valid 10-digit mobile number required')
 
     // Verify OTP
-    const stored = otpStore.get(email)
+    const stored = await otpStore.get(email)
     if (!stored || stored.otp !== otp || stored.expires < Date.now()) {
       throw new AppError(400, 'Invalid or expired verification code')
     }
     if (stored.purpose !== 'verify') throw new AppError(400, 'Invalid OTP purpose')
-    otpStore.delete(email)
+    await otpStore.delete(email)
 
     // Check for duplicates
     const emailExists = await User.findOne({ email })
