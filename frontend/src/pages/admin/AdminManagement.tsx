@@ -85,7 +85,11 @@ export function AdminManagement() {
       setShowCreateForm(false);
       setForm({ name: '', email: '', mobile: '', role: 'insurer', permissions: [] });
       loadAll();
-    } catch { }
+    } catch (e: any) {
+      const msg = e?.response?.data?.message || e?.response?.data?.errors?.[0]?.message || 'Failed to create admin';
+      toast.error(msg);
+      console.error('createAdmin failed:', e?.response?.data);
+    }
   };
 
   const handleUpdatePermissions = async (id: string) => {

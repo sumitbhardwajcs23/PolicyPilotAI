@@ -276,14 +276,17 @@ router.post('/admins', requireMasterAdmin, async (req, res, next) => {
     if (processedBody.email === '') delete processedBody.email;
     if (processedBody.mobile === '') delete processedBody.mobile;
 
+    console.log('[createAdmin] body received:', JSON.stringify(processedBody));
+
     const schema = z.object({
-      name: z.string(),
+      name: z.string().min(1, 'Name is required'),
       email: z.string().email().optional(),
-      mobile: z.string().regex(/^\d{10}$/).optional(),
+      mobile: z.string().regex(/^\d{10}$/, 'Mobile must be 10 digits').optional(),
       role: z.enum(['admin', 'insurer']).default('insurer'),
       permissions: z.array(z.string()).default([]),
     })
     const data = schema.parse(processedBody)
+    console.log('[createAdmin] parsed OK:', JSON.stringify(data));
 
     // Check duplicates
     if (data.email) {
