@@ -13,8 +13,7 @@ provider:
   httpApi:
     cors:
       allowedOrigins:
-        - 'https://main.d2pyi3hcbigvv7.amplifyapp.com'
-        - 'https://policy-pilot-ai.vercel.app'
+        - '*'
       allowedHeaders:
         - Content-Type
         - Authorization
@@ -28,7 +27,7 @@ provider:
         - DELETE
         - OPTIONS
         - PATCH
-      allowCredentials: true
+      allowCredentials: false
 
 functions:
   api:
