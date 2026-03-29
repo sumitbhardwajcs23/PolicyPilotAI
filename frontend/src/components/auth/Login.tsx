@@ -54,7 +54,7 @@ export function Login() {
     } catch {
       // Ignore
     }
-    navigate(user.role === 'admin' ? '/admin' : '/dashboard')
+    navigate(user.role === 'admin' || user.role === 'insurer' ? '/admin' : '/dashboard')
   }
 
   const startCountdown = () => {
@@ -285,15 +285,22 @@ export function Login() {
                   {isLoading ? <Loader2 className="w-5 h-5 animate-spin" /> : <><span>Continue</span><ArrowRight className="w-5 h-5" /></>}
                 </button>
 
+                {/* Slave Admin hint */}
+                <div className="mt-3 p-3 rounded-xl bg-blue-50 border border-blue-100">
+                  <p className="text-xs text-blue-700 text-center">
+                    <span className="font-semibold">Slave Admins:</span> enter your registered email or mobile above ↑ to log in with OTP
+                  </p>
+                </div>
+
                 <div className="relative py-3">
                   <div className="absolute inset-0 flex items-center"><div className="w-full border-t border-gray-200" /></div>
-                  <div className="relative flex justify-center text-sm"><span className="px-4 bg-white text-gray-500">Or test portal</span></div>
+                  <div className="relative flex justify-center text-sm"><span className="px-4 bg-white text-gray-500">Master Admin only</span></div>
                 </div>
 
                 <div className="flex gap-3">
                   <button type="button" onClick={() => { setStep('password'); setLoginRole('admin') }}
                     className="flex-1 py-2.5 border-2 border-gray-200 rounded-xl text-sm font-medium text-gray-600 hover:border-[#0a2d8d] hover:text-[#0a2d8d] transition-colors">
-                    Admin Login
+                    Master Admin
                   </button>
                   <button type="button" onClick={() => { setStep('password'); setLoginRole('worker') }}
                     className="flex-1 py-2.5 bg-gray-50 border-2 border-transparent rounded-xl text-sm font-medium text-gray-600 hover:bg-gray-100 transition-colors">
