@@ -17,6 +17,9 @@ applications:
         paths:
           - node_modules/**/*
 customRules:
-  - source: </^[^.]+$|\.(?!(css|gif|ico|jpg|js|png|txt|svg|woff|ttf|map|json)$)([^.]+$)/>
+  - source: '/assets/<*>'
+    target: '/assets/<*>'
+    status: '200'
+  - source: '/<*>'
     target: /index.html
     status: '200'
