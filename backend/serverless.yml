@@ -10,7 +10,25 @@ provider:
     NODE_ENV: production
     DATABASE_URL: ${env:DATABASE_URL}
     JWT_SECRET: ${env:JWT_SECRET}
-    # Add other env vars here or in the AWS Console
+  httpApi:
+    cors:
+      allowedOrigins:
+        - 'https://main.d2pyi3hcbigvv7.amplifyapp.com'
+        - 'https://policy-pilot-ai.vercel.app'
+      allowedHeaders:
+        - Content-Type
+        - Authorization
+        - X-Requested-With
+        - Accept
+        - Origin
+      allowedMethods:
+        - GET
+        - POST
+        - PUT
+        - DELETE
+        - OPTIONS
+        - PATCH
+      allowCredentials: true
 
 functions:
   api:
