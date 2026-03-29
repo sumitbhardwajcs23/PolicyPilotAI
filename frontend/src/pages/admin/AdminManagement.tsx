@@ -86,8 +86,11 @@ export function AdminManagement() {
       setForm({ name: '', email: '', mobile: '', role: 'insurer', permissions: [] });
       loadAll();
     } catch (e: any) {
-      const msg = e?.response?.data?.message || e?.response?.data?.errors?.[0]?.message || 'Failed to create admin';
-      toast.error(msg);
+      const zodErrors = e?.response?.data?.errors;
+      const firstErr = zodErrors?.[0];
+      const field = firstErr?.path?.join('.') || 'unknown field';
+      const reason = firstErr?.message || e?.response?.data?.message || 'Failed to create admin';
+      toast.error(`${field}: ${reason}`);
       console.error('createAdmin failed:', e?.response?.data);
     }
   };
