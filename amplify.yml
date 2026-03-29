@@ -16,10 +16,3 @@ applications:
       cache:
         paths:
           - node_modules/**/*
-customRules:
-  - source: '/assets/<*>'
-    target: '/assets/<*>'
-    status: '200'
-  - source: '/<*>'
-    target: /index.html
-    status: '200'
