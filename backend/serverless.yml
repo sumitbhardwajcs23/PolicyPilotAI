@@ -1,5 +1,18 @@
 service: policypilotai-backend
 
+package:
+  individually: false
+  patterns:
+    - 'dist/**'
+    - 'node_modules/**'
+    - '!node_modules/.cache/**'
+    - '!node_modules/.bin/**'
+    - '!src/**'
+    - '!**/*.ts'
+    - '!**/*.map'
+    - '!.env'
+    - '!*.md'
+
 provider:
   name: aws
   runtime: nodejs20.x
