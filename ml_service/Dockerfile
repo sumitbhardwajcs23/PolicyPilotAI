@@ -21,8 +21,9 @@ RUN pip install --no-cache-dir --upgrade pip && \
 # Copy source
 COPY . .
 
-# Create artifacts directory (populated by train script at runtime / build)
+# Ensure artifacts (models + metadata) are included in the build
 RUN mkdir -p artifacts
+COPY artifacts/ artifacts/
 
 EXPOSE 8001
 
