@@ -30,3 +30,17 @@ Thumbs.db
 # Temporary files
 tmp/
 C:/Users/Asus/.gemini/antigravity/
+
+# Python virtual environments
+venv/
+ml_service/venv/
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# ML model artifacts (regenerated via train.py)
+ml_service/artifacts/*.joblib
+ml_service/artifacts/*.h5
+ml_service/artifacts/*.keras
+ml_service/artifacts/*.pkl
