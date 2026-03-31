@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Shield, Menu, X } from 'lucide-react';
+import { Shield, Menu, X, Zap } from 'lucide-react';
 
 interface NavigationProps {
   scrollY: number;
@@ -87,14 +87,24 @@ const Navigation = ({ scrollY }: NavigationProps) => {
             ))}
           </div>
 
-          {/* CTA Button */}
+          {/* CTA Buttons */}
           <div
-            className={`hidden md:block transition-all duration-500 ${
+            className={`hidden md:flex items-center gap-3 transition-all duration-500 ${
               isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-90'
             }`}
             style={{ transitionDelay: '500ms' }}
           >
-            <button 
+            {/* AI Demo Badge Button */}
+            <button
+              onClick={() => navigate('/ml-demo')}
+              className="relative flex items-center gap-1.5 px-4 py-2 rounded-xl bg-gradient-to-r from-violet-600/90 to-cyan-600/90 hover:from-violet-500 hover:to-cyan-500 text-white text-sm font-semibold shadow-lg shadow-violet-500/20 transition-all hover:scale-105"
+            >
+              <Zap className="w-3.5 h-3.5" />
+              AI Demo
+              <span className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping" />
+              <span className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-emerald-400" />
+            </button>
+            <button
               onClick={() => navigate('/login')}
               className="gig-btn-primary"
             >
@@ -140,9 +150,16 @@ const Navigation = ({ scrollY }: NavigationProps) => {
               {link.name}
             </a>
           ))}
+          <button
+            onClick={() => navigate('/ml-demo')}
+            className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl bg-gradient-to-r from-violet-600 to-cyan-600 text-white font-semibold text-sm mt-2"
+          >
+            <Zap className="w-4 h-4" />
+            Try AI Demo
+          </button>
           <button 
             onClick={() => navigate('/login')}
-            className="w-full gig-btn-primary mt-4"
+            className="w-full gig-btn-primary mt-2"
           >
             Get Started
           </button>

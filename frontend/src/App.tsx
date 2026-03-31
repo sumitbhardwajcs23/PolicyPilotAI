@@ -3,6 +3,7 @@ import { AuthProvider, useAuth } from '@/contexts/AuthContext'
 import { Login } from '@/components/auth/Login'
 import { Register } from '@/components/auth/Register'
 import { Landing } from '@/pages/Landing'
+import { MLDemo } from '@/pages/MLDemo'
 
 // Layout components
 import { UserLayout } from '@/components/layout/UserLayout'
@@ -86,6 +87,7 @@ function AppRoutes() {
       {/* Public Routes */}
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
+      <Route path="/ml-demo" element={<MLDemo />} />
 
       {/* Worker/User Routes with Layout */}
       <Route path="/dashboard" element={

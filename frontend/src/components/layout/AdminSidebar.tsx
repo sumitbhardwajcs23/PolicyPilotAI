@@ -14,7 +14,8 @@ import {
   LogOut,
   ChevronLeft,
   ChevronRight,
-  Shield
+  Shield,
+  Brain
 } from 'lucide-react';
 import { useAuth } from '@/contexts/AuthContext';
 
@@ -37,6 +38,7 @@ export function AdminSidebar({ collapsed, onToggle }: AdminSidebarProps) {
     { id: 'weather', label: 'Weather Alerts', icon: CloudSun, path: '/admin/weather' },
     { id: 'payments', label: 'Payments', icon: CreditCard, path: '/admin/payments' },
     { id: 'analytics', label: 'Analytics', icon: BarChart3, path: '/admin/analytics' },
+    { id: 'ml', label: 'ML Models', icon: Brain, path: '/ml-demo' },
     { id: 'settings', label: 'Settings', icon: Settings, path: '/admin/settings' },
   ];
 

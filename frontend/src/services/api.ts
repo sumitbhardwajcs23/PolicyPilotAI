@@ -120,3 +120,44 @@ export const adminApi = {
   getParametricEvents: () => api.get('/admin/parametric-events'),
   createParametricEvent: (data: any) => api.post('/admin/parametric-events', data),
 }
+
+// ─── ML Service (via Node.js proxy, auth-required) ─────────────────────────
+export const mlApi = {
+  health: () => api.get('/ml/health'),
+  info: () => api.get('/ml/info'),
+  predictPremium: (tier: string, overrides?: Record<string, number>) =>
+    api.post('/ml/predict/premium', { tier, overrides }),
+  predictFraud: (claimData: any, threshold?: number, overrides?: Record<string, number>) =>
+    api.post('/ml/predict/fraud', { claimData, threshold, overrides }),
+}
+
+// ─── ML Service (direct — public demo, no auth) ────────────────────────────
+const ML_URL = import.meta.env.VITE_ML_URL || 'http://localhost:8001'
+
+export const mlDemoApi = {
+  health: async () => {
+    const r = await fetch(`${ML_URL}/health`)
+    return r.json()
+  },
+  info: async () => {
+    const r = await fetch(`${ML_URL}/models/info`)
+    return r.json()
+  },
+  predictPremium: async (body: Record<string, number>) => {
+    const r = await fetch(`${ML_URL}/predict/premium`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(body),
+    })
+    return r.json()
+  },
+  predictFraud: async (body: Record<string, number>) => {
+    const r = await fetch(`${ML_URL}/predict/fraud`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(body),
+    })
+    return r.json()
+  },
+}
+

@@ -18,6 +18,8 @@ provider:
     SMTP_PASS: ${env:SMTP_PASS}
     SMTP_FROM_NAME: PolicyPilotAI
     MONGO_FALLBACK: "false"
+    ML_SERVICE_URL: ${env:ML_SERVICE_URL, "http://localhost:8001"}
+    ML_TIMEOUT_MS: "8000"
   httpApi:
     cors:
       allowedOrigins:

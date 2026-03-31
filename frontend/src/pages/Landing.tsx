@@ -6,6 +6,7 @@ import Solution from '../sections/Solution';
 import HowItWorks from '../sections/HowItWorks';
 import Dashboard from '../sections/Dashboard';
 import Pricing from '../sections/Pricing';
+import MLSection from '../sections/MLSection';
 import Testimonials from '../sections/Testimonials';
 import FAQ from '../sections/FAQ';
 import CTA from '../sections/CTA';
@@ -64,6 +65,7 @@ export function Landing() {
         <HowItWorks />
         <Dashboard />
         <Pricing />
+        <MLSection />
         <Testimonials />
         <FAQ />
         <CTA />

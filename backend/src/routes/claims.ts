@@ -7,57 +7,49 @@ import { AppError } from '../middleware/errorHandler'
 import { authenticate } from '../middleware/auth'
 import { z } from 'zod'
 import { getAirQuality, getWeatherData } from '../services/weatherService'
+import { detectFraud, buildFraudInput } from '../services/MLService'
 
 const router = Router()
 
-// Fraud detection simulation
-const calculateFraudScore = async (claim: any, user: any) => {
-  let score = 0
-  const factors = {
-    gpsValid: true,
-    weatherCorrelated: false, // Start as false, then validate
-    behavioralAnomaly: false,
-    platformVerified: true
-  }
-
+// ─── ML-Powered Fraud Detection ──────────────────────────────────────────────
+const runFraudDetection = async (claim: any, user: any, policy: any) => {
+  // 1. Weather correlation (augment ML features)
+  let weatherEventMatched = 1
   try {
-    const { lat, lng } = claim.location;
-    
+    const { lat, lng } = claim.location
     if (claim.triggerType === 'severe_pollution') {
-      const aqData = await getAirQuality(lat, lng);
-      // If AQI > 300 (severe), weather correlated
-      if (aqData.aqi >= 300) {
-        factors.weatherCorrelated = true;
-      } else {
-        score += 40; // High score if trigger claimed but not found in data
-      }
+      const aqData = await getAirQuality(lat, lng)
+      weatherEventMatched = aqData.aqi >= 300 ? 1 : 0
     } else if (claim.triggerType === 'heavy_rain') {
-      const weatherData = await getWeatherData(lat, lng);
-      // If rainfall > 10mm/hr, weather correlated
-      if (weatherData.rainfall && weatherData.rainfall >= 10) {
-        factors.weatherCorrelated = true;
-      } else {
-        score += 40;
-      }
-    } else {
-      // For other triggers, default to true for now or add more logic
-      factors.weatherCorrelated = true;
+      const weather = await getWeatherData(lat, lng)
+      weatherEventMatched = weather.rainfall && weather.rainfall >= 10 ? 1 : 0
     }
-  } catch (error) {
-    console.warn('Fraud check weather validation failed, defaulting to correlated');
-    factors.weatherCorrelated = true;
+  } catch {
+    console.warn('[Claims] Weather validation skipped — defaulting to matched')
   }
 
-  // Check claim frequency
-  if (Math.random() > 0.8) {
-    score += 20
-    factors.behavioralAnomaly = true
+  // 2. Build ML feature vector
+  const fraudInput = buildFraudInput(claim, user, policy)
+  fraudInput.weather_event_matched = weatherEventMatched
+
+  // 3. Run ML prediction (falls back to rule engine if ML service is down)
+  const { prediction, source } = await detectFraud(fraudInput)
+
+  // 4. Map ML output to legacy claim schema
+  const legacyScore = Math.round(prediction.fraud_probability * 100)
+
+  return {
+    score: legacyScore,
+    factors: {
+      gpsValid: true,
+      weatherCorrelated: weatherEventMatched === 1,
+      behavioralAnomaly: prediction.risk_level === 'HIGH' || prediction.risk_level === 'CRITICAL',
+      platformVerified: true,
+    },
+    confidence: 0.95,
+    mlPrediction: prediction,
+    mlSource: source,
   }
-
-  // Random variation for demo
-  score += Math.floor(Math.random() * 20)
-
-  return { score, factors, confidence: 0.9 }
 }
 
 // GET /api/claims/my-claims
@@ -131,8 +123,8 @@ router.post('/manual', authenticate, async (req, res, next) => {
     // Calculate payout (₹150/hour for 3 hours = ₹450)
     const payoutAmount = 450
 
-    // Fraud detection
-    const fraudCheck = await calculateFraudScore(data, user)
+    // Fraud detection (ML-powered)
+    const fraudCheck = await runFraudDetection(data, user, policy)
 
     // Determine status based on fraud score
     let status = 'pending'
@@ -167,7 +159,15 @@ router.post('/manual', authenticate, async (req, res, next) => {
     res.status(201).json({
       success: true,
       data: claim,
-      fraudAnalysis: fraudCheck,
+      fraudAnalysis: {
+        score: fraudCheck.score,
+        factors: fraudCheck.factors,
+        confidence: fraudCheck.confidence,
+        riskLevel: fraudCheck.mlPrediction?.risk_level || 'UNKNOWN',
+        topRiskFeatures: fraudCheck.mlPrediction?.top_risk_features || [],
+        model: fraudCheck.mlPrediction?.model || 'Rule Engine',
+        source: fraudCheck.mlSource || 'fallback',
+      },
       message: status === 'approved' 
         ? 'Claim approved instantly' 
         : status === 'rejected'

@@ -12,6 +12,7 @@ import { claimsRouter } from './routes/claims'
 import { dashboardRouter } from './routes/dashboard'
 import { adminRouter } from './routes/admin'
 import { weatherRouter } from './routes/weather'
+import { mlRouter } from './routes/ml'
 import { errorHandler } from './middleware/errorHandler'
 import { connectDB } from './config/db'
 
@@ -129,6 +130,7 @@ app.use('/api/claims', claimsRouter)
 app.use('/api/dashboard', dashboardRouter)
 app.use('/api/admin', adminRouter)
 app.use('/api/weather', weatherRouter)
+app.use('/api/ml', mlRouter)
 
 // Error handling
 app.use(errorHandler)
