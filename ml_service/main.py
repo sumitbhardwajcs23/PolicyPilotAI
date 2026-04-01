@@ -34,13 +34,28 @@ app = FastAPI(
     version="2.0.0",
 )
 
+import os
+
+ALLOWED_ORIGINS = [
+    "*", 
+    "https://main.d1tw90tt4alsd5.amplifyapp.com",
+    "http://localhost:5173",
+    "http://localhost:3000"
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=ALLOWED_ORIGINS,
     allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+@app.on_event("startup")
+async def startup_event():
+    port = os.getenv("PORT", "8001")
+    logger.info(f"PolicyPilotAI ML Service starting on port {port} with 1 worker...")
+
 
 
 # ── Request Schemas ────────────────────────────────────────────────────────────

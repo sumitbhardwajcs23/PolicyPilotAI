@@ -22,9 +22,13 @@ _features: list[str] | None = None
 def _load():
     global _model, _scaler, _features
     if _model is None:
+        import logging
+        logger = logging.getLogger(__name__)
+        logger.info("Loading pricing model artifacts...")
         _model    = joblib.load(ARTIFACTS_DIR / "pricing_model.joblib")
         _scaler   = joblib.load(ARTIFACTS_DIR / "pricing_scaler.joblib")
         _features = joblib.load(ARTIFACTS_DIR / "pricing_features.joblib")
+        logger.info(f"Pricing model loaded successfully! Features: {len(_features)}")
 
 
 def get_feature_names() -> list[str]:

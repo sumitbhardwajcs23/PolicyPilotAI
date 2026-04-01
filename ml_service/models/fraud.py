@@ -16,7 +16,8 @@ from typing import Any
 
 import numpy as np
 import joblib
-import tensorflow as tf
+# Heavy imports moved inside _load() for lazy loading to save RAM on Render
+# import tensorflow as tf (Moved)
 
 BASE_DIR      = Path(__file__).resolve().parent.parent
 ARTIFACTS_DIR = BASE_DIR / "artifacts"
@@ -34,6 +35,10 @@ DEFAULT_THRESHOLD = 0.50
 def _load():
     global _rf_model, _nn_model, _scaler, _features
     if _rf_model is None:
+        import tensorflow as tf
+        # Prevent TF from attempting to find GPUs (saves minor memory/startup time)
+        tf.config.set_visible_devices([], 'GPU')
+        
         _rf_model = joblib.load(ARTIFACTS_DIR / "fraud_rf_model.joblib")
         _nn_model = tf.keras.models.load_model(str(ARTIFACTS_DIR / "fraud_nn_model.keras"))
         _scaler   = joblib.load(ARTIFACTS_DIR / "fraud_scaler.joblib")

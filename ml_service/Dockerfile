@@ -31,4 +31,5 @@ EXPOSE 8001
 HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \
     CMD python -c "import httpx; httpx.get('http://localhost:8001/health')" || exit 1
 
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8001", "--workers", "2"]
+# Use 1 worker to save RAM on Render Free Tier (512MB limit)
+CMD ["sh", "-c", "uvicorn main:app --host 0.0.0.0 --port ${PORT:-8001} --workers 1"]
