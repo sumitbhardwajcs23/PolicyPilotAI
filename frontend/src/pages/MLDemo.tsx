@@ -667,7 +667,7 @@ export function MLDemo() {
         {/* Footer */}
         <p className="text-center text-[11px] text-white/15 mt-10">
           Real inference via Python/FastAPI microservice · XGBoost + RF/NN ensemble · India gig economy focus ·{' '}
-          <a href="http://localhost:8001/docs" target="_blank" rel="noreferrer" className="text-violet-400/50 hover:text-violet-400 underline">Swagger →</a>
+          <a href="https://policypilotai-2.onrender.com/docs" target="_blank" rel="noreferrer" className="text-violet-400/50 hover:text-violet-400 underline">Swagger →</a>
         </p>
       </div>
     </div>

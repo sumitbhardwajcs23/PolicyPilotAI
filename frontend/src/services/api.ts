@@ -133,7 +133,7 @@ export const mlApi = {
 }
 
 // ─── ML Service (direct — public demo, no auth) ────────────────────────────
-const ML_URL = import.meta.env.VITE_ML_URL || 'http://localhost:8001'
+const ML_URL = import.meta.env.VITE_ML_URL || (import.meta.env.PROD ? 'https://policypilotai-2.onrender.com' : 'http://localhost:8001')
 
 export const mlDemoApi = {
   health: async () => {

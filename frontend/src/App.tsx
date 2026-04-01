@@ -23,7 +23,7 @@ import { AdminDashboard } from '@/pages/admin/AdminDashboard'
 import { AdminPolicies } from '@/pages/admin/AdminPolicies'
 import { AdminClaims } from '@/pages/admin/AdminClaims'
 import { AdminManagement } from '@/pages/admin/AdminManagement'
-import { UserManagement } from '@/pages/admin/UserManagement'
+import { UserManagement } from '@/pages/admin/UserManagement' // Force TS cache refresh
 import { AdminSettings } from '@/pages/admin/AdminSettings'
 
 // Shared pages
