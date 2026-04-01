@@ -50,7 +50,10 @@ export function Login() {
       const pos = await new Promise<GeolocationPosition>((resolve, reject) => {
         navigator.geolocation.getCurrentPosition(resolve, reject, { timeout: 8000, maximumAge: 60000 })
       })
-      localStorage.setItem('cachedLocation', JSON.stringify({ lat: pos.coords.latitude, lng: pos.coords.longitude }))
+      const lat = pos.coords.latitude;
+      const lng = pos.coords.longitude;
+      localStorage.setItem('cachedLocation', JSON.stringify({ lat, lng }))
+      authApi.updateLocation(lat, lng).catch(() => {}); // Fire and forget update
     } catch {
       // Ignore
     }

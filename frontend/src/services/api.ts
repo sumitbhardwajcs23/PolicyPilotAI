@@ -54,6 +54,7 @@ export const authApi = {
   workerLogin: (data: any) => api.post('/auth/worker-login', data),
   me: () => api.get('/auth/me'),
   logout: () => api.post('/auth/logout'),
+  updateLocation: (lat: number, lng: number) => api.patch('/auth/location', { lat, lng }),
 }
 
 // ─── Policies ─────────────────────────────────────────────────────────────────

@@ -91,9 +91,17 @@ export function useGPS(): UseGPSReturn {
           baseLat = 19.1075; baseLng = 72.8263; // Juhu approx
         }
         
-        // Jitter to spread them out around the zone center
-        const lat = baseLat + (Math.random() - 0.5) * 0.03;
-        const lng = baseLng + (Math.random() - 0.5) * 0.03;
+        let lat = baseLat;
+        let lng = baseLng;
+
+        if (u.lastLocation?.lat && u.lastLocation?.lng) {
+          lat = u.lastLocation.lat;
+          lng = u.lastLocation.lng;
+        } else {
+          // Jitter to spread them out around the zone center if no real location exists
+          lat += (Math.random() - 0.5) * 0.03;
+          lng += (Math.random() - 0.5) * 0.03;
+        }
 
         let status = 'inactive';
         if (u.isActive) {

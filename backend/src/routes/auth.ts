@@ -435,6 +435,24 @@ router.post('/worker-login', async (req, res, next) => {
     res.json({ success: true, token: accessToken, refreshToken, user: buildUserResponse(user) })
   } catch (error) { next(error) }
 })
+// ─── PATCH /api/auth/location ───────────────────────────────────────────────
+
+router.patch('/location', authenticate, async (req, res, next) => {
+  try {
+    const { lat, lng } = req.body
+    if (lat === undefined || lng === undefined) {
+      throw new AppError(400, 'Latitude and longitude are required')
+    }
+    const user = await User.findById(req.user!.userId)
+    if (!user) throw new AppError(404, 'User not found')
+    
+    user.lastLocation = { lat, lng }
+    await user.save()
+    
+    res.json({ success: true, message: 'Location updated', location: user.lastLocation })
+  } catch (error) { next(error) }
+})
+
 
 // ─── GET /api/auth/me ─────────────────────────────────────────────────────────
 

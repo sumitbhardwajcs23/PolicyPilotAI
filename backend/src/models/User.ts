@@ -18,6 +18,7 @@ export interface IUser extends Document {
   isActive: boolean;
   createdAt: Date;
   lastLoginAt?: Date;
+  lastLocation?: { lat: number; lng: number };
 }
 
 const userSchema = new Schema<IUser>({
@@ -37,6 +38,10 @@ const userSchema = new Schema<IUser>({
   emailVerified: { type: Boolean, default: false },
   isActive:      { type: Boolean, default: true },
   lastLoginAt:   { type: Date },
+  lastLocation:  {
+    lat: { type: Number },
+    lng: { type: Number }
+  }
 }, { 
   timestamps: true 
 });
