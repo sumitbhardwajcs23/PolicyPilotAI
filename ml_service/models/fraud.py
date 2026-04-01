@@ -35,14 +35,17 @@ DEFAULT_THRESHOLD = 0.50
 def _load():
     global _rf_model, _nn_model, _scaler, _features
     if _rf_model is None:
-        import tensorflow as tf
-        # Prevent TF from attempting to find GPUs (saves minor memory/startup time)
-        tf.config.set_visible_devices([], 'GPU')
+        import onnxruntime as ort
+        import logging
+        logger = logging.getLogger(__name__)
+        logger.info("Loading Fraud Detection models (RF + ONNX)...")
         
         _rf_model = joblib.load(ARTIFACTS_DIR / "fraud_rf_model.joblib")
-        _nn_model = tf.keras.models.load_model(str(ARTIFACTS_DIR / "fraud_nn_model.keras"))
+        # Load ONNX model instead of Keras/TensorFlow
+        _nn_model = ort.InferenceSession(str(ARTIFACTS_DIR / "fraud_nn_model.onnx"))
         _scaler   = joblib.load(ARTIFACTS_DIR / "fraud_scaler.joblib")
         _features = joblib.load(ARTIFACTS_DIR / "fraud_features.joblib")
+        logger.info("Fraud models loaded successfully!")
 
 
 def get_feature_names() -> list[str]:
@@ -95,7 +98,11 @@ def predict(data: dict[str, Any], threshold: float = DEFAULT_THRESHOLD) -> dict[
     scaled = _scaler.transform(fv).astype(np.float32)  # type: ignore
 
     rf_prob  = float(_rf_model.predict_proba(scaled)[0, 1])        # type: ignore
-    nn_prob  = float(_nn_model.predict(scaled, verbose=0).flatten()[0])  # type: ignore
+    
+    # ONNX inference: run(output_names, input_feed)
+    onnx_inputs = {_nn_model.get_inputs()[0].name: scaled}
+    nn_prob = float(_nn_model.run(None, onnx_inputs)[0].flatten()[0])
+    
     ens_prob = _RF_WEIGHT * rf_prob + _NN_WEIGHT * nn_prob
 
     # Explainability — top RF feature importances
