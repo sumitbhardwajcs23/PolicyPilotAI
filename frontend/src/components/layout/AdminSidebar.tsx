@@ -32,6 +32,7 @@ export function AdminSidebar({ collapsed, onToggle }: AdminSidebarProps) {
     { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard, path: '/admin' },
     { id: 'policies', label: 'Policy Approvals', icon: ShieldCheck, path: '/admin/policies' },
     { id: 'claims', label: 'Claim Approvals', icon: ClipboardList, path: '/admin/claims' },
+    { id: 'users', label: 'User Management', icon: Users, path: '/admin/users' },
     { id: 'admins', label: 'Admin Management', icon: Users, path: '/admin/admins' },
     { id: 'gps', label: 'GPS Tracking', icon: Map, path: '/admin/gps' },
     { id: 'fraud', label: 'Fraud Detection', icon: ShieldAlert, path: '/admin/fraud' },

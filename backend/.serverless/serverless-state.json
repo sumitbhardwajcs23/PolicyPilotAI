@@ -21,7 +21,9 @@
         "SMTP_USER": "devidsharma394@gmail.com",
         "SMTP_PASS": "jdzq lave ykus gtnt",
         "SMTP_FROM_NAME": "PolicyPilotAI",
-        "MONGO_FALLBACK": "false"
+        "MONGO_FALLBACK": "false",
+        "ML_SERVICE_URL": "https://policypilotai-2.onrender.com",
+        "ML_TIMEOUT_MS": "8000"
       },
       "httpApi": {
         "cors": {
@@ -141,7 +143,7 @@
             "Properties": {
               "Code": {
                 "S3Bucket": "serverless-framework-deployments-us-east-1-bdc3bd6d-394d",
-                "S3Key": "serverless/policypilotai-backend/dev/1774808443555-2026-03-29T18:20:43.555Z/policypilotai-backend.zip"
+                "S3Key": "serverless/policypilotai-backend/dev/1774947553891-2026-03-31T08:59:13.891Z/policypilotai-backend.zip"
               },
               "Handler": "dist/backend/src/handler.handler",
               "Runtime": "nodejs20.x",
@@ -160,7 +162,9 @@
                   "SMTP_USER": "devidsharma394@gmail.com",
                   "SMTP_PASS": "jdzq lave ykus gtnt",
                   "SMTP_FROM_NAME": "PolicyPilotAI",
-                  "MONGO_FALLBACK": "false"
+                  "MONGO_FALLBACK": "false",
+                  "ML_SERVICE_URL": "https://policypilotai-2.onrender.com",
+                  "ML_TIMEOUT_MS": "8000"
                 }
               },
               "Role": {
@@ -174,14 +178,14 @@
               "ApiLogGroup"
             ]
           },
-          "ApiLambdaVersion1ZiRHvPCqAxQwvQB1DL5WmBSud81flweUCILup1Wtk": {
+          "ApiLambdaVersion8a2LGEtFjE50tOnyTQi31DlJie8afklQlGGjF4kqI": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "ApiLambdaFunction"
               },
-              "CodeSha256": "EiJFuXE96YUZPtHIkyd16CCpdOp9c0BivU8wAHlXIOs="
+              "CodeSha256": "R0NguavrCStd7krBZmt168MlCY3sx+fAWhtm/0QG+L4="
             }
           },
           "HttpApi": {
@@ -307,7 +311,7 @@
           "ApiLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "ApiLambdaVersion1ZiRHvPCqAxQwvQB1DL5WmBSud81flweUCILup1Wtk"
+              "Ref": "ApiLambdaVersion8a2LGEtFjE50tOnyTQi31DlJie8afklQlGGjF4kqI"
             },
             "Export": {
               "Name": "sls-policypilotai-backend-dev-ApiLambdaFunctionQualifiedArn"
@@ -367,13 +371,31 @@
         "timeout": 30,
         "runtime": "nodejs20.x",
         "vpc": {},
-        "versionLogicalId": "ApiLambdaVersion1ZiRHvPCqAxQwvQB1DL5WmBSud81flweUCILup1Wtk"
+        "versionLogicalId": "ApiLambdaVersion8a2LGEtFjE50tOnyTQi31DlJie8afklQlGGjF4kqI"
       }
     },
     "configValidationMode": "warn",
     "serviceFilename": "serverless",
     "initialServerlessConfig": {
       "service": "policypilotai-backend",
+      "package": {
+        "individually": false,
+        "patterns": [
+          "dist/**",
+          "node_modules/**",
+          "!node_modules/.cache/**",
+          "!node_modules/.bin/**",
+          "!src/**",
+          "!**/*.ts",
+          "!**/*.map",
+          "!.env",
+          "!*.md"
+        ],
+        "artifactsS3KeyDirname": "serverless/policypilotai-backend/dev/code-artifacts",
+        "deploymentBucket": "serverless-framework-deployments-us-east-1-bdc3bd6d-394d",
+        "artifact": "D:\\SD\\projects\\Guid wire\\diployment\\M3AWS\\backend\\.serverless\\policypilotai-backend.zip",
+        "artifactDirectoryName": "serverless/policypilotai-backend/dev/1774947553891-2026-03-31T08:59:13.891Z"
+      },
       "provider": {
         "$ref": "$[\"service\"][\"provider\"]"
       },
@@ -387,7 +409,8 @@
     "artifact": "D:\\SD\\projects\\Guid wire\\diployment\\M3AWS\\backend\\.serverless\\policypilotai-backend.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/policypilotai-backend/dev/1774808443555-2026-03-29T18:20:43.555Z",
+    "individually": false,
+    "artifactDirectoryName": "serverless/policypilotai-backend/dev/1774947553891-2026-03-31T08:59:13.891Z",
     "artifact": "policypilotai-backend.zip"
   }
 }

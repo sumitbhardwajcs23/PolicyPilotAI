@@ -23,6 +23,7 @@ import { AdminDashboard } from '@/pages/admin/AdminDashboard'
 import { AdminPolicies } from '@/pages/admin/AdminPolicies'
 import { AdminClaims } from '@/pages/admin/AdminClaims'
 import { AdminManagement } from '@/pages/admin/AdminManagement'
+import { UserManagement } from '@/pages/admin/UserManagement'
 import { AdminSettings } from '@/pages/admin/AdminSettings'
 
 // Shared pages
@@ -118,6 +119,7 @@ function AppRoutes() {
         <Route path="policies" element={<AdminPolicies />} />
         <Route path="claims" element={<AdminClaims />} />
         <Route path="admins" element={<AdminManagement />} />
+        <Route path="users" element={<UserManagement />} />
         <Route path="settings" element={<AdminSettings />} />
         <Route path="gps" element={<GPSTracking />} />
         <Route path="fraud" element={<FraudDetection />} />

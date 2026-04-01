@@ -5,6 +5,24 @@
     "serviceConfigFileName": "serverless.yml",
     "service": {
       "service": "policypilotai-backend",
+      "package": {
+        "individually": false,
+        "patterns": [
+          "dist/**",
+          "node_modules/**",
+          "!node_modules/.cache/**",
+          "!node_modules/.bin/**",
+          "!src/**",
+          "!**/*.ts",
+          "!**/*.map",
+          "!.env",
+          "!*.md"
+        ],
+        "artifactsS3KeyDirname": "serverless/policypilotai-backend/dev/code-artifacts",
+        "deploymentBucket": "serverless-framework-deployments-us-east-1-bdc3bd6d-394d",
+        "artifact": "D:\\SD\\projects\\Guid wire\\diployment\\M3AWS\\backend\\.serverless\\policypilotai-backend.zip",
+        "artifactDirectoryName": "serverless/policypilotai-backend/dev/1774947553891-2026-03-31T08:59:13.891Z"
+      },
       "provider": {
         "name": "aws",
         "runtime": "nodejs20.x",
@@ -22,7 +40,9 @@
           "SMTP_USER": "devidsharma394@gmail.com",
           "SMTP_PASS": "jdzq lave ykus gtnt",
           "SMTP_FROM_NAME": "PolicyPilotAI",
-          "MONGO_FALLBACK": "false"
+          "MONGO_FALLBACK": "false",
+          "ML_SERVICE_URL": "https://policypilotai-2.onrender.com",
+          "ML_TIMEOUT_MS": "8000"
         },
         "httpApi": {
           "cors": {
@@ -48,17 +68,332 @@
           }
         },
         "stage": "dev",
-        "versionFunctions": true
+        "versionFunctions": true,
+        "compiledCloudFormationTemplate": {
+          "AWSTemplateFormatVersion": "2010-09-09",
+          "Description": "The AWS CloudFormation template for this Serverless application",
+          "Resources": {
+            "ApiLogGroup": {
+              "Type": "AWS::Logs::LogGroup",
+              "Properties": {
+                "LogGroupName": "/aws/lambda/policypilotai-backend-dev-api"
+              }
+            },
+            "IamRoleLambdaExecution": {
+              "Type": "AWS::IAM::Role",
+              "Properties": {
+                "AssumeRolePolicyDocument": {
+                  "Version": "2012-10-17",
+                  "Statement": [
+                    {
+                      "Effect": "Allow",
+                      "Principal": {
+                        "Service": [
+                          "lambda.amazonaws.com"
+                        ]
+                      },
+                      "Action": [
+                        "sts:AssumeRole"
+                      ]
+                    }
+                  ]
+                },
+                "Policies": [
+                  {
+                    "PolicyName": {
+                      "Fn::Join": [
+                        "-",
+                        [
+                          "policypilotai-backend",
+                          "dev",
+                          "lambda"
+                        ]
+                      ]
+                    },
+                    "PolicyDocument": {
+                      "Version": "2012-10-17",
+                      "Statement": [
+                        {
+                          "Effect": "Allow",
+                          "Action": [
+                            "logs:CreateLogStream",
+                            "logs:CreateLogGroup",
+                            "logs:TagResource"
+                          ],
+                          "Resource": [
+                            {
+                              "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/policypilotai-backend-dev*:*"
+                            }
+                          ]
+                        },
+                        {
+                          "Effect": "Allow",
+                          "Action": [
+                            "logs:PutLogEvents"
+                          ],
+                          "Resource": [
+                            {
+                              "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/policypilotai-backend-dev*:*:*"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "Path": "/",
+                "RoleName": {
+                  "Fn::Join": [
+                    "-",
+                    [
+                      "policypilotai-backend",
+                      "dev",
+                      {
+                        "Ref": "AWS::Region"
+                      },
+                      "lambdaRole"
+                    ]
+                  ]
+                }
+              }
+            },
+            "ApiLambdaFunction": {
+              "Type": "AWS::Lambda::Function",
+              "Properties": {
+                "Code": {
+                  "S3Bucket": "serverless-framework-deployments-us-east-1-bdc3bd6d-394d",
+                  "S3Key": "serverless/policypilotai-backend/dev/1774947553891-2026-03-31T08:59:13.891Z/policypilotai-backend.zip"
+                },
+                "Handler": "dist/backend/src/handler.handler",
+                "Runtime": "nodejs20.x",
+                "FunctionName": "policypilotai-backend-dev-api",
+                "MemorySize": 512,
+                "Timeout": 30,
+                "Environment": {
+                  "Variables": {
+                    "NODE_ENV": "production",
+                    "DATABASE_URL": "mongodb+srv://sumitbhardwaj2227_db_user:xgqjkGl7WiOptMQW@cluster0.axd0ocl.mongodb.net/?appName=Cluster0",
+                    "JWT_SECRET": "<REDACTED>",
+                    "REFRESH_TOKEN_SECRET": "<REDACTED>",
+                    "JWT_EXPIRES_IN": "24h",
+                    "SMTP_HOST": "smtp.gmail.com",
+                    "SMTP_PORT": "587",
+                    "SMTP_USER": "devidsharma394@gmail.com",
+                    "SMTP_PASS": "jdzq lave ykus gtnt",
+                    "SMTP_FROM_NAME": "PolicyPilotAI",
+                    "MONGO_FALLBACK": "false",
+                    "ML_SERVICE_URL": "https://policypilotai-2.onrender.com",
+                    "ML_TIMEOUT_MS": "8000"
+                  }
+                },
+                "Role": {
+                  "Fn::GetAtt": [
+                    "IamRoleLambdaExecution",
+                    "Arn"
+                  ]
+                }
+              },
+              "DependsOn": [
+                "ApiLogGroup"
+              ]
+            },
+            "ApiLambdaVersion8a2LGEtFjE50tOnyTQi31DlJie8afklQlGGjF4kqI": {
+              "Type": "AWS::Lambda::Version",
+              "DeletionPolicy": "Retain",
+              "Properties": {
+                "FunctionName": {
+                  "Ref": "ApiLambdaFunction"
+                },
+                "CodeSha256": "R0NguavrCStd7krBZmt168MlCY3sx+fAWhtm/0QG+L4="
+              }
+            },
+            "HttpApi": {
+              "Type": "AWS::ApiGatewayV2::Api",
+              "Properties": {
+                "Name": "dev-policypilotai-backend",
+                "ProtocolType": "HTTP",
+                "CorsConfiguration": {
+                  "AllowCredentials": "<REDACTED>",
+                  "AllowHeaders": [
+                    "Content-Type",
+                    "Authorization",
+                    "X-Requested-With",
+                    "Accept",
+                    "Origin"
+                  ],
+                  "AllowMethods": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "DELETE",
+                    "OPTIONS",
+                    "PATCH"
+                  ],
+                  "AllowOrigins": [
+                    "*"
+                  ]
+                }
+              }
+            },
+            "HttpApiStage": {
+              "Type": "AWS::ApiGatewayV2::Stage",
+              "Properties": {
+                "ApiId": {
+                  "Ref": "HttpApi"
+                },
+                "StageName": "$default",
+                "AutoDeploy": true,
+                "DefaultRouteSettings": {
+                  "DetailedMetricsEnabled": false
+                }
+              }
+            },
+            "ApiLambdaPermissionHttpApi": {
+              "Type": "AWS::Lambda::Permission",
+              "Properties": {
+                "FunctionName": {
+                  "Fn::GetAtt": [
+                    "ApiLambdaFunction",
+                    "Arn"
+                  ]
+                },
+                "Action": "lambda:InvokeFunction",
+                "Principal": "apigateway.amazonaws.com",
+                "SourceArn": {
+                  "Fn::Join": [
+                    "",
+                    [
+                      "arn:",
+                      {
+                        "Ref": "AWS::Partition"
+                      },
+                      ":execute-api:",
+                      {
+                        "Ref": "AWS::Region"
+                      },
+                      ":",
+                      {
+                        "Ref": "AWS::AccountId"
+                      },
+                      ":",
+                      {
+                        "Ref": "HttpApi"
+                      },
+                      "/*"
+                    ]
+                  ]
+                }
+              }
+            },
+            "HttpApiIntegrationApi": {
+              "Type": "AWS::ApiGatewayV2::Integration",
+              "Properties": {
+                "ApiId": {
+                  "Ref": "HttpApi"
+                },
+                "IntegrationType": "AWS_PROXY",
+                "IntegrationUri": {
+                  "Fn::GetAtt": [
+                    "ApiLambdaFunction",
+                    "Arn"
+                  ]
+                },
+                "PayloadFormatVersion": "2.0",
+                "TimeoutInMillis": 30000
+              }
+            },
+            "HttpApiRouteDefault": {
+              "Type": "AWS::ApiGatewayV2::Route",
+              "Properties": {
+                "ApiId": {
+                  "Ref": "HttpApi"
+                },
+                "RouteKey": "$default",
+                "Target": {
+                  "Fn::Join": [
+                    "/",
+                    [
+                      "integrations",
+                      {
+                        "Ref": "HttpApiIntegrationApi"
+                      }
+                    ]
+                  ]
+                }
+              },
+              "DependsOn": "HttpApiIntegrationApi"
+            }
+          },
+          "Outputs": {
+            "ServerlessDeploymentBucketName": {
+              "Value": "serverless-framework-deployments-us-east-1-bdc3bd6d-394d",
+              "Export": {
+                "Name": "sls-policypilotai-backend-dev-ServerlessDeploymentBucketName"
+              }
+            },
+            "ApiLambdaFunctionQualifiedArn": {
+              "Description": "Current Lambda function version",
+              "Value": {
+                "Ref": "ApiLambdaVersion8a2LGEtFjE50tOnyTQi31DlJie8afklQlGGjF4kqI"
+              },
+              "Export": {
+                "Name": "sls-policypilotai-backend-dev-ApiLambdaFunctionQualifiedArn"
+              }
+            },
+            "HttpApiId": {
+              "Description": "Id of the HTTP API",
+              "Value": {
+                "Ref": "HttpApi"
+              },
+              "Export": {
+                "Name": "sls-policypilotai-backend-dev-HttpApiId"
+              }
+            },
+            "HttpApiUrl": {
+              "Description": "URL of the HTTP API",
+              "Value": {
+                "Fn::Join": [
+                  "",
+                  [
+                    "https://",
+                    {
+                      "Ref": "HttpApi"
+                    },
+                    ".execute-api.",
+                    {
+                      "Ref": "AWS::Region"
+                    },
+                    ".",
+                    {
+                      "Ref": "AWS::URLSuffix"
+                    }
+                  ]
+                ]
+              },
+              "Export": {
+                "Name": "sls-policypilotai-backend-dev-HttpApiUrl"
+              }
+            }
+          }
+        },
+        "vpc": {}
       },
       "functions": {
         "api": {
           "handler": "dist/backend/src/handler.handler",
           "events": [
             {
-              "httpApi": "*"
+              "httpApi": "*",
+              "resolvedMethod": "ANY"
             }
           ],
-          "name": "policypilotai-backend-dev-api"
+          "name": "policypilotai-backend-dev-api",
+          "package": {},
+          "memory": 512,
+          "timeout": 30,
+          "runtime": "nodejs20.x",
+          "vpc": {},
+          "versionLogicalId": "ApiLambdaVersion8a2LGEtFjE50tOnyTQi31DlJie8afklQlGGjF4kqI"
         }
       }
     },
@@ -79,7 +414,9 @@
         "SMTP_USER": "devidsharma394@gmail.com",
         "SMTP_PASS": "jdzq lave ykus gtnt",
         "SMTP_FROM_NAME": "PolicyPilotAI",
-        "MONGO_FALLBACK": "false"
+        "MONGO_FALLBACK": "false",
+        "ML_SERVICE_URL": "https://policypilotai-2.onrender.com",
+        "ML_TIMEOUT_MS": "8000"
       },
       "httpApi": {
         "cors": {
@@ -105,7 +442,315 @@
         }
       },
       "stage": "dev",
-      "versionFunctions": true
+      "versionFunctions": true,
+      "compiledCloudFormationTemplate": {
+        "AWSTemplateFormatVersion": "2010-09-09",
+        "Description": "The AWS CloudFormation template for this Serverless application",
+        "Resources": {
+          "ApiLogGroup": {
+            "Type": "AWS::Logs::LogGroup",
+            "Properties": {
+              "LogGroupName": "/aws/lambda/policypilotai-backend-dev-api"
+            }
+          },
+          "IamRoleLambdaExecution": {
+            "Type": "AWS::IAM::Role",
+            "Properties": {
+              "AssumeRolePolicyDocument": {
+                "Version": "2012-10-17",
+                "Statement": [
+                  {
+                    "Effect": "Allow",
+                    "Principal": {
+                      "Service": [
+                        "lambda.amazonaws.com"
+                      ]
+                    },
+                    "Action": [
+                      "sts:AssumeRole"
+                    ]
+                  }
+                ]
+              },
+              "Policies": [
+                {
+                  "PolicyName": {
+                    "Fn::Join": [
+                      "-",
+                      [
+                        "policypilotai-backend",
+                        "dev",
+                        "lambda"
+                      ]
+                    ]
+                  },
+                  "PolicyDocument": {
+                    "Version": "2012-10-17",
+                    "Statement": [
+                      {
+                        "Effect": "Allow",
+                        "Action": [
+                          "logs:CreateLogStream",
+                          "logs:CreateLogGroup",
+                          "logs:TagResource"
+                        ],
+                        "Resource": [
+                          {
+                            "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/policypilotai-backend-dev*:*"
+                          }
+                        ]
+                      },
+                      {
+                        "Effect": "Allow",
+                        "Action": [
+                          "logs:PutLogEvents"
+                        ],
+                        "Resource": [
+                          {
+                            "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/policypilotai-backend-dev*:*:*"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ],
+              "Path": "/",
+              "RoleName": {
+                "Fn::Join": [
+                  "-",
+                  [
+                    "policypilotai-backend",
+                    "dev",
+                    {
+                      "Ref": "AWS::Region"
+                    },
+                    "lambdaRole"
+                  ]
+                ]
+              }
+            }
+          },
+          "ApiLambdaFunction": {
+            "Type": "AWS::Lambda::Function",
+            "Properties": {
+              "Code": {
+                "S3Bucket": "serverless-framework-deployments-us-east-1-bdc3bd6d-394d",
+                "S3Key": "serverless/policypilotai-backend/dev/1774947553891-2026-03-31T08:59:13.891Z/policypilotai-backend.zip"
+              },
+              "Handler": "dist/backend/src/handler.handler",
+              "Runtime": "nodejs20.x",
+              "FunctionName": "policypilotai-backend-dev-api",
+              "MemorySize": 512,
+              "Timeout": 30,
+              "Environment": {
+                "Variables": {
+                  "NODE_ENV": "production",
+                  "DATABASE_URL": "mongodb+srv://sumitbhardwaj2227_db_user:xgqjkGl7WiOptMQW@cluster0.axd0ocl.mongodb.net/?appName=Cluster0",
+                  "JWT_SECRET": "<REDACTED>",
+                  "REFRESH_TOKEN_SECRET": "<REDACTED>",
+                  "JWT_EXPIRES_IN": "24h",
+                  "SMTP_HOST": "smtp.gmail.com",
+                  "SMTP_PORT": "587",
+                  "SMTP_USER": "devidsharma394@gmail.com",
+                  "SMTP_PASS": "jdzq lave ykus gtnt",
+                  "SMTP_FROM_NAME": "PolicyPilotAI",
+                  "MONGO_FALLBACK": "false",
+                  "ML_SERVICE_URL": "https://policypilotai-2.onrender.com",
+                  "ML_TIMEOUT_MS": "8000"
+                }
+              },
+              "Role": {
+                "Fn::GetAtt": [
+                  "IamRoleLambdaExecution",
+                  "Arn"
+                ]
+              }
+            },
+            "DependsOn": [
+              "ApiLogGroup"
+            ]
+          },
+          "ApiLambdaVersion8a2LGEtFjE50tOnyTQi31DlJie8afklQlGGjF4kqI": {
+            "Type": "AWS::Lambda::Version",
+            "DeletionPolicy": "Retain",
+            "Properties": {
+              "FunctionName": {
+                "Ref": "ApiLambdaFunction"
+              },
+              "CodeSha256": "R0NguavrCStd7krBZmt168MlCY3sx+fAWhtm/0QG+L4="
+            }
+          },
+          "HttpApi": {
+            "Type": "AWS::ApiGatewayV2::Api",
+            "Properties": {
+              "Name": "dev-policypilotai-backend",
+              "ProtocolType": "HTTP",
+              "CorsConfiguration": {
+                "AllowCredentials": "<REDACTED>",
+                "AllowHeaders": [
+                  "Content-Type",
+                  "Authorization",
+                  "X-Requested-With",
+                  "Accept",
+                  "Origin"
+                ],
+                "AllowMethods": [
+                  "GET",
+                  "POST",
+                  "PUT",
+                  "DELETE",
+                  "OPTIONS",
+                  "PATCH"
+                ],
+                "AllowOrigins": [
+                  "*"
+                ]
+              }
+            }
+          },
+          "HttpApiStage": {
+            "Type": "AWS::ApiGatewayV2::Stage",
+            "Properties": {
+              "ApiId": {
+                "Ref": "HttpApi"
+              },
+              "StageName": "$default",
+              "AutoDeploy": true,
+              "DefaultRouteSettings": {
+                "DetailedMetricsEnabled": false
+              }
+            }
+          },
+          "ApiLambdaPermissionHttpApi": {
+            "Type": "AWS::Lambda::Permission",
+            "Properties": {
+              "FunctionName": {
+                "Fn::GetAtt": [
+                  "ApiLambdaFunction",
+                  "Arn"
+                ]
+              },
+              "Action": "lambda:InvokeFunction",
+              "Principal": "apigateway.amazonaws.com",
+              "SourceArn": {
+                "Fn::Join": [
+                  "",
+                  [
+                    "arn:",
+                    {
+                      "Ref": "AWS::Partition"
+                    },
+                    ":execute-api:",
+                    {
+                      "Ref": "AWS::Region"
+                    },
+                    ":",
+                    {
+                      "Ref": "AWS::AccountId"
+                    },
+                    ":",
+                    {
+                      "Ref": "HttpApi"
+                    },
+                    "/*"
+                  ]
+                ]
+              }
+            }
+          },
+          "HttpApiIntegrationApi": {
+            "Type": "AWS::ApiGatewayV2::Integration",
+            "Properties": {
+              "ApiId": {
+                "Ref": "HttpApi"
+              },
+              "IntegrationType": "AWS_PROXY",
+              "IntegrationUri": {
+                "Fn::GetAtt": [
+                  "ApiLambdaFunction",
+                  "Arn"
+                ]
+              },
+              "PayloadFormatVersion": "2.0",
+              "TimeoutInMillis": 30000
+            }
+          },
+          "HttpApiRouteDefault": {
+            "Type": "AWS::ApiGatewayV2::Route",
+            "Properties": {
+              "ApiId": {
+                "Ref": "HttpApi"
+              },
+              "RouteKey": "$default",
+              "Target": {
+                "Fn::Join": [
+                  "/",
+                  [
+                    "integrations",
+                    {
+                      "Ref": "HttpApiIntegrationApi"
+                    }
+                  ]
+                ]
+              }
+            },
+            "DependsOn": "HttpApiIntegrationApi"
+          }
+        },
+        "Outputs": {
+          "ServerlessDeploymentBucketName": {
+            "Value": "serverless-framework-deployments-us-east-1-bdc3bd6d-394d",
+            "Export": {
+              "Name": "sls-policypilotai-backend-dev-ServerlessDeploymentBucketName"
+            }
+          },
+          "ApiLambdaFunctionQualifiedArn": {
+            "Description": "Current Lambda function version",
+            "Value": {
+              "Ref": "ApiLambdaVersion8a2LGEtFjE50tOnyTQi31DlJie8afklQlGGjF4kqI"
+            },
+            "Export": {
+              "Name": "sls-policypilotai-backend-dev-ApiLambdaFunctionQualifiedArn"
+            }
+          },
+          "HttpApiId": {
+            "Description": "Id of the HTTP API",
+            "Value": {
+              "Ref": "HttpApi"
+            },
+            "Export": {
+              "Name": "sls-policypilotai-backend-dev-HttpApiId"
+            }
+          },
+          "HttpApiUrl": {
+            "Description": "URL of the HTTP API",
+            "Value": {
+              "Fn::Join": [
+                "",
+                [
+                  "https://",
+                  {
+                    "Ref": "HttpApi"
+                  },
+                  ".execute-api.",
+                  {
+                    "Ref": "AWS::Region"
+                  },
+                  ".",
+                  {
+                    "Ref": "AWS::URLSuffix"
+                  }
+                ]
+              ]
+            },
+            "Export": {
+              "Name": "sls-policypilotai-backend-dev-HttpApiUrl"
+            }
+          }
+        }
+      },
+      "vpc": {}
     },
     "dashboard": {
       "isEnabledForService": false,
@@ -116,9 +761,9 @@
       "serviceProvider": null,
       "instanceParameters": null
     },
-    "serviceRawFile": "service: policypilotai-backend\n\nprovider:\n  name: aws\n  runtime: nodejs20.x\n  region: us-east-1 # Change to your preferred region\n  memorySize: 512\n  timeout: 30\n  environment:\n    NODE_ENV: production\n    DATABASE_URL: ${env:DATABASE_URL}\n    JWT_SECRET: ${env:JWT_SECRET}\n    REFRESH_TOKEN_SECRET: ${env:REFRESH_TOKEN_SECRET}\n    JWT_EXPIRES_IN: 24h\n    SMTP_HOST: smtp.gmail.com\n    SMTP_PORT: \"587\"\n    SMTP_USER: ${env:SMTP_USER}\n    SMTP_PASS: ${env:SMTP_PASS}\n    SMTP_FROM_NAME: PolicyPilotAI\n    MONGO_FALLBACK: \"false\"\n  httpApi:\n    cors:\n      allowedOrigins:\n        - '*'\n      allowedHeaders:\n        - Content-Type\n        - Authorization\n        - X-Requested-With\n        - Accept\n        - Origin\n      allowedMethods:\n        - GET\n        - POST\n        - PUT\n        - DELETE\n        - OPTIONS\n        - PATCH\n      allowCredentials: false\n\nfunctions:\n  api:\n    handler: dist/backend/src/handler.handler\n    events:\n      - httpApi: '*' # Using HTTP API (v2) for lower cost and faster performance\n",
+    "serviceRawFile": "service: policypilotai-backend\n\npackage:\n  individually: false\n  patterns:\n    - 'dist/**'\n    - 'node_modules/**'\n    - '!node_modules/.cache/**'\n    - '!node_modules/.bin/**'\n    - '!src/**'\n    - '!**/*.ts'\n    - '!**/*.map'\n    - '!.env'\n    - '!*.md'\n\nprovider:\n  name: aws\n  runtime: nodejs20.x\n  region: us-east-1 # Change to your preferred region\n  memorySize: 512\n  timeout: 30\n  environment:\n    NODE_ENV: production\n    DATABASE_URL: ${env:DATABASE_URL}\n    JWT_SECRET: ${env:JWT_SECRET}\n    REFRESH_TOKEN_SECRET: ${env:REFRESH_TOKEN_SECRET}\n    JWT_EXPIRES_IN: 24h\n    SMTP_HOST: smtp.gmail.com\n    SMTP_PORT: \"587\"\n    SMTP_USER: ${env:SMTP_USER}\n    SMTP_PASS: ${env:SMTP_PASS}\n    SMTP_FROM_NAME: PolicyPilotAI\n    MONGO_FALLBACK: \"false\"\n    ML_SERVICE_URL: ${env:ML_SERVICE_URL, \"http://localhost:8001\"}\n    ML_TIMEOUT_MS: \"8000\"\n  httpApi:\n    cors:\n      allowedOrigins:\n        - '*'\n      allowedHeaders:\n        - Content-Type\n        - Authorization\n        - X-Requested-With\n        - Accept\n        - Origin\n      allowedMethods:\n        - GET\n        - POST\n        - PUT\n        - DELETE\n        - OPTIONS\n        - PATCH\n      allowCredentials: false\n\nfunctions:\n  api:\n    handler: dist/backend/src/handler.handler\n    events:\n      - httpApi: '*' # Using HTTP API (v2) for lower cost and faster performance\n",
     "command": [
-      "remove"
+      "deploy"
     ],
     "options": {
       "region": "us-east-1"
@@ -129,20 +774,20 @@
     "userName": "policypilotai",
     "serviceProviderAwsAccountId": "855603408059",
     "serviceProviderAwsCfStackName": "policypilotai-backend-dev",
-    "serviceProviderAwsCfStackId": "arn:aws:cloudformation:us-east-1:855603408059:stack/policypilotai-backend-dev/1fef0220-2b88-11f1-850f-0e5cf49c5251",
-    "serviceProviderAwsCfStackCreated": "2026-03-29T15:58:27.812Z",
-    "serviceProviderAwsCfStackUpdated": "2026-03-29T18:21:44.879Z",
-    "serviceProviderAwsCfStackStatus": "UPDATE_COMPLETE",
+    "serviceProviderAwsCfStackId": "arn:aws:cloudformation:us-east-1:855603408059:stack/policypilotai-backend-dev/0a91cea0-2cd5-11f1-bf5d-0ed8b0036fd9",
+    "serviceProviderAwsCfStackCreated": "2026-03-31T07:41:34.361Z",
+    "serviceProviderAwsCfStackUpdated": null,
+    "serviceProviderAwsCfStackStatus": "CREATE_COMPLETE",
     "serviceProviderAwsCfStackOutputs": [
       {
         "OutputKey": "ApiLambdaFunctionQualifiedArn",
-        "OutputValue": "arn:aws:lambda:us-east-1:855603408059:function:policypilotai-backend-dev-api:5",
+        "OutputValue": "arn:aws:lambda:us-east-1:855603408059:function:policypilotai-backend-dev-api:6",
         "Description": "Current Lambda function version",
         "ExportName": "sls-policypilotai-backend-dev-ApiLambdaFunctionQualifiedArn"
       },
       {
         "OutputKey": "HttpApiId",
-        "OutputValue": "ogund8l3z4",
+        "OutputValue": "9qhkpunkii",
         "Description": "Id of the HTTP API",
         "ExportName": "sls-policypilotai-backend-dev-HttpApiId"
       },
@@ -153,10 +798,316 @@
       },
       {
         "OutputKey": "HttpApiUrl",
-        "OutputValue": "https://ogund8l3z4.execute-api.us-east-1.amazonaws.com",
+        "OutputValue": "https://9qhkpunkii.execute-api.us-east-1.amazonaws.com",
         "Description": "URL of the HTTP API",
         "ExportName": "sls-policypilotai-backend-dev-HttpApiUrl"
       }
-    ]
+    ],
+    "compiledCloudFormationTemplate": {
+      "AWSTemplateFormatVersion": "2010-09-09",
+      "Description": "The AWS CloudFormation template for this Serverless application",
+      "Resources": {
+        "ApiLogGroup": {
+          "Type": "AWS::Logs::LogGroup",
+          "Properties": {
+            "LogGroupName": "/aws/lambda/policypilotai-backend-dev-api"
+          }
+        },
+        "IamRoleLambdaExecution": {
+          "Type": "AWS::IAM::Role",
+          "Properties": {
+            "AssumeRolePolicyDocument": {
+              "Version": "2012-10-17",
+              "Statement": [
+                {
+                  "Effect": "Allow",
+                  "Principal": {
+                    "Service": [
+                      "lambda.amazonaws.com"
+                    ]
+                  },
+                  "Action": [
+                    "sts:AssumeRole"
+                  ]
+                }
+              ]
+            },
+            "Policies": [
+              {
+                "PolicyName": {
+                  "Fn::Join": [
+                    "-",
+                    [
+                      "policypilotai-backend",
+                      "dev",
+                      "lambda"
+                    ]
+                  ]
+                },
+                "PolicyDocument": {
+                  "Version": "2012-10-17",
+                  "Statement": [
+                    {
+                      "Effect": "Allow",
+                      "Action": [
+                        "logs:CreateLogStream",
+                        "logs:CreateLogGroup",
+                        "logs:TagResource"
+                      ],
+                      "Resource": [
+                        {
+                          "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/policypilotai-backend-dev*:*"
+                        }
+                      ]
+                    },
+                    {
+                      "Effect": "Allow",
+                      "Action": [
+                        "logs:PutLogEvents"
+                      ],
+                      "Resource": [
+                        {
+                          "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/policypilotai-backend-dev*:*:*"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            ],
+            "Path": "/",
+            "RoleName": {
+              "Fn::Join": [
+                "-",
+                [
+                  "policypilotai-backend",
+                  "dev",
+                  {
+                    "Ref": "AWS::Region"
+                  },
+                  "lambdaRole"
+                ]
+              ]
+            }
+          }
+        },
+        "ApiLambdaFunction": {
+          "Type": "AWS::Lambda::Function",
+          "Properties": {
+            "Code": {
+              "S3Bucket": "serverless-framework-deployments-us-east-1-bdc3bd6d-394d",
+              "S3Key": "serverless/policypilotai-backend/dev/1774947553891-2026-03-31T08:59:13.891Z/policypilotai-backend.zip"
+            },
+            "Handler": "dist/backend/src/handler.handler",
+            "Runtime": "nodejs20.x",
+            "FunctionName": "policypilotai-backend-dev-api",
+            "MemorySize": 512,
+            "Timeout": 30,
+            "Environment": {
+              "Variables": {
+                "NODE_ENV": "production",
+                "DATABASE_URL": "mongodb+srv://sumitbhardwaj2227_db_user:xgqjkGl7WiOptMQW@cluster0.axd0ocl.mongodb.net/?appName=Cluster0",
+                "JWT_SECRET": "<REDACTED>",
+                "REFRESH_TOKEN_SECRET": "<REDACTED>",
+                "JWT_EXPIRES_IN": "24h",
+                "SMTP_HOST": "smtp.gmail.com",
+                "SMTP_PORT": "587",
+                "SMTP_USER": "devidsharma394@gmail.com",
+                "SMTP_PASS": "jdzq lave ykus gtnt",
+                "SMTP_FROM_NAME": "PolicyPilotAI",
+                "MONGO_FALLBACK": "false",
+                "ML_SERVICE_URL": "https://policypilotai-2.onrender.com",
+                "ML_TIMEOUT_MS": "8000"
+              }
+            },
+            "Role": {
+              "Fn::GetAtt": [
+                "IamRoleLambdaExecution",
+                "Arn"
+              ]
+            }
+          },
+          "DependsOn": [
+            "ApiLogGroup"
+          ]
+        },
+        "ApiLambdaVersion8a2LGEtFjE50tOnyTQi31DlJie8afklQlGGjF4kqI": {
+          "Type": "AWS::Lambda::Version",
+          "DeletionPolicy": "Retain",
+          "Properties": {
+            "FunctionName": {
+              "Ref": "ApiLambdaFunction"
+            },
+            "CodeSha256": "R0NguavrCStd7krBZmt168MlCY3sx+fAWhtm/0QG+L4="
+          }
+        },
+        "HttpApi": {
+          "Type": "AWS::ApiGatewayV2::Api",
+          "Properties": {
+            "Name": "dev-policypilotai-backend",
+            "ProtocolType": "HTTP",
+            "CorsConfiguration": {
+              "AllowHeaders": [
+                "Content-Type",
+                "Authorization",
+                "X-Requested-With",
+                "Accept",
+                "Origin"
+              ],
+              "AllowMethods": [
+                "GET",
+                "POST",
+                "PUT",
+                "DELETE",
+                "OPTIONS",
+                "PATCH"
+              ],
+              "AllowOrigins": [
+                "*"
+              ]
+            }
+          }
+        },
+        "HttpApiStage": {
+          "Type": "AWS::ApiGatewayV2::Stage",
+          "Properties": {
+            "ApiId": {
+              "Ref": "HttpApi"
+            },
+            "StageName": "$default",
+            "AutoDeploy": true,
+            "DefaultRouteSettings": {
+              "DetailedMetricsEnabled": false
+            }
+          }
+        },
+        "ApiLambdaPermissionHttpApi": {
+          "Type": "AWS::Lambda::Permission",
+          "Properties": {
+            "FunctionName": {
+              "Fn::GetAtt": [
+                "ApiLambdaFunction",
+                "Arn"
+              ]
+            },
+            "Action": "lambda:InvokeFunction",
+            "Principal": "apigateway.amazonaws.com",
+            "SourceArn": {
+              "Fn::Join": [
+                "",
+                [
+                  "arn:",
+                  {
+                    "Ref": "AWS::Partition"
+                  },
+                  ":execute-api:",
+                  {
+                    "Ref": "AWS::Region"
+                  },
+                  ":",
+                  {
+                    "Ref": "AWS::AccountId"
+                  },
+                  ":",
+                  {
+                    "Ref": "HttpApi"
+                  },
+                  "/*"
+                ]
+              ]
+            }
+          }
+        },
+        "HttpApiIntegrationApi": {
+          "Type": "AWS::ApiGatewayV2::Integration",
+          "Properties": {
+            "ApiId": {
+              "Ref": "HttpApi"
+            },
+            "IntegrationType": "AWS_PROXY",
+            "IntegrationUri": {
+              "Fn::GetAtt": [
+                "ApiLambdaFunction",
+                "Arn"
+              ]
+            },
+            "PayloadFormatVersion": "2.0",
+            "TimeoutInMillis": 30000
+          }
+        },
+        "HttpApiRouteDefault": {
+          "Type": "AWS::ApiGatewayV2::Route",
+          "Properties": {
+            "ApiId": {
+              "Ref": "HttpApi"
+            },
+            "RouteKey": "$default",
+            "Target": {
+              "Fn::Join": [
+                "/",
+                [
+                  "integrations",
+                  {
+                    "Ref": "HttpApiIntegrationApi"
+                  }
+                ]
+              ]
+            }
+          },
+          "DependsOn": "HttpApiIntegrationApi"
+        }
+      },
+      "Outputs": {
+        "ServerlessDeploymentBucketName": {
+          "Value": "serverless-framework-deployments-us-east-1-bdc3bd6d-394d",
+          "Export": {
+            "Name": "sls-policypilotai-backend-dev-ServerlessDeploymentBucketName"
+          }
+        },
+        "ApiLambdaFunctionQualifiedArn": {
+          "Description": "Current Lambda function version",
+          "Value": {
+            "Ref": "ApiLambdaVersion8a2LGEtFjE50tOnyTQi31DlJie8afklQlGGjF4kqI"
+          },
+          "Export": {
+            "Name": "sls-policypilotai-backend-dev-ApiLambdaFunctionQualifiedArn"
+          }
+        },
+        "HttpApiId": {
+          "Description": "Id of the HTTP API",
+          "Value": {
+            "Ref": "HttpApi"
+          },
+          "Export": {
+            "Name": "sls-policypilotai-backend-dev-HttpApiId"
+          }
+        },
+        "HttpApiUrl": {
+          "Description": "URL of the HTTP API",
+          "Value": {
+            "Fn::Join": [
+              "",
+              [
+                "https://",
+                {
+                  "Ref": "HttpApi"
+                },
+                ".execute-api.",
+                {
+                  "Ref": "AWS::Region"
+                },
+                ".",
+                {
+                  "Ref": "AWS::URLSuffix"
+                }
+              ]
+            ]
+          },
+          "Export": {
+            "Name": "sls-policypilotai-backend-dev-HttpApiUrl"
+          }
+        }
+      }
+    }
   }
 }

@@ -299,7 +299,7 @@ export function AdminDashboard() {
           {/* Admin Quick Actions */}
           <div className="space-y-3">
             {can('view_users') && (
-              <Link to="/admin/admins">
+              <Link to="/admin/users">
                 <GlassCard className="hover:border-purple-500/30 transition-colors">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-xl bg-purple-500/20 flex items-center justify-center">

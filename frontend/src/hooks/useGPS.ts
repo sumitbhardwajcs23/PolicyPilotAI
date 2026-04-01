@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import type { Worker, GeoZone } from '@/types';
 import { mockWorkers, mockGeoZones } from '@/services/mockData';
+import { adminApi } from '@/services/api';
 
 interface UseGPSReturn {
   workers: Worker[];
@@ -58,7 +59,7 @@ export function isPointInPolygon(
 }
 
 export function useGPS(): UseGPSReturn {
-  const [workers, setWorkers] = useState<Worker[]>(mockWorkers);
+  const [workers, setWorkers] = useState<Worker[]>([]);
   const [zones] = useState<GeoZone[]>(mockGeoZones);
   const [selectedWorker, setSelectedWorker] = useState<Worker | null>(null);
   const [userLocation, setUserLocation] = useState<{ lat: number; lng: number } | null>(null);
@@ -66,6 +67,63 @@ export function useGPS(): UseGPSReturn {
   const [error, setError] = useState<string | null>(null);
   const [isTracking, setIsTracking] = useState(false);
   const watchIdRef = useRef<number | null>(null);
+  
+  const loadRealWorkers = useCallback(async () => {
+    setLoading(true);
+    try {
+      const resp = await adminApi.getUsers({ role: 'worker', limit: 1000 }) as any;
+      const apiUsers = resp?.data?.data || [];
+      
+      const realWorkers: Worker[] = apiUsers.map((u: any) => {
+        let baseLat = 19.0760;
+        let baseLng = 72.8777;
+        
+        const zoneStr = (u.zone || '').toLowerCase();
+        if (zoneStr.includes('bandra')) {
+          baseLat = 19.0450; baseLng = 72.8250;
+        } else if (zoneStr.includes('east')) {
+          baseLat = 19.0800; baseLng = 72.9050; // Andheri East approx
+        } else if (zoneStr.includes('west')) {
+          baseLat = 19.0800; baseLng = 72.8750; // Andheri West approx
+        } else if (zoneStr.includes('khar')) {
+          baseLat = 19.0667; baseLng = 72.8400; // Khar approx
+        } else if (zoneStr.includes('juhu')) {
+          baseLat = 19.1075; baseLng = 72.8263; // Juhu approx
+        }
+        
+        // Jitter to spread them out around the zone center
+        const lat = baseLat + (Math.random() - 0.5) * 0.03;
+        const lng = baseLng + (Math.random() - 0.5) * 0.03;
+
+        let status = 'inactive';
+        if (u.isActive) {
+           status = Math.random() > 0.9 ? 'alert' : 'active';
+        }
+
+        return {
+          id: u._id,
+          name: u.name,
+          phone: u.mobile || '+91 0000000000',
+          location: { lat, lng },
+          status: status as 'active' | 'inactive' | 'alert',
+          zone: u.zone || 'Unknown',
+          lastUpdate: new Date(u.updatedAt || u.createdAt || Date.now())
+        };
+      });
+
+      if (realWorkers.length > 0) {
+        setWorkers(realWorkers);
+      } else {
+        setWorkers(mockWorkers);
+      }
+    } catch (err) {
+      console.error('Failed to fetch real workers:', err);
+      // Fallback
+      setWorkers(mockWorkers);
+    } finally {
+      setLoading(false);
+    }
+  }, []);
 
   // Get user's current location
   const getUserLocation = useCallback(() => {
@@ -121,29 +179,28 @@ export function useGPS(): UseGPSReturn {
 
   // Simulate worker location updates
   const refreshLocations = useCallback(() => {
-    setLoading(true);
-    
-    // Simulate API call delay
-    setTimeout(() => {
-      setWorkers(prevWorkers =>
-        prevWorkers.map(worker => ({
-          ...worker,
-          location: {
-            lat: worker.location.lat + (Math.random() - 0.5) * 0.001,
-            lng: worker.location.lng + (Math.random() - 0.5) * 0.001,
-          },
-          lastUpdate: new Date(),
-        }))
-      );
-      setLoading(false);
-    }, 500);
+    setWorkers(prevWorkers =>
+      prevWorkers.map(worker => ({
+        ...worker,
+        location: {
+          lat: worker.location.lat + (Math.random() - 0.5) * 0.001,
+          lng: worker.location.lng + (Math.random() - 0.5) * 0.001,
+        },
+        lastUpdate: new Date(),
+      }))
+    );
   }, []);
 
   const selectWorker = useCallback((worker: Worker | null) => {
     setSelectedWorker(worker);
   }, []);
 
-  // Auto-refresh worker locations every 30 seconds
+  // Fetch real workers on mount
+  useEffect(() => {
+    loadRealWorkers();
+  }, [loadRealWorkers]);
+
+  // Auto-refresh worker locations (simulation) every 30 seconds
   useEffect(() => {
     const interval = setInterval(refreshLocations, 30000);
     return () => clearInterval(interval);
@@ -171,7 +228,7 @@ export function useGPS(): UseGPSReturn {
     loading,
     error,
     selectWorker,
-    refreshLocations,
+    refreshLocations: loadRealWorkers, // manual refresh button triggers real fetch
     isTracking,
     startTracking,
     stopTracking,
