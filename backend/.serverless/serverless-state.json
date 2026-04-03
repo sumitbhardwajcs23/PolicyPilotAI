@@ -143,7 +143,7 @@
             "Properties": {
               "Code": {
                 "S3Bucket": "serverless-framework-deployments-us-east-1-bdc3bd6d-394d",
-                "S3Key": "serverless/policypilotai-backend/dev/1775239590394-2026-04-03T18:06:30.394Z/policypilotai-backend.zip"
+                "S3Key": "serverless/policypilotai-backend/dev/1775241613297-2026-04-03T18:40:13.297Z/policypilotai-backend.zip"
               },
               "Handler": "dist/backend/src/handler.handler",
               "Runtime": "nodejs20.x",
@@ -394,7 +394,7 @@
         "artifactsS3KeyDirname": "serverless/policypilotai-backend/dev/code-artifacts",
         "deploymentBucket": "serverless-framework-deployments-us-east-1-bdc3bd6d-394d",
         "artifact": "D:\\SD\\projects\\Guid wire\\diployment\\M3AWS\\backend\\.serverless\\policypilotai-backend.zip",
-        "artifactDirectoryName": "serverless/policypilotai-backend/dev/1775239590394-2026-04-03T18:06:30.394Z"
+        "artifactDirectoryName": "serverless/policypilotai-backend/dev/1775241613297-2026-04-03T18:40:13.297Z"
       },
       "provider": {
         "$ref": "$[\"service\"][\"provider\"]"
@@ -410,7 +410,7 @@
   },
   "package": {
     "individually": false,
-    "artifactDirectoryName": "serverless/policypilotai-backend/dev/1775239590394-2026-04-03T18:06:30.394Z",
+    "artifactDirectoryName": "serverless/policypilotai-backend/dev/1775241613297-2026-04-03T18:40:13.297Z",
     "artifact": "policypilotai-backend.zip"
   }
 }

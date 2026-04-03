@@ -21,7 +21,7 @@
         "artifactsS3KeyDirname": "serverless/policypilotai-backend/dev/code-artifacts",
         "deploymentBucket": "serverless-framework-deployments-us-east-1-bdc3bd6d-394d",
         "artifact": "D:\\SD\\projects\\Guid wire\\diployment\\M3AWS\\backend\\.serverless\\policypilotai-backend.zip",
-        "artifactDirectoryName": "serverless/policypilotai-backend/dev/1775239590394-2026-04-03T18:06:30.394Z"
+        "artifactDirectoryName": "serverless/policypilotai-backend/dev/1775241613297-2026-04-03T18:40:13.297Z"
       },
       "provider": {
         "name": "aws",
@@ -162,7 +162,7 @@
               "Properties": {
                 "Code": {
                   "S3Bucket": "serverless-framework-deployments-us-east-1-bdc3bd6d-394d",
-                  "S3Key": "serverless/policypilotai-backend/dev/1775239590394-2026-04-03T18:06:30.394Z/policypilotai-backend.zip"
+                  "S3Key": "serverless/policypilotai-backend/dev/1775241613297-2026-04-03T18:40:13.297Z/policypilotai-backend.zip"
                 },
                 "Handler": "dist/backend/src/handler.handler",
                 "Runtime": "nodejs20.x",
@@ -536,7 +536,7 @@
             "Properties": {
               "Code": {
                 "S3Bucket": "serverless-framework-deployments-us-east-1-bdc3bd6d-394d",
-                "S3Key": "serverless/policypilotai-backend/dev/1775239590394-2026-04-03T18:06:30.394Z/policypilotai-backend.zip"
+                "S3Key": "serverless/policypilotai-backend/dev/1775241613297-2026-04-03T18:40:13.297Z/policypilotai-backend.zip"
               },
               "Handler": "dist/backend/src/handler.handler",
               "Runtime": "nodejs20.x",
@@ -765,7 +765,9 @@
     "command": [
       "deploy"
     ],
-    "options": {},
+    "options": {
+      "force": true
+    },
     "orgId": "fabe2f41-ae79-40e0-9991-0f717396953a",
     "orgName": "policypilotai",
     "userId": "yVVvVRCgHxCxhd3rvt",
@@ -774,12 +776,12 @@
     "serviceProviderAwsCfStackName": "policypilotai-backend-dev",
     "serviceProviderAwsCfStackId": "arn:aws:cloudformation:us-east-1:855603408059:stack/policypilotai-backend-dev/0a91cea0-2cd5-11f1-bf5d-0ed8b0036fd9",
     "serviceProviderAwsCfStackCreated": "2026-03-31T07:41:34.361Z",
-    "serviceProviderAwsCfStackUpdated": "2026-04-03T17:42:18.027Z",
+    "serviceProviderAwsCfStackUpdated": "2026-04-03T18:37:55.402Z",
     "serviceProviderAwsCfStackStatus": "UPDATE_COMPLETE",
     "serviceProviderAwsCfStackOutputs": [
       {
         "OutputKey": "ApiLambdaFunctionQualifiedArn",
-        "OutputValue": "arn:aws:lambda:us-east-1:855603408059:function:policypilotai-backend-dev-api:11",
+        "OutputValue": "arn:aws:lambda:us-east-1:855603408059:function:policypilotai-backend-dev-api:14",
         "Description": "Current Lambda function version",
         "ExportName": "sls-policypilotai-backend-dev-ApiLambdaFunctionQualifiedArn"
       },
@@ -894,7 +896,7 @@
           "Properties": {
             "Code": {
               "S3Bucket": "serverless-framework-deployments-us-east-1-bdc3bd6d-394d",
-              "S3Key": "serverless/policypilotai-backend/dev/1775239590394-2026-04-03T18:06:30.394Z/policypilotai-backend.zip"
+              "S3Key": "serverless/policypilotai-backend/dev/1775241613297-2026-04-03T18:40:13.297Z/policypilotai-backend.zip"
             },
             "Handler": "dist/backend/src/handler.handler",
             "Runtime": "nodejs20.x",

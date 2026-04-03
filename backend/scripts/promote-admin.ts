@@ -1,7 +1,13 @@
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import path from 'path';
+import dns from 'dns';
 import { User } from '../src/models/User';
+
+// Fix for Node.js 18+ DNS resolution issues on some Windows systems
+if (dns.setDefaultResultOrder) {
+  dns.setDefaultResultOrder('ipv4first');
+}
 
 dotenv.config({ path: path.join(__dirname, '../.env') });
 
