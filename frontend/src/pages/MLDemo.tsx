@@ -112,6 +112,13 @@ export function MLDemo() {
   const [tab, setTab] = useState<'pricing' | 'fraud'>('pricing')
   const [mlStatus, setMlStatus] = useState<'checking' | 'online' | 'offline'>('checking')
 
+  // Custom Tier Prices State
+  const [tierPrices, setTierPrices] = useState<Record<string, number>>({
+    Basic: 29,
+    Standard: 59,
+    Premium: 99
+  })
+
   // ── Pricing state ────────────────────────────────────────────────────────
   const [P, setP] = useState({
     age: 26,
@@ -155,7 +162,22 @@ export function MLDemo() {
     setPLoading(true); setPResult(null)
     try {
       const res = await mlDemoApi.predictPremium(P as any)
-      if (res.success) setPResult(res.prediction as any)
+      if (res.success) {
+        const pred = res.prediction as any
+        const selectedTierLabel = P.coverage_tier === 0 ? 'Basic' : P.coverage_tier === 1 ? 'Standard' : 'Premium'
+        const customWeekly = tierPrices[selectedTierLabel]
+        
+        // Use custom price for final display while keeping model metadata
+        setPResult({
+          ...pred,
+          weekly_premium: customWeekly,
+          monthly_estimate: customWeekly * 4,
+          annual_estimate: customWeekly * 52,
+          tier_label: selectedTierLabel,
+          confidence_band_low: Math.floor(customWeekly * 0.94),
+          confidence_band_high: Math.ceil(customWeekly * 1.06)
+        })
+      }
     } finally { setPLoading(false) }
   }
 
@@ -321,12 +343,25 @@ export function MLDemo() {
                 <div className="grid grid-cols-3 gap-2">
                   {(['Basic', 'Standard', 'Premium'] as const).map((tier, i) => (
                     <button key={tier} onClick={() => setP(v => ({ ...v, coverage_tier: i }))}
-                      className={`py-2.5 rounded-xl text-xs font-bold border transition-all ${
+                      className={`relative py-2.5 rounded-xl text-xs font-bold border transition-all ${
                         P.coverage_tier === i
                           ? `${tierCfg[tier].bg} ${tierCfg[tier].color} border-current`
                           : 'bg-white/4 text-white/40 border-white/8 hover:bg-white/8'}`}>
                       {tierCfg[tier].icon} {tier}<br />
-                      <span className="text-[10px] font-normal opacity-70">{tierCfg[tier].weekly}/week</span>
+                      <span className="text-[10px] font-normal opacity-70 flex items-center justify-center gap-0.5 mt-0.5">
+                        ₹
+                        <input
+                          type="number"
+                          value={tierPrices[tier]}
+                          onClick={(e) => e.stopPropagation()}
+                          onChange={(e) => {
+                            const val = parseInt(e.target.value) || 0
+                            setTierPrices(prev => ({ ...prev, [tier]: val }))
+                          }}
+                          className="w-10 bg-transparent border-b border-white/10 text-center focus:outline-none focus:border-white/40 tabular-nums"
+                        />
+                        /week
+                      </span>
                     </button>
                   ))}
                 </div>
