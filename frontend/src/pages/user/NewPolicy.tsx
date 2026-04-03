@@ -23,7 +23,7 @@ const tiers = [
     color: 'from-blue-500 to-cyan-500',
     description: 'Essential protection for rainy days and minor disruptions.',
     weeklyPremium: 49,
-    maxCoverage: 5000,
+    maxCoverage: 49 * 20,
     eventsPerWeek: 1,
     features: ['Rain Protection', 'Heat Alerts', 'Standard Payouts']
   },
@@ -34,7 +34,7 @@ const tiers = [
     color: 'from-purple-500 to-indigo-500',
     description: 'Balanced coverage for active full-time gig workers.',
     weeklyPremium: 79,
-    maxCoverage: 12000,
+    maxCoverage: 79 * 20,
     eventsPerWeek: 2,
     features: ['Rain & Heat Protection', 'Disruption Coverage', 'Priority Support', '2 Events / Week']
   },
@@ -45,7 +45,7 @@ const tiers = [
     color: 'from-amber-500 to-orange-500',
     description: 'Ultimate peace of mind with maximum payouts and event count.',
     weeklyPremium: 129,
-    maxCoverage: 25000,
+    maxCoverage: 129 * 20,
     eventsPerWeek: 3,
     features: ['All Risks Covered', 'AQI Protection', '3 Events / Week', 'Instant UPI Payouts', 'Highest Payout Caps']
   },

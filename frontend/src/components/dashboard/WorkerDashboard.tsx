@@ -106,10 +106,10 @@ export function WorkerDashboard() {
             />
             <StatsCard
               title="Weekly Risk Score"
-              value={`${stats?.weeklyRiskScore || 0}/100`}
-              subtitle={stats?.weeklyRiskScore && stats.weeklyRiskScore > 50 ? 'High risk week' : 'Low risk week'}
+              value={`${stats?.WeeklyRiskScore || 0}/100`}
+              subtitle={stats?.WeeklyRiskScore && stats.WeeklyRiskScore > 50 ? 'High risk week' : 'Low risk week'}
               icon={TrendingUp}
-              className={stats?.weeklyRiskScore && stats.weeklyRiskScore > 50 ? 'border-l-4 border-l-warning-500' : 'border-l-4 border-l-success-500'}
+              className={stats?.WeeklyRiskScore && stats.WeeklyRiskScore > 50 ? 'border-l-4 border-l-warning-500' : 'border-l-4 border-l-success-500'}
             />
           </div>
 

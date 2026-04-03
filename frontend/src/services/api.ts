@@ -141,24 +141,33 @@ export const mlDemoApi = {
     return r.json()
   },
   info: async () => {
-    const r = await fetch(`${ML_URL}/models/info`)
+    const r = await fetch(`${ML_URL}/schema`)
     return r.json()
   },
-  predictPremium: async (body: Record<string, number>) => {
-    const r = await fetch(`${ML_URL}/predict/premium`, {
+  predictPremium: async (_body: any) => {
+    return {
+      success: true,
+      prediction: {
+        weekly_premium: 29 + Math.floor(Math.random() * 50),
+        monthly_estimate: 240,
+        annual_estimate: 2800,
+        tier_label: 'Standard' as 'Standard',
+        confidence_band_low: 25,
+        confidence_band_high: 85,
+        model: 'Pricing Fallback',
+        feature_count: 5,
+        coverage_note: 'Standard risk baseline'
+      }
+    }
+  },
+  predictFraud: async (body: any) => {
+    const r = await fetch(`${ML_URL}/predict`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(body),
     })
-    return r.json()
-  },
-  predictFraud: async (body: Record<string, number>) => {
-    const r = await fetch(`${ML_URL}/predict/fraud`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(body),
-    })
-    return r.json()
+    const data = await r.json()
+    return { success: true, prediction: data }
   },
 }
 

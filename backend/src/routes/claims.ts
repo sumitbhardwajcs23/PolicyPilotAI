@@ -30,20 +30,20 @@ const runFraudDetection = async (claim: any, user: any, policy: any) => {
 
   // 2. Build ML feature vector
   const fraudInput = buildFraudInput(claim, user, policy)
-  fraudInput.weather_event_matched = weatherEventMatched
+  fraudInput.weather_api_match = weatherEventMatched
 
   // 3. Run ML prediction (falls back to rule engine if ML service is down)
   const { prediction, source } = await detectFraud(fraudInput)
 
   // 4. Map ML output to legacy claim schema
-  const legacyScore = Math.round(prediction.fraud_probability * 100)
+  const legacyScore = Math.round(prediction.risk_score)
 
   return {
     score: legacyScore,
     factors: {
       gpsValid: true,
       weatherCorrelated: weatherEventMatched === 1,
-      behavioralAnomaly: prediction.risk_level === 'HIGH' || prediction.risk_level === 'CRITICAL',
+      behavioralAnomaly: prediction.decision !== 'AUTO_APPROVE',
       platformVerified: true,
     },
     confidence: 0.95,
@@ -120,8 +120,11 @@ router.post('/manual', authenticate, async (req, res, next) => {
       throw new AppError(404, 'User not found')
     }
 
-    // Calculate payout (₹150/hour for 3 hours = ₹450)
-    const payoutAmount = 450
+    // Calculate payout formula 
+    // Default base payout is 450, but max output per day will be 5x of policy premium
+    const basePayout = 450
+    const maxOutputPerDay = policy.weeklyPremium * 5
+    const payoutAmount = Math.min(basePayout, maxOutputPerDay)
 
     // Fraud detection (ML-powered)
     const fraudCheck = await runFraudDetection(data, user, policy)
@@ -163,8 +166,8 @@ router.post('/manual', authenticate, async (req, res, next) => {
         score: fraudCheck.score,
         factors: fraudCheck.factors,
         confidence: fraudCheck.confidence,
-        riskLevel: fraudCheck.mlPrediction?.risk_level || 'UNKNOWN',
-        topRiskFeatures: fraudCheck.mlPrediction?.top_risk_features || [],
+        riskLevel: fraudCheck.mlPrediction?.decision || 'UNKNOWN',
+        topRiskFeatures: fraudCheck.mlPrediction?.top_signals || [],
         model: fraudCheck.mlPrediction?.model || 'Rule Engine',
         source: fraudCheck.mlSource || 'fallback',
       },

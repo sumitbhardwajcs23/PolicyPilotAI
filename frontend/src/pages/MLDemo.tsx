@@ -25,18 +25,13 @@ interface PricingResult {
 }
 
 interface FraudResult {
-  is_fraud: boolean
+  decision: string
+  risk_score: number
   fraud_probability: number
-  risk_level: 'LOW' | 'MEDIUM' | 'HIGH' | 'CRITICAL'
-  rf_probability: number
-  nn_probability: number
-  payout_decision: 'AUTO_APPROVE' | 'MANUAL_REVIEW' | 'REJECTED'
-  payout_eta: string | null
-  top_risk_features: string[]
-  threshold_used: number
-  model: string
-  feature_count: number
-  api_verified: boolean
+  action: string
+  timestamp: string
+  top_signals: { feature: string; importance: number }[]
+  model?: string
 }
 
 // ────────────────────────────────────────────────────────────────────────────
@@ -50,10 +45,16 @@ const riskCfg = {
   CRITICAL: { color: 'text-red-400',     bg: 'bg-red-500/10',     border: 'border-red-500/25',     bar: 'bg-red-500',     Icon: XCircle },
 }
 
-const payoutCfg = {
+const payoutCfg: Record<string, any> = {
   AUTO_APPROVE:  { color: 'text-emerald-400', bg: 'bg-emerald-500/10', border: 'border-emerald-400/30', label: '✅ Auto-Approve — Instant UPI Payout' },
   MANUAL_REVIEW: { color: 'text-amber-400',   bg: 'bg-amber-500/10',   border: 'border-amber-400/30',   label: '📋 Manual Review Required' },
-  REJECTED:      { color: 'text-red-400',     bg: 'bg-red-500/10',     border: 'border-red-400/30',     label: '🚫 Claim Rejected — Fraud Detected' },
+  AUTO_REJECT:   { color: 'text-red-400',     bg: 'bg-red-500/10',     border: 'border-red-400/30',     label: '🚫 Claim Rejected — Fraud Detected' },
+}
+
+function getRiskLevel(score: number) {
+  if (score < 30) return { label: 'LOW', ...riskCfg.LOW }
+  if (score < 70) return { label: 'MEDIUM', ...riskCfg.MEDIUM }
+  return { label: 'HIGH', ...riskCfg.HIGH }
 }
 
 const tierCfg = {
@@ -64,12 +65,13 @@ const tierCfg = {
 
 function AnimatedNumber({ value, decimals = 0 }: { value: number; decimals?: number }) {
   const [d, setD] = useState(0)
+  const val = isNaN(value) ? 0 : value
   useEffect(() => {
-    let v = 0; const step = value / 35
-    const t = setInterval(() => { v += step; if (v >= value) { setD(value); clearInterval(t) } else setD(v) }, 18)
+    let v = 0; const step = val / 35
+    const t = setInterval(() => { v += step; if (v >= val) { setD(val); clearInterval(t) } else setD(v) }, 18)
     return () => clearInterval(t)
-  }, [value])
-  return <span>{d.toFixed(decimals)}</span>
+  }, [val])
+  return <span>{isNaN(d) ? '0' : d.toFixed(decimals)}</span>
 }
 
 function Slider({ label, value, min, max, step = 1, unit = '', prefix = '', onChange, color = 'violet' }: {
@@ -140,42 +142,7 @@ export function MLDemo() {
 
   // ── Fraud state ──────────────────────────────────────────────────────────
   const [F, setF] = useState({
-    trigger_type: 0,
-    weather_api_threshold_crossed: 1,
-    rainfall_mm_on_day: 80,
-    temperature_celsius: 38,
-    aqi_reading_trigger_day: 250,
-    event_duration_hours: 5,
-    multiple_workers_same_event: 0.7,
-    gps_in_affected_zone: 1,
-    location_matches_home_zone: 1,
-    distance_from_trigger_km: 0.5,
-    platform_order_drop_pct: 0.6,
-    platform_activity_at_time: 0,
-    zone_order_volume_drop: 0.7,
-    account_age_days: 180,
-    kyc_complete: 1,
-    biometric_verified: 1,
-    prior_claims_count_90d: 0,
-    prior_fraud_flags: 0,
-    platform_rating: 4.2,
-    tenure_weeks: 50,
-    claim_filed_within_hours: 0.5,
-    claim_amount_vs_weekly_avg: 0.8,
-    upi_id_changed_7d: 0,
-    multiple_upi_ids: 0,
-    device_changes_7d: 0,
-    login_anomaly_score: 0.05,
-    support_escalation_count_7d: 0,
-    claim_description_similarity: 0.05,
-    ip_match_home_city: 1,
-    battery_level_at_claim: 40,
-    app_version_current: 1,
-    vpn_proxy_active: 0,
-    jailbroken_rooted_device: 0,
-    concurrent_logins: 1,
-    weekend_claim_flag: 0,
-    threshold: 0.5,
+    worker_age: 26, worker_zone: 'Gurgaon', platform: 'Swiggy', vehicle_type: 'Bike', months_active: 12, avg_weekly_earnings_inr: 3500, work_hours_daily: 9, multiplatform: 1, season: 'Summer', trigger_type: 'Heavy Rainfall', geo_risk: 0.3, temporal_risk: 0.2, combined_risk: 0.5, gps_zone_match: 0.95, gps_network_delta_m: 50, accel_variance: 0.25, mock_location_flag: 0, speed_anomaly: 0, gps_trust_score: 0.88, claim_latitude: 28.45, claim_longitude: 77.02, weather_api_match: 1, rainfall_mm_hr: 0, heat_index_celsius: 35, aqi: 100, claims_this_month: 0, earnings_deviation: 0.1, peer_claim_ratio: 0.2, platform_login_active: 1, order_availability: 1, duplicate_upi_event: 0, loyalty_score: 0.8, loyalty_discount: 0.15, weekly_premium_inr: 50, hours_disrupted: 3
   })
   const [fResult, setFResult] = useState<FraudResult | null>(null)
   const [fLoading, setFLoading] = useState(false)
@@ -187,23 +154,33 @@ export function MLDemo() {
   const runPricing = async () => {
     setPLoading(true); setPResult(null)
     try {
-      const res = await mlDemoApi.predictPremium(P as Record<string, number>)
-      if (res.success) setPResult(res.prediction)
+      const res = await mlDemoApi.predictPremium(P as any)
+      if (res.success) setPResult(res.prediction as any)
     } finally { setPLoading(false) }
   }
 
   const runFraud = async () => {
     setFLoading(true); setFResult(null)
     try {
-      const res = await mlDemoApi.predictFraud(F as Record<string, number>)
-      if (res.success) setFResult(res.prediction)
+      const res = await mlDemoApi.predictFraud(F as any)
+      if (res.prediction && (res.prediction.error || res.prediction.detail)) {
+        setFResult({ error: res.prediction.error || res.prediction.detail } as any)
+      } else {
+        // Ensure numbers are valid
+        const pred = res.prediction as any
+        if (typeof pred.fraud_probability !== 'number' || isNaN(pred.fraud_probability)) pred.fraud_probability = 0
+        if (typeof pred.risk_score !== 'number' || isNaN(pred.risk_score)) pred.risk_score = 0
+        setFResult(pred)
+      }
+    } catch (err) {
+      setFResult({ error: 'Connection to ML Service failed' } as any)
     } finally { setFLoading(false) }
   }
 
   const fraudPresets = {
-    genuine: { weather_api_threshold_crossed: 1, rainfall_mm_on_day: 90, gps_in_affected_zone: 1, location_matches_home_zone: 1, platform_order_drop_pct: 0.65, multiple_workers_same_event: 0.75, kyc_complete: 1, biometric_verified: 1, prior_fraud_flags: 0, claim_filed_within_hours: 1, login_anomaly_score: 0.03, upi_id_changed_7d: 0, claim_description_similarity: 0.04, prior_claims_count_90d: 0, account_age_days: 300, platform_rating: 4.5, ip_match_home_city: 1, vpn_proxy_active: 0, jailbroken_rooted_device: 0, concurrent_logins: 1 },
-    suspicious: { weather_api_threshold_crossed: 0, rainfall_mm_on_day: 12, gps_in_affected_zone: 0, location_matches_home_zone: 0, platform_order_drop_pct: 0.05, multiple_workers_same_event: 0.02, kyc_complete: 1, biometric_verified: 0, prior_fraud_flags: 0, claim_filed_within_hours: 48, login_anomaly_score: 0.5, upi_id_changed_7d: 1, claim_description_similarity: 0.6, prior_claims_count_90d: 2, account_age_days: 40, platform_rating: 2.8, ip_match_home_city: 0, vpn_proxy_active: 1, jailbroken_rooted_device: 0, concurrent_logins: 2 },
-    fraud: { weather_api_threshold_crossed: 0, rainfall_mm_on_day: 5, gps_in_affected_zone: 0, location_matches_home_zone: 0, platform_order_drop_pct: 0.0, multiple_workers_same_event: 0.01, kyc_complete: 0, biometric_verified: 0, prior_fraud_flags: 1, claim_filed_within_hours: 70, login_anomaly_score: 0.9, upi_id_changed_7d: 1, multiple_upi_ids: 1, claim_description_similarity: 0.92, prior_claims_count_90d: 6, account_age_days: 12, platform_rating: 1.2, device_changes_7d: 7, ip_match_home_city: 0, vpn_proxy_active: 1, jailbroken_rooted_device: 1, concurrent_logins: 4 },
+    genuine: { weather_api_match: 1, rainfall_mm_hr: 90, gps_zone_match: 0.95, mock_location_flag: 0, duplicate_upi_event: 0, platform_login_active: 1, claims_this_month: 0, loyalty_score: 0.9 },
+    suspicious: { weather_api_match: 0, rainfall_mm_hr: 12, gps_zone_match: 0.5, mock_location_flag: 0, duplicate_upi_event: 1, platform_login_active: 0.5, claims_this_month: 2, loyalty_score: 0.4 },
+    fraud: { weather_api_match: 0, rainfall_mm_hr: 5, gps_zone_match: 0.1, mock_location_flag: 1, duplicate_upi_event: 1, platform_login_active: 0, claims_this_month: 6, loyalty_score: 0.1 },
   }
 
   const setPreset = (p: keyof typeof fraudPresets) => {
@@ -211,8 +188,6 @@ export function MLDemo() {
     setFResult(null)
   }
 
-  const triggerLabels = ['🌧 Heavy Rain', '🌡 Extreme Heat', '💨 High AQI', '🚧 Zone Closure', '🌊 Flooding']
-  const platformLabels = ['Zomato', 'Swiggy', 'Both']
   const cityLabels = ['Metro (Delhi/Mumbai/Bengaluru)', 'Tier-2 (Pune/Jaipur/Lucknow)', 'Tier-3 City']
 
   return (
@@ -254,7 +229,7 @@ export function MLDemo() {
             Gig Worker ML Playground
           </h1>
           <p className="text-white/45 text-base max-w-xl mx-auto">
-            Weekly micro-insurance from <span className="text-emerald-400 font-bold">₹29/week</span>. Zero-touch claims with <span className="text-cyan-400 font-bold">instant UPI payouts</span>.
+            Annual micro-insurance from <span className="text-emerald-400 font-bold">₹29/week</span>. Zero-touch claims with <span className="text-cyan-400 font-bold">instant UPI payouts</span>.
             Real AI inference — no login required.
           </p>
         </div>
@@ -262,7 +237,7 @@ export function MLDemo() {
         {/* ── Stat pills ─────────────────────────────────────────────────── */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
           {[
-            { label: 'Weekly Premium', value: '₹29–₹99', Icon: IndianRupee, color: 'emerald' },
+            { label: 'Annual Premium', value: '₹4–₹15', Icon: IndianRupee, color: 'emerald' },
             { label: 'UPI Payout ETA', value: '< 2 min', Icon: Clock, color: 'cyan' },
             { label: 'Fraud Accuracy', value: '95%+', Icon: Shield, color: 'violet' },
             { label: 'Platform APIs', value: 'Real-time', Icon: Activity, color: 'amber' },
@@ -282,7 +257,7 @@ export function MLDemo() {
         {/* ── Tabs ──────────────────────────────────────────────────────── */}
         <div className="flex gap-2 mb-6">
           {[
-            { id: 'pricing', label: 'Weekly Premium Calculator', Icon: IndianRupee, activeClass: 'bg-orange-600 shadow-orange-500/20' },
+            { id: 'pricing', label: 'Annual Premium Calculator', Icon: IndianRupee, activeClass: 'bg-orange-600 shadow-orange-500/20' },
             { id: 'fraud',   label: 'Parametric Claim Verifier', Icon: Shield,      activeClass: 'bg-violet-600 shadow-violet-500/20' },
           ].map(t => (
             <button key={t.id} onClick={() => setTab(t.id as any)}
@@ -304,7 +279,7 @@ export function MLDemo() {
                 </div>
                 <div>
                   <h3 className="font-bold text-white">XGBoost Pricing Model</h3>
-                  <p className="text-[11px] text-white/35">22 features · 60k gig worker records · ₹29–₹99/week</p>
+                  <p className="text-[11px] text-white/35">22 features · 60k gig worker records · ₹4–₹15/week</p>
                 </div>
               </div>
 
@@ -314,7 +289,7 @@ export function MLDemo() {
                   <p className="text-[11px] text-white/40 mb-1.5">Platform</p>
                   <select value={P.platform_code} onChange={e => setP(v => ({ ...v, platform_code: +e.target.value }))}
                     className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-orange-500">
-                    {platformLabels.map((l, i) => <option key={i} value={i}>{l}</option>)}
+                    {['Zomato', 'Swiggy', 'Both'].map((l, i) => <option key={i} value={i}>{l}</option>)}
                   </select>
                 </div>
                 <div>
@@ -346,7 +321,7 @@ export function MLDemo() {
                           ? `${tierCfg[tier].bg} ${tierCfg[tier].color} border-current`
                           : 'bg-white/4 text-white/40 border-white/8 hover:bg-white/8'}`}>
                       {tierCfg[tier].icon} {tier}<br />
-                      <span className="text-[10px] font-normal opacity-70">{tierCfg[tier].weekly}/wk</span>
+                      <span className="text-[10px] font-normal opacity-70">{tierCfg[tier].weekly}/week</span>
                     </button>
                   ))}
                 </div>
@@ -355,7 +330,7 @@ export function MLDemo() {
               {/* Sliders: 2-column grid */}
               <div className="grid grid-cols-2 gap-x-6 gap-y-4">
                 <Slider label="Age" value={P.age} min={18} max={45} onChange={v => setP(p => ({ ...p, age: v }))} color="orange" unit=" yrs" />
-                <Slider label="Avg Weekly Earnings" value={P.avg_weekly_earnings} min={1500} max={8000} step={100} prefix="₹" onChange={v => setP(p => ({ ...p, avg_weekly_earnings: v }))} color="orange" />
+                <Slider label="Avg Annual Earnings" value={P.avg_weekly_earnings} min={1500} max={8000} step={100} prefix="₹" onChange={v => setP(p => ({ ...p, avg_weekly_earnings: v }))} color="orange" />
                 <Slider label="Active Days/Week" value={P.active_days_per_week} min={3} max={7} onChange={v => setP(p => ({ ...p, active_days_per_week: v }))} color="orange" unit=" days" />
                 <Slider label="Daily Hours" value={P.daily_active_hours} min={4} max={14} onChange={v => setP(p => ({ ...p, daily_active_hours: v }))} color="orange" unit="h" />
                 <Slider label="Orders/Day" value={P.avg_orders_per_day} min={5} max={60} onChange={v => setP(p => ({ ...p, avg_orders_per_day: v }))} color="orange" />
@@ -382,7 +357,7 @@ export function MLDemo() {
               <button onClick={runPricing} disabled={pLoading || mlStatus !== 'online'}
                 className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl bg-gradient-to-r from-orange-600 to-rose-600 hover:from-orange-500 hover:to-rose-500 disabled:opacity-40 font-bold text-sm transition-all shadow-lg">
                 {pLoading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Zap className="w-4 h-4" />}
-                {pLoading ? 'Running XGBoost…' : 'Calculate Weekly Premium'}
+                {pLoading ? 'Running XGBoost…' : 'Calculate Annual Premium'}
               </button>
             </div>
 
@@ -507,10 +482,10 @@ export function MLDemo() {
               <div>
                 <p className="text-[11px] text-white/40 mb-2">Trigger Event Type</p>
                 <div className="flex flex-wrap gap-2">
-                  {triggerLabels.map((l, i) => (
-                    <button key={i} onClick={() => setF(v => ({ ...v, trigger_type: i }))}
+                  {['Severe Pollution', 'Heavy Rainfall', 'Extreme Heat', 'Flooding', 'Social Disruption'].map((l) => (
+                    <button key={l} onClick={() => setF(v => ({ ...v, trigger_type: l }))}
                       className={`px-3 py-1.5 rounded-lg text-xs font-medium border transition-all ${
-                        F.trigger_type === i ? 'bg-violet-500/20 border-violet-500/40 text-violet-300' : 'bg-white/4 border-white/8 text-white/40 hover:bg-white/8'}`}>
+                        F.trigger_type === l ? 'bg-violet-500/20 border-violet-500/40 text-violet-300' : 'bg-white/4 border-white/8 text-white/40 hover:bg-white/8'}`}>
                       {l}
                     </button>
                   ))}
@@ -521,13 +496,13 @@ export function MLDemo() {
               <div className="bg-white/3 rounded-xl p-4 space-y-4">
                 <div className="flex items-center justify-between">
                   <p className="text-[11px] text-white/40 font-semibold uppercase tracking-wider">External API Readings</p>
-                  <Toggle label="API Threshold Crossed" value={!!F.weather_api_threshold_crossed} onChange={v => setF(p => ({ ...p, weather_api_threshold_crossed: v ? 1 : 0 }))} />
+                  <Toggle label="API Threshold Crossed" value={!!F.weather_api_match} onChange={v => setF(p => ({ ...p, weather_api_match: v ? 1 : 0 }))} />
                 </div>
                 <div className="grid grid-cols-2 gap-x-6 gap-y-4">
-                  <Slider label="🌧 Rainfall (mm)" value={F.rainfall_mm_on_day} min={0} max={200} step={5} onChange={v => setF(p => ({ ...p, rainfall_mm_on_day: v }))} color="cyan" unit="mm" />
-                  <Slider label="🌡 Temperature (°C)" value={F.temperature_celsius} min={15} max={50} onChange={v => setF(p => ({ ...p, temperature_celsius: v }))} color="orange" unit="°C" />
-                  <Slider label="💨 AQI Reading" value={F.aqi_reading_trigger_day} min={0} max={500} step={10} onChange={v => setF(p => ({ ...p, aqi_reading_trigger_day: v }))} color="rose" />
-                  <Slider label="Event Duration" value={F.event_duration_hours} min={0} max={24} step={0.5} onChange={v => setF(p => ({ ...p, event_duration_hours: v }))} color="violet" unit="h" />
+                  <Slider label="🌧 Rainfall (mm/h)" value={F.rainfall_mm_hr} min={0} max={200} step={5} onChange={v => setF(p => ({ ...p, rainfall_mm_hr: v }))} color="cyan" unit="mm" />
+                  <Slider label="🌡 Heat Index (°C)" value={F.heat_index_celsius} min={15} max={50} onChange={v => setF(p => ({ ...p, heat_index_celsius: v }))} color="orange" unit="°C" />
+                  <Slider label="💨 AQI Reading" value={F.aqi} min={0} max={500} step={10} onChange={v => setF(p => ({ ...p, aqi: v }))} color="rose" />
+                  <Slider label="Hours Disrupted" value={F.hours_disrupted} min={0} max={24} step={0.5} onChange={v => setF(p => ({ ...p, hours_disrupted: v }))} color="violet" unit="h" />
                 </div>
               </div>
 
@@ -535,33 +510,27 @@ export function MLDemo() {
               <div className="bg-white/3 rounded-xl p-4 space-y-4">
                 <p className="text-[11px] text-white/40 font-semibold uppercase tracking-wider">Platform & GPS Signals</p>
                 <div className="grid grid-cols-2 gap-x-6 gap-y-4">
-                  <Slider label="Order Drop in Zone (%)" value={F.platform_order_drop_pct} min={0} max={1} step={0.05} onChange={v => setF(p => ({ ...p, platform_order_drop_pct: v }))} color="violet" unit="%" />
-                  <Slider label="Zone Volume Drop" value={F.zone_order_volume_drop} min={0} max={1} step={0.05} onChange={v => setF(p => ({ ...p, zone_order_volume_drop: v }))} color="violet" />
-                  <Slider label="Distance from Trigger (km)" value={F.distance_from_trigger_km} min={0} max={50} step={0.5} onChange={v => setF(p => ({ ...p, distance_from_trigger_km: v }))} color="cyan" unit="km" />
-                  <Slider label="% Cluster Claims" value={F.multiple_workers_same_event} min={0} max={1} step={0.05} onChange={v => setF(p => ({ ...p, multiple_workers_same_event: v }))} color="emerald" />
+                  <Slider label="GPS Zone Match (%)" value={F.gps_zone_match} min={0} max={1} step={0.05} onChange={v => setF(p => ({ ...p, gps_zone_match: v }))} color="emerald" unit="" />
+                  <Slider label="Geo Risk" value={F.geo_risk} min={0} max={1} step={0.05} onChange={v => setF(p => ({ ...p, geo_risk: v }))} color="violet" />
+                  <Slider label="GPS Error (m)" value={F.gps_network_delta_m} min={0} max={500} step={10} onChange={v => setF(p => ({ ...p, gps_network_delta_m: v }))} color="cyan" unit="m" />
+                  <Slider label="GPS Trust Score" value={F.gps_trust_score} min={0} max={1} step={0.05} onChange={v => setF(p => ({ ...p, gps_trust_score: v }))} color="emerald" />
                 </div>
                 <div className="grid grid-cols-2 gap-2">
-                  <Toggle label="GPS in Affected Zone" value={!!F.gps_in_affected_zone} onChange={v => setF(p => ({ ...p, gps_in_affected_zone: v ? 1 : 0 }))} />
-                  <Toggle label="Location = Home Zone" value={!!F.location_matches_home_zone} onChange={v => setF(p => ({ ...p, location_matches_home_zone: v ? 1 : 0 }))} />
-                  <Toggle label="Worker App Active" value={!!F.platform_activity_at_time} onChange={v => setF(p => ({ ...p, platform_activity_at_time: v ? 1 : 0 }))} />
-                  <Toggle label="KYC Complete" value={!!F.kyc_complete} onChange={v => setF(p => ({ ...p, kyc_complete: v ? 1 : 0 }))} />
-                  <Toggle label="Biometric Verified" value={!!F.biometric_verified} onChange={v => setF(p => ({ ...p, biometric_verified: v ? 1 : 0 }))} />
-                  <Toggle label="UPI Changed (7d)" value={!!F.upi_id_changed_7d} onChange={v => setF(p => ({ ...p, upi_id_changed_7d: v ? 1 : 0 }))} />
-                  <Toggle label="Prior Fraud Flag" value={!!F.prior_fraud_flags} onChange={v => setF(p => ({ ...p, prior_fraud_flags: v ? 1 : 0 }))} />
-                  <Toggle label="Multiple UPI IDs" value={!!F.multiple_upi_ids} onChange={v => setF(p => ({ ...p, multiple_upi_ids: v ? 1 : 0 }))} />
-                  <Toggle label="VPN/Proxy Active" value={!!F.vpn_proxy_active} onChange={v => setF(p => ({ ...p, vpn_proxy_active: v ? 1 : 0 }))} />
-                  <Toggle label="Jailbroken Device" value={!!F.jailbroken_rooted_device} onChange={v => setF(p => ({ ...p, jailbroken_rooted_device: v ? 1 : 0 }))} />
+                  <Toggle label="Mock Location Flag" value={!!F.mock_location_flag} onChange={v => setF(p => ({ ...p, mock_location_flag: v ? 1 : 0 }))} />
+                  <Toggle label="Duplicate UPI Event" value={!!F.duplicate_upi_event} onChange={v => setF(p => ({ ...p, duplicate_upi_event: v ? 1 : 0 }))} />
+                  <Toggle label="App Active" value={!!F.platform_login_active} onChange={v => setF(p => ({ ...p, platform_login_active: v ? 1 : 0 }))} />
+                  <Toggle label="Has Anomalous Speed" value={!!F.speed_anomaly} onChange={v => setF(p => ({ ...p, speed_anomaly: v ? 1 : 0 }))} />
                 </div>
               </div>
 
               {/* Worker profile sliders */}
               <div className="grid grid-cols-2 gap-x-6 gap-y-4">
-                <Slider label="Platform Rating" value={F.platform_rating} min={1} max={5} step={0.1} onChange={v => setF(p => ({ ...p, platform_rating: v }))} color="amber" />
-                <Slider label="Account Age" value={F.account_age_days} min={0} max={730} step={10} onChange={v => setF(p => ({ ...p, account_age_days: v }))} color="violet" unit="d" />
-                <Slider label="Claims in 90d" value={F.prior_claims_count_90d} min={0} max={10} onChange={v => setF(p => ({ ...p, prior_claims_count_90d: v }))} color="rose" />
-                <Slider label="Login Anomaly" value={F.login_anomaly_score} min={0} max={1} step={0.01} onChange={v => setF(p => ({ ...p, login_anomaly_score: v }))} color="rose" />
-                <Slider label="Claim ÷ Weekly Avg" value={F.claim_amount_vs_weekly_avg} min={0} max={3} step={0.1} onChange={v => setF(p => ({ ...p, claim_amount_vs_weekly_avg: v }))} color="amber" />
-                <Slider label="Desc. Similarity" value={F.claim_description_similarity} min={0} max={1} step={0.01} onChange={v => setF(p => ({ ...p, claim_description_similarity: v }))} color="rose" />
+                <Slider label="Loyalty Score" value={F.loyalty_score} min={0} max={1} step={0.05} onChange={v => setF(p => ({ ...p, loyalty_score: v }))} color="amber" />
+                <Slider label="Months Active" value={F.months_active} min={0} max={60} step={1} onChange={v => setF(p => ({ ...p, months_active: v }))} color="violet" unit="m" />
+                <Slider label="Claims this Month" value={F.claims_this_month} min={0} max={10} onChange={v => setF(p => ({ ...p, claims_this_month: v }))} color="rose" />
+                <Slider label="Earnings Deviation" value={F.earnings_deviation} min={0} max={1} step={0.01} onChange={v => setF(p => ({ ...p, earnings_deviation: v }))} color="rose" />
+                <Slider label="Peer Claim Ratio" value={F.peer_claim_ratio} min={0} max={1} step={0.05} onChange={v => setF(p => ({ ...p, peer_claim_ratio: v }))} color="amber" />
+                <Slider label="Worker Age" value={F.worker_age} min={18} max={65} step={1} onChange={v => setF(p => ({ ...p, worker_age: v }))} color="emerald" />
               </div>
 
               <button onClick={runFraud} disabled={fLoading || mlStatus !== 'online'}
@@ -599,15 +568,28 @@ export function MLDemo() {
               )}
 
               {fResult && (() => {
-                const rc = riskCfg[fResult.risk_level]
-                const pc = payoutCfg[fResult.payout_decision]
-                const pct = Math.round(fResult.fraud_probability * 100)
+                if ((fResult as any).error) {
+                  return (
+                    <div className="flex-1 flex flex-col items-center justify-center p-6 text-center">
+                      <div className="w-12 h-12 rounded-full bg-red-500/10 flex items-center justify-center mb-4">
+                        <AlertTriangle className="w-6 h-6 text-red-400" />
+                      </div>
+                      <p className="text-red-400 font-medium text-sm mb-1">Detection Error</p>
+                      <p className="text-white/40 text-xs max-w-[200px]">{(fResult as any).error}</p>
+                      <button onClick={() => setFResult(null)} className="mt-4 text-[11px] text-white/40 hover:text-white underline underline-offset-4">Dismiss</button>
+                    </div>
+                  )
+                }
+                const rLevel = getRiskLevel(fResult.risk_score || 0)
+                const rc = rLevel
+                const pc = payoutCfg[fResult.decision] || payoutCfg.AUTO_APPROVE
+                const pct = Math.round((fResult.fraud_probability || 0) * 100)
                 return (
                   <div className="flex-1 flex flex-col gap-4">
                     {/* Fraud probability */}
                     <div className={`${rc.bg} border ${rc.border} rounded-2xl p-5 text-center`}>
                       <div className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-bold mb-2 ${rc.bg} ${rc.color} border ${rc.border}`}>
-                        <rc.Icon className="w-3.5 h-3.5" />{fResult.risk_level} RISK
+                        <rc.Icon className="w-3.5 h-3.5" />{rLevel.label} RISK
                       </div>
                       <p className={`text-5xl font-black ${rc.color}`}>
                         <AnimatedNumber value={pct} />%
@@ -618,51 +600,22 @@ export function MLDemo() {
                     {/* Payout decision — most important */}
                     <div className={`${pc.bg} border ${pc.border} rounded-xl p-4 text-center`}>
                       <p className={`text-base font-bold ${pc.color}`}>{pc.label}</p>
-                      {fResult.payout_eta && (
-                        <p className="text-white/40 text-xs mt-1">⏱ Payout ETA: <span className="text-white/60 font-semibold">{fResult.payout_eta}</span></p>
-                      )}
-                    </div>
-
-                    {/* API verified badge */}
-                    <div className={`flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-medium ${
-                      fResult.api_verified ? 'bg-emerald-500/8 border border-emerald-500/20 text-emerald-400' : 'bg-red-500/8 border border-red-500/20 text-red-400'}`}>
-                      {fResult.api_verified ? <CheckCircle2 className="w-3.5 h-3.5" /> : <XCircle className="w-3.5 h-3.5" />}
-                      Weather API {fResult.api_verified ? 'Threshold Confirmed' : 'NOT Verified — trigger disputed'}
-                    </div>
-
-                    {/* RF vs NN bars */}
-                    <div className="bg-white/4 rounded-xl p-4">
-                      <p className="text-[11px] text-white/35 mb-3">Model Components (Fallback visual)</p>
-                      {[
-                        { label: 'Primary Feature Analysis', val: fResult.rf_probability },
-                        { label: 'Deep Pattern Analysis', val: fResult.nn_probability },
-                      ].map(s => (
-                        <div key={s.label} className="mb-2">
-                          <div className="flex justify-between text-[11px] text-white/40 mb-1">
-                            <span>{s.label}</span>
-                            <span className={rc.color}>{(s.val * 100).toFixed(1)}%</span>
-                          </div>
-                          <div className="h-1.5 bg-white/8 rounded-full overflow-hidden">
-                            <div className={`h-full ${rc.bar} rounded-full transition-all duration-700`} style={{ width: `${s.val * 100}%` }} />
-                          </div>
-                        </div>
-                      ))}
+                      <p className="text-white/40 text-xs mt-1">⏱ Action: <span className="text-white/60 font-semibold">{fResult.action || 'Manual investigation required'}</span></p>
                     </div>
 
                     {/* Top risk features */}
-                    {fResult.top_risk_features?.length > 0 && (
+                    {fResult.top_signals?.length > 0 && (
                       <div className="bg-white/4 rounded-xl p-4">
-                        <p className="text-[11px] text-white/35 mb-2">Top Risk Signals (RF Feature Importance)</p>
+                        <p className="text-[11px] text-white/35 mb-2">Top Risk Signals (GigShield RF)</p>
                         <div className="flex flex-wrap gap-1.5">
-                          {fResult.top_risk_features.map(f => (
-                            <span key={f} className={`px-2 py-0.5 rounded text-[10px] font-mono ${rc.bg} ${rc.color} border ${rc.border}`}>
-                              {f.replaceAll('_', ' ')}
+                          {fResult.top_signals.map(s => (
+                            <span key={s.feature} className={`px-2 py-0.5 rounded text-[10px] font-mono ${rc.bg} ${rc.color} border ${rc.border}`}>
+                              {s.feature.replaceAll('_', ' ')} ({(s.importance * 100).toFixed(1)}%)
                             </span>
                           ))}
                         </div>
                       </div>
                     )}
-
                     <button onClick={() => setFResult(null)} className="flex items-center justify-center gap-1.5 text-[11px] text-white/25 hover:text-white/50 transition-colors">
                       <RotateCcw className="w-3 h-3" />Reset
                     </button>

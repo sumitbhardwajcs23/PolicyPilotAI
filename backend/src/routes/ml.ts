@@ -104,11 +104,7 @@ router.post('/predict/premium', authenticate, async (req, res, next) => {
         source,
         tier,
         model_spec: {
-          algorithm: 'XGBoost Gradient Boosting',
-          features: 23,
-          training_records: '50,000',
-          accuracy: '92%',
-          retraining: 'Monthly',
+          algorithm: 'Pricing Fallback/Proxy',
         },
       },
     })

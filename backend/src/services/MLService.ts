@@ -7,7 +7,7 @@
  *   - Fraud Detection Model (RF + Neural Network ensemble, 31 features)
  */
 
-const ML_SERVICE_URL = process.env.ML_SERVICE_URL || 'http://localhost:8001'
+const ML_SERVICE_URL = process.env.ML_SERVICE_URL || 'http://localhost:5000'
 const ML_TIMEOUT_MS = parseInt(process.env.ML_TIMEOUT_MS || '8000', 10)
 
 // ─── Pricing Model Types ──────────────────────────────────────────────────────
@@ -50,57 +50,51 @@ export interface PricingPrediction {
 // ─── Fraud Detection Model Types ──────────────────────────────────────────────
 
 export interface FraudInput {
-  trigger_type: number
-  weather_api_threshold_crossed: number
-  rainfall_mm_on_day: number
-  temperature_celsius: number
-  aqi_reading_trigger_day: number
-  event_duration_hours: number
-  multiple_workers_same_event: number
-  gps_in_affected_zone: number
-  location_matches_home_zone: number
-  distance_from_trigger_km: number
-  platform_order_drop_pct: number
-  platform_activity_at_time: number
-  zone_order_volume_drop: number
-  account_age_days: number
-  kyc_complete: number
-  biometric_verified: number
-  prior_claims_count_90d: number
-  prior_fraud_flags: number
-  platform_rating: number
-  tenure_weeks: number
-  claim_filed_within_hours: number
-  claim_amount_vs_weekly_avg: number
-  upi_id_changed_7d: number
-  multiple_upi_ids: number
-  device_changes_7d: number
-  login_anomaly_score: number
-  support_escalation_count_7d: number
-  claim_description_similarity: number
-  ip_match_home_city: number
-  battery_level_at_claim: number
-  app_version_current: number
-  vpn_proxy_active: number
-  jailbroken_rooted_device: number
-  concurrent_logins: number
-  weekend_claim_flag: number
-  threshold?: number
+  worker_age: number
+  worker_zone: string
+  platform: string
+  vehicle_type: string
+  months_active: number
+  avg_weekly_earnings_inr: number
+  work_hours_daily: number
+  multiplatform: number
+  season: string
+  trigger_type: string
+  geo_risk: number
+  temporal_risk: number
+  combined_risk: number
+  gps_zone_match: number
+  gps_network_delta_m: number
+  accel_variance: number
+  mock_location_flag: number
+  speed_anomaly: number
+  gps_trust_score: number
+  claim_latitude: number
+  claim_longitude: number
+  weather_api_match: number
+  rainfall_mm_hr: number
+  heat_index_celsius: number
+  aqi: number
+  claims_this_month: number
+  earnings_deviation: number
+  peer_claim_ratio: number
+  platform_login_active: number
+  order_availability: number
+  duplicate_upi_event: number
+  loyalty_score: number
+  loyalty_discount: number
+  weekly_premium_inr: number
+  hours_disrupted: number
 }
 
 export interface FraudPrediction {
-  is_fraud: boolean
+  decision: string
+  risk_score: number
   fraud_probability: number
-  risk_level: 'LOW' | 'MEDIUM' | 'HIGH' | 'CRITICAL'
-  rf_probability: number
-  nn_probability: number
-  payout_decision?: 'AUTO_APPROVE' | 'MANUAL_REVIEW' | 'REJECTED'
-  payout_eta?: string | null
-  top_risk_features: string[]
-  threshold_used: number
-  model: string
-  feature_count: number
-  api_verified?: boolean
+  action: string
+  timestamp: string
+  top_signals: { feature: string; importance: number }[]
+  model?: string
 }
 
 // ─── Model Metadata Types ─────────────────────────────────────────────────────
@@ -156,8 +150,8 @@ export async function checkMLHealth(): Promise<boolean> {
 /**
  * Get model metadata and accuracy metrics from the ML service.
  */
-export async function getModelInfo(): Promise<ModelInfo> {
-  return callML<ModelInfo>('/models/info')
+export async function getModelInfo(): Promise<any> {
+  return callML<any>('/schema')
 }
 
 /**
@@ -203,31 +197,27 @@ export async function detectFraud(
   input: FraudInput
 ): Promise<{ prediction: FraudPrediction; source: 'ml' | 'fallback' }> {
   try {
-    const result = await callML<{ success: boolean; prediction: FraudPrediction }>('/predict/fraud', input)
-    return { prediction: result.prediction, source: 'ml' }
+    const prediction = await callML<FraudPrediction>('/predict', input)
+    return { prediction, source: 'ml' }
   } catch (err) {
     console.warn('[MLService] Fraud detection failed, using fallback score:', err)
     // Graceful degradation — rule-based fallback
     let score = 0
-    if (!input.weather_api_threshold_crossed) score += 40
-    if (input.vpn_proxy_active) score += 20
-    if (input.multiple_upi_ids) score += 20
-    if (input.prior_claims_count_90d > 3) score += 15
+    if (!input.weather_api_match) score += 40
+    if (input.duplicate_upi_event) score += 20
+    if (input.mock_location_flag) score += 20
+    if (input.claims_this_month > 2) score += 15
     score += Math.floor(Math.random() * 5)
     const prob = Math.min(score / 100, 0.99)
     return {
       prediction: {
-        is_fraud: prob >= 0.5,
+        decision: prob < 0.3 ? 'AUTO_APPROVE' : prob < 0.7 ? 'MANUAL_REVIEW' : 'AUTO_REJECT',
+        risk_score: prob * 100,
         fraud_probability: parseFloat(prob.toFixed(4)),
-        risk_level: prob < 0.25 ? 'LOW' : prob < 0.5 ? 'MEDIUM' : prob < 0.75 ? 'HIGH' : 'CRITICAL',
-        rf_probability: prob,
-        nn_probability: prob,
-        payout_decision: prob < 0.3 ? 'AUTO_APPROVE' : prob < 0.7 ? 'MANUAL_REVIEW' : 'REJECTED',
-        top_risk_features: [],
-        threshold_used: 0.5,
+        action: prob < 0.3 ? "Instant UPI payout triggered" : "Flagged for 24-hour investigation",
+        timestamp: new Date().toISOString(),
+        top_signals: [],
         model: 'Fallback Rule Engine',
-        feature_count: 5,
-        api_verified: input.weather_api_threshold_crossed === 1
       },
       source: 'fallback',
     }
@@ -240,47 +230,57 @@ export async function detectFraud(
  */
 export function buildFraudInput(claim: any, user: any, policy: any): FraudInput {
   const accountAge = Math.floor(
-    (Date.now() - new Date(user.createdAt || Date.now()).getTime()) / (1000 * 60 * 60 * 24)
+    (Date.now() - new Date(user.createdAt || Date.now()).getTime()) / (1000 * 60 * 60 * 24 * 30) // months
   )
-  const isWeekend = [0, 6].includes(new Date(claim.eventTimestamp).getDay()) ? 1 : 0
+
+  const workerAge = user.dob 
+    ? Math.floor((Date.now() - new Date(user.dob).getTime()) / (1000 * 60 * 60 * 24 * 365.25))
+    : 26
+
+  const mapTriggerType = (t: string) => {
+    if (t === 'severe_pollution') return 'Severe Pollution'
+    if (t === 'heavy_rain') return 'Heavy Rainfall'
+    if (t === 'extreme_heat') return 'Extreme Heat'
+    if (t === 'flooding') return 'Flooding'
+    return 'Social Disruption'
+  }
 
   return {
+    worker_age: workerAge,
+    worker_zone: claim.location?.zone || user.zone || 'Gurgaon',
+    platform: user.platform || 'Swiggy', 
+    vehicle_type: 'Bike', 
+    months_active: accountAge || 12,
+    avg_weekly_earnings_inr: 3500, // Default if not in user model
+    work_hours_daily: 9,
+    multiplatform: 1,
+    season: 'Summer',
     trigger_type: mapTriggerType(claim.triggerType),
-    weather_api_threshold_crossed: 1, // Mock API verification
-    rainfall_mm_on_day: 45.0,
-    temperature_celsius: 28.0,
-    aqi_reading_trigger_day: 120.0,
-    event_duration_hours: 4.5,
-    multiple_workers_same_event: 0.2, // Low cluster density by default
-    gps_in_affected_zone: 1,
-    location_matches_home_zone: 1,
-    distance_from_trigger_km: 1.5,
-    platform_order_drop_pct: 0.4,
-    platform_activity_at_time: 0,
-    zone_order_volume_drop: 0.5,
-    account_age_days: accountAge || 120,
-    kyc_complete: user.kycVerified ? 1 : 0,
-    biometric_verified: user.biometricVerified ? 1 : 0,
-    prior_claims_count_90d: 0,
-    prior_fraud_flags: 0,
-    platform_rating: user.platformRating || 4.2,
-    tenure_weeks: Math.floor(accountAge / 7) || 20,
-    claim_filed_within_hours: 2.0,
-    claim_amount_vs_weekly_avg: 1.2,
-    upi_id_changed_7d: 0,
-    multiple_upi_ids: 0,
-    device_changes_7d: 0,
-    login_anomaly_score: 0.05,
-    support_escalation_count_7d: 0,
-    claim_description_similarity: 0.1,
-    ip_match_home_city: 1,
-    battery_level_at_claim: 45,
-    app_version_current: 1,
-    vpn_proxy_active: 0,
-    jailbroken_rooted_device: 0,
-    concurrent_logins: 1,
-    weekend_claim_flag: isWeekend,
-    threshold: 0.5,
+    geo_risk: 0.3,
+    temporal_risk: 0.2,
+    combined_risk: 0.5,
+    gps_zone_match: 0.95,
+    gps_network_delta_m: 50,
+    accel_variance: 0.25,
+    mock_location_flag: 0,
+    speed_anomaly: 0,
+    gps_trust_score: 0.88,
+    claim_latitude: claim.location?.lat || 28.45,
+    claim_longitude: claim.location?.lng || 77.02,
+    weather_api_match: claim.weather_api_match !== undefined ? claim.weather_api_match : 1,
+    rainfall_mm_hr: claim.rainfall_mm_hr || 0,
+    heat_index_celsius: 35,
+    aqi: claim.aqi || 100,
+    claims_this_month: 0,
+    earnings_deviation: 0.1,
+    peer_claim_ratio: 0.2,
+    platform_login_active: 1,
+    order_availability: 1,
+    duplicate_upi_event: 0,
+    loyalty_score: 0.8,
+    loyalty_discount: 0.15,
+    weekly_premium_inr: policy?.weeklyPremium || 50,
+    hours_disrupted: 3,
   }
 }
 
@@ -315,13 +315,4 @@ export function buildPricingInput(user: any, tier: number = 1): PricingInput {
   }
 }
 
-function mapTriggerType(trigger: string): number {
-  const map: Record<string, number> = {
-    severe_pollution: 0,    // medical
-    heavy_rain: 3,          // weather
-    extreme_heat: 3,        // weather
-    flooding: 3,            // weather
-    social_disruption: 4,   // other
-  }
-  return map[trigger] ?? 4
-}
+

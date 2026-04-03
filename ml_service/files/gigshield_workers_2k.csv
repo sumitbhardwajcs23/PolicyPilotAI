@@ -1,0 +1,2001 @@
+worker_id,age,zone,platform,months_active,avg_weekly_earnings,work_hours_daily,multiplatform,vehicle_type,geo_risk
+W00000,29,Connaught Place,Swiggy,37,3379.34,7.5,0,Bike,0.15
+W00001,20,West Delhi,Instamart,39,2922.27,10.5,0,Bike,0.25
+W00002,23,Lajpat Nagar,Swiggy,28,3784.82,7.9,0,Bike,0.12
+W00003,22,Dwarka,Blinkit,41,5036.64,7.1,0,Bike,0.22
+W00004,24,Gurgaon,Instamart,35,3456.54,9.8,0,Bike,0.3
+W00005,31,Connaught Place,BigBasket,47,4948.22,7.6,0,Bike,0.15
+W00006,44,Faridabad,Zomato,18,5441.47,8.5,0,Bike,0.32
+W00007,31,East Delhi,Blinkit,14,2987.26,12.6,0,Bike,0.35
+W00008,32,Connaught Place,Blinkit,35,3757.24,10.2,0,Bicycle,0.15
+W00009,43,Lajpat Nagar,Zepto,44,5432.99,8.7,0,Bike,0.12
+W00010,31,Lajpat Nagar,Swiggy,41,3653.14,8.8,0,Bike,0.12
+W00011,44,Dwarka,Blinkit,7,3779.45,10.4,0,Bike,0.22
+W00012,35,Gurgaon,Blinkit,41,2414.0,10.0,1,Bike,0.3
+W00013,32,West Delhi,BigBasket,13,3324.67,9.1,1,Bike,0.25
+W00014,24,Dwarka,BigBasket,18,4194.47,9.2,1,Bike,0.22
+W00015,43,Dwarka,Instamart,37,5693.43,6.8,0,Bike,0.22
+W00016,23,East Delhi,Zomato,13,3593.19,6.5,0,Bike,0.35
+W00017,40,Noida,Zepto,36,2419.9,8.7,0,EV Scooter,0.28
+W00018,34,Gurgaon,Zomato,31,2625.8,8.1,1,Bicycle,0.3
+W00019,31,North Delhi,Instamart,2,3721.37,9.9,0,Bicycle,0.2
+W00020,38,Dwarka,BigBasket,16,4691.77,9.3,0,Bike,0.22
+W00021,40,Saket,Swiggy,9,4259.88,7.8,0,Bicycle,0.14
+W00022,38,Noida,BigBasket,9,4118.2,9.2,0,EV Scooter,0.28
+W00023,40,North Delhi,Zepto,38,4797.32,8.4,0,Bicycle,0.2
+W00024,30,Saket,BigBasket,11,3173.82,12.1,0,Bike,0.14
+W00025,40,Gurgaon,Zepto,22,3765.28,9.6,0,Bike,0.3
+W00026,25,South Delhi,Zepto,33,3333.69,6.7,0,Bike,0.1
+W00027,28,Saket,Zepto,36,3532.84,11.7,0,Bike,0.14
+W00028,20,Faridabad,Instamart,45,2944.98,8.1,0,Bike,0.32
+W00029,31,Noida,Zepto,23,3474.82,7.5,1,EV Scooter,0.28
+W00030,33,Saket,Zepto,45,3727.83,12.2,0,Bicycle,0.14
+W00031,25,Rohini,Swiggy,45,3452.82,9.5,0,Bike,0.18
+W00032,20,South Delhi,Zomato,34,3621.15,10.1,0,Bike,0.1
+W00033,41,Lajpat Nagar,Blinkit,9,4074.03,10.1,0,Bike,0.12
+W00034,21,Lajpat Nagar,Zomato,24,4740.96,8.7,0,Bike,0.12
+W00035,43,Faridabad,Zepto,8,4798.92,8.1,0,Bike,0.32
+W00036,30,Saket,Swiggy,7,4359.14,8.4,0,Bike,0.14
+W00037,22,Saket,BigBasket,36,2742.01,11.4,0,Bike,0.14
+W00038,29,East Delhi,Swiggy,18,3461.67,9.3,0,EV Scooter,0.35
+W00039,25,Saket,Zepto,3,3530.57,11.0,0,Bike,0.14
+W00040,25,Connaught Place,Swiggy,28,3224.28,8.9,0,Bike,0.15
+W00041,39,West Delhi,Swiggy,6,4023.88,7.9,0,Bike,0.25
+W00042,40,Rohini,Zepto,44,2474.54,6.8,0,Bike,0.18
+W00043,21,East Delhi,Instamart,44,5104.85,10.0,0,Bike,0.35
+W00044,43,Gurgaon,Swiggy,21,4706.18,11.5,0,Bike,0.3
+W00045,29,East Delhi,Blinkit,28,4132.56,7.7,0,Bike,0.35
+W00046,42,Connaught Place,Blinkit,40,3700.31,9.8,0,Bike,0.15
+W00047,25,Gurgaon,Swiggy,1,4733.07,6.9,0,Bicycle,0.3
+W00048,42,Rohini,Instamart,36,4301.52,8.2,0,Bike,0.18
+W00049,36,Connaught Place,BigBasket,21,4635.31,9.4,0,Bike,0.15
+W00050,33,North Delhi,Zepto,43,3702.76,6.4,0,Bike,0.2
+W00051,24,West Delhi,Blinkit,35,5181.45,9.0,1,Bicycle,0.25
+W00052,42,Rohini,BigBasket,13,4683.51,7.7,0,Bike,0.18
+W00053,36,Saket,Swiggy,10,4157.63,9.9,0,Bike,0.14
+W00054,21,North Delhi,BigBasket,44,4754.78,8.8,0,Bicycle,0.2
+W00055,28,Faridabad,Zomato,47,3414.67,10.4,0,Bike,0.32
+W00056,31,Rohini,Blinkit,10,2816.0,8.6,0,Bike,0.18
+W00057,38,Faridabad,Swiggy,46,4007.24,7.0,0,Bike,0.32
+W00058,41,Gurgaon,Zepto,13,3704.33,6.8,0,Bicycle,0.3
+W00059,26,North Delhi,Instamart,37,3591.83,6.1,0,EV Scooter,0.2
+W00060,28,West Delhi,Swiggy,38,4723.05,9.9,0,EV Scooter,0.25
+W00061,40,Saket,Zepto,24,3883.71,12.8,0,EV Scooter,0.14
+W00062,35,Saket,Instamart,2,3960.86,9.7,0,Bicycle,0.14
+W00063,39,Connaught Place,Instamart,22,3488.36,11.5,0,Bike,0.15
+W00064,30,Saket,Swiggy,17,4454.9,10.7,0,Bicycle,0.14
+W00065,31,Dwarka,BigBasket,36,4311.5,8.2,0,Bike,0.22
+W00066,34,East Delhi,BigBasket,14,4448.93,10.9,0,Bike,0.35
+W00067,37,South Delhi,Instamart,10,3352.19,8.3,1,Bike,0.1
+W00068,38,West Delhi,BigBasket,35,4793.27,8.3,0,Bike,0.25
+W00069,35,North Delhi,Zomato,25,5221.01,8.7,0,Bicycle,0.2
+W00070,34,Dwarka,Instamart,3,4423.63,8.8,0,Bike,0.22
+W00071,24,West Delhi,Instamart,47,3102.57,10.0,0,Bike,0.25
+W00072,30,North Delhi,Zepto,38,3108.24,8.0,0,Bike,0.2
+W00073,34,Noida,BigBasket,17,3449.7,10.3,0,EV Scooter,0.28
+W00074,37,Noida,Instamart,12,3298.5,10.3,0,Bicycle,0.28
+W00075,32,Faridabad,Zomato,24,3693.13,9.5,1,Bike,0.32
+W00076,23,West Delhi,Zepto,29,4255.95,11.9,0,Bike,0.25
+W00077,36,Noida,Swiggy,43,3981.96,10.9,0,Bike,0.28
+W00078,23,North Delhi,Instamart,25,3911.83,10.6,1,Bike,0.2
+W00079,35,Faridabad,Zomato,36,3557.04,9.1,0,Bike,0.32
+W00080,42,Saket,Blinkit,26,3690.92,9.5,0,Bicycle,0.14
+W00081,34,North Delhi,Zomato,38,4387.26,9.8,0,Bike,0.2
+W00082,33,Faridabad,Zomato,1,2140.43,9.0,0,Bike,0.32
+W00083,31,West Delhi,Zepto,20,3740.89,8.4,0,Bike,0.25
+W00084,22,Dwarka,Swiggy,28,3980.39,5.4,0,Bike,0.22
+W00085,29,Connaught Place,Blinkit,16,4376.87,10.1,0,Bike,0.15
+W00086,27,Saket,BigBasket,47,2941.96,10.6,0,Bike,0.14
+W00087,25,Rohini,BigBasket,17,2899.67,7.3,0,Bike,0.18
+W00088,41,Dwarka,Zomato,40,4217.16,9.9,0,Bicycle,0.22
+W00089,33,Gurgaon,Zepto,28,2226.44,8.1,0,Bike,0.3
+W00090,36,North Delhi,Zepto,12,4815.75,8.5,0,Bike,0.2
+W00091,40,Gurgaon,BigBasket,27,3931.27,11.0,0,Bike,0.3
+W00092,38,Dwarka,Blinkit,42,4996.98,7.5,0,Bicycle,0.22
+W00093,35,Faridabad,Swiggy,47,2880.34,7.5,0,Bike,0.32
+W00094,34,Rohini,Blinkit,30,3400.91,11.7,0,Bike,0.18
+W00095,34,Saket,Instamart,41,1823.71,8.8,0,EV Scooter,0.14
+W00096,20,Saket,Instamart,34,3113.45,10.9,0,Bike,0.14
+W00097,43,Saket,Swiggy,37,3602.92,6.6,1,Bike,0.14
+W00098,42,Rohini,BigBasket,6,2179.83,6.7,0,Bicycle,0.18
+W00099,42,South Delhi,Swiggy,7,3434.3,7.6,0,Bike,0.1
+W00100,31,Rohini,Zepto,32,2160.13,8.3,0,Bicycle,0.18
+W00101,29,Connaught Place,Instamart,32,3544.03,6.9,0,Bike,0.15
+W00102,33,Rohini,Zomato,25,4667.69,9.6,0,Bike,0.18
+W00103,29,Dwarka,Zomato,33,3722.02,9.7,0,Bicycle,0.22
+W00104,29,South Delhi,BigBasket,7,5076.57,7.7,0,Bicycle,0.1
+W00105,39,Saket,Zepto,12,4379.03,7.8,0,EV Scooter,0.14
+W00106,30,Dwarka,Blinkit,16,4828.52,8.0,0,Bike,0.22
+W00107,41,Dwarka,Zepto,16,3138.04,7.3,0,Bike,0.22
+W00108,35,Lajpat Nagar,Zomato,43,3118.69,4.7,0,Bike,0.12
+W00109,28,East Delhi,Zomato,36,4026.49,8.9,0,Bike,0.35
+W00110,34,South Delhi,Instamart,13,2487.84,8.4,0,Bike,0.1
+W00111,33,Dwarka,Zepto,7,4126.91,8.5,0,Bike,0.22
+W00112,38,East Delhi,Zepto,36,3490.86,7.5,0,Bike,0.35
+W00113,28,East Delhi,Zomato,47,4814.0,10.2,0,Bike,0.35
+W00114,23,South Delhi,Blinkit,9,4293.61,12.6,0,Bike,0.1
+W00115,40,Lajpat Nagar,BigBasket,32,4627.37,7.7,0,EV Scooter,0.12
+W00116,26,Gurgaon,BigBasket,11,3146.64,11.1,0,Bicycle,0.3
+W00117,41,Faridabad,Zepto,8,4588.57,9.5,0,Bike,0.32
+W00118,27,Connaught Place,BigBasket,33,4905.77,9.1,0,EV Scooter,0.15
+W00119,43,Faridabad,Zomato,23,3719.03,8.5,0,Bike,0.32
+W00120,27,Rohini,Zomato,25,3158.52,8.9,0,EV Scooter,0.18
+W00121,38,Saket,Zepto,8,3172.57,10.7,0,Bike,0.14
+W00122,34,Connaught Place,Zepto,45,4741.21,7.3,0,Bike,0.15
+W00123,35,Rohini,Instamart,22,5897.48,8.6,0,EV Scooter,0.18
+W00124,41,Dwarka,Zepto,4,2964.68,10.9,0,Bike,0.22
+W00125,42,Saket,Blinkit,40,2903.18,10.5,0,EV Scooter,0.14
+W00126,28,North Delhi,BigBasket,3,4487.13,7.3,0,Bicycle,0.2
+W00127,31,South Delhi,Zepto,29,3146.87,8.7,0,EV Scooter,0.1
+W00128,35,Connaught Place,Swiggy,41,4564.68,10.1,0,Bike,0.15
+W00129,23,Connaught Place,Instamart,29,4122.28,10.0,0,Bike,0.15
+W00130,24,Dwarka,Swiggy,34,3730.82,10.5,0,Bike,0.22
+W00131,27,Gurgaon,Zomato,34,4103.02,9.6,0,EV Scooter,0.3
+W00132,20,East Delhi,BigBasket,28,4054.16,9.8,0,Bike,0.35
+W00133,25,Saket,Zepto,13,3606.31,9.5,0,Bike,0.14
+W00134,34,Dwarka,Swiggy,15,2344.91,11.4,0,Bike,0.22
+W00135,23,Noida,BigBasket,23,3892.92,8.4,0,Bike,0.28
+W00136,40,Lajpat Nagar,Zomato,44,5008.45,9.1,0,Bike,0.12
+W00137,30,East Delhi,Blinkit,26,2462.99,7.5,0,Bike,0.35
+W00138,24,South Delhi,Instamart,4,2977.37,7.2,0,Bicycle,0.1
+W00139,37,East Delhi,BigBasket,26,4091.46,9.5,0,Bike,0.35
+W00140,43,Gurgaon,BigBasket,40,3780.87,7.9,0,EV Scooter,0.3
+W00141,34,East Delhi,Blinkit,9,4078.95,8.9,0,Bicycle,0.35
+W00142,37,South Delhi,BigBasket,5,3190.55,11.4,0,Bike,0.1
+W00143,39,Gurgaon,Zomato,32,4679.97,11.3,0,Bike,0.3
+W00144,32,Faridabad,Zomato,20,3787.52,12.3,0,Bike,0.32
+W00145,24,Connaught Place,Blinkit,11,4307.59,11.5,0,Bike,0.15
+W00146,20,Connaught Place,Instamart,15,4006.22,12.6,0,Bicycle,0.15
+W00147,41,Lajpat Nagar,Zepto,32,3890.4,9.7,1,Bike,0.12
+W00148,37,Rohini,Swiggy,28,4251.47,7.6,0,Bike,0.18
+W00149,33,Faridabad,Zepto,22,3899.19,7.5,0,Bike,0.32
+W00150,24,Faridabad,BigBasket,41,2797.84,11.1,0,Bicycle,0.32
+W00151,25,Saket,Swiggy,17,4619.89,9.1,0,Bike,0.14
+W00152,43,East Delhi,Blinkit,26,4404.5,9.2,0,Bike,0.35
+W00153,44,Connaught Place,Blinkit,44,2064.52,8.2,0,Bike,0.15
+W00154,35,South Delhi,Instamart,7,3226.64,8.4,0,EV Scooter,0.1
+W00155,41,West Delhi,Swiggy,42,4583.89,9.6,0,Bike,0.25
+W00156,40,West Delhi,Zomato,26,2288.46,7.4,0,Bike,0.25
+W00157,31,Gurgaon,Swiggy,25,4504.85,9.4,1,Bike,0.3
+W00158,39,Connaught Place,BigBasket,10,3637.02,11.3,0,Bicycle,0.15
+W00159,37,Connaught Place,Zomato,45,4822.23,5.8,0,Bike,0.15
+W00160,21,Lajpat Nagar,Blinkit,19,3749.08,6.7,0,Bicycle,0.12
+W00161,42,West Delhi,Swiggy,11,3172.35,10.0,0,Bike,0.25
+W00162,40,Connaught Place,Zepto,13,3996.47,11.0,0,Bike,0.15
+W00163,42,Lajpat Nagar,Instamart,8,3725.69,8.3,0,Bicycle,0.12
+W00164,32,East Delhi,Zepto,40,3101.32,6.0,0,Bicycle,0.35
+W00165,36,Noida,Instamart,4,5524.67,11.1,1,Bicycle,0.28
+W00166,36,Saket,BigBasket,47,2973.12,7.8,0,EV Scooter,0.14
+W00167,35,North Delhi,Zepto,31,1955.64,8.5,0,Bike,0.2
+W00168,40,Faridabad,Swiggy,28,5015.36,9.5,1,EV Scooter,0.32
+W00169,37,Rohini,Swiggy,11,3283.15,8.0,1,Bike,0.18
+W00170,27,Gurgaon,Zepto,43,3512.58,7.7,0,Bicycle,0.3
+W00171,22,Noida,Swiggy,1,3463.68,7.7,0,Bike,0.28
+W00172,36,Saket,BigBasket,47,3294.28,11.8,0,Bike,0.14
+W00173,37,Saket,Zomato,38,3137.05,10.7,1,Bike,0.14
+W00174,42,Saket,BigBasket,24,2952.55,9.9,0,Bike,0.14
+W00175,25,Saket,Instamart,47,3801.81,5.7,0,Bike,0.14
+W00176,27,West Delhi,BigBasket,31,3428.41,9.9,0,Bike,0.25
+W00177,42,Lajpat Nagar,Instamart,41,4334.29,9.8,0,Bike,0.12
+W00178,32,Faridabad,Swiggy,46,4136.16,7.1,0,Bike,0.32
+W00179,27,Connaught Place,Zomato,26,3007.99,9.4,0,Bike,0.15
+W00180,38,Saket,Swiggy,5,3836.82,10.6,1,Bike,0.14
+W00181,25,Rohini,Blinkit,20,3415.73,9.9,0,Bike,0.18
+W00182,42,Connaught Place,Swiggy,41,2956.67,8.0,0,Bike,0.15
+W00183,34,South Delhi,Instamart,11,4301.55,9.0,0,Bicycle,0.1
+W00184,29,South Delhi,Swiggy,33,3652.94,10.1,0,EV Scooter,0.1
+W00185,36,Rohini,Swiggy,38,3423.96,9.1,0,Bike,0.18
+W00186,20,Lajpat Nagar,Zomato,27,3065.55,10.9,0,Bike,0.12
+W00187,26,Rohini,Swiggy,34,2927.65,9.6,0,Bicycle,0.18
+W00188,32,West Delhi,Zomato,15,5341.01,10.1,0,Bike,0.25
+W00189,22,Rohini,Zepto,32,4017.29,10.2,0,Bicycle,0.18
+W00190,38,East Delhi,Blinkit,21,2877.1,7.4,0,Bike,0.35
+W00191,34,Connaught Place,Zomato,46,3980.29,9.1,0,Bike,0.15
+W00192,24,Noida,Instamart,5,4599.61,8.5,0,Bike,0.28
+W00193,30,Dwarka,Zepto,6,3884.01,10.6,0,Bike,0.22
+W00194,41,Lajpat Nagar,Zomato,38,4849.22,9.7,0,Bike,0.12
+W00195,37,Rohini,Zomato,22,2515.75,8.7,0,Bike,0.18
+W00196,22,Gurgaon,Blinkit,18,2156.94,7.1,0,Bike,0.3
+W00197,25,South Delhi,Instamart,14,3958.41,6.6,1,Bike,0.1
+W00198,22,East Delhi,BigBasket,10,3971.2,9.5,0,Bicycle,0.35
+W00199,24,Faridabad,BigBasket,46,1500.0,7.9,0,Bicycle,0.32
+W00200,28,Saket,Zomato,13,3251.14,10.0,0,Bike,0.14
+W00201,38,Dwarka,Swiggy,31,2943.07,6.5,0,Bike,0.22
+W00202,32,Lajpat Nagar,Instamart,30,2636.44,11.4,0,Bike,0.12
+W00203,25,Noida,Zepto,3,2941.17,10.0,1,Bike,0.28
+W00204,30,Dwarka,Swiggy,30,4226.63,9.1,0,Bike,0.22
+W00205,40,Rohini,Swiggy,6,2936.08,11.5,0,Bike,0.18
+W00206,40,West Delhi,Instamart,29,2963.5,10.4,0,Bike,0.25
+W00207,33,South Delhi,Zomato,8,2454.96,8.3,1,Bike,0.1
+W00208,25,South Delhi,Zomato,44,4765.13,9.1,0,EV Scooter,0.1
+W00209,25,Faridabad,Zomato,45,4097.71,6.1,0,Bicycle,0.32
+W00210,36,West Delhi,Zomato,43,1756.12,10.6,0,Bike,0.25
+W00211,30,Saket,BigBasket,44,2964.21,8.6,0,Bike,0.14
+W00212,34,Connaught Place,Zomato,33,4172.81,6.0,1,Bike,0.15
+W00213,28,North Delhi,BigBasket,17,4775.11,7.2,0,Bicycle,0.2
+W00214,40,East Delhi,BigBasket,11,4422.67,10.3,0,Bicycle,0.35
+W00215,36,South Delhi,Zomato,13,3465.45,11.4,1,EV Scooter,0.1
+W00216,43,Gurgaon,Blinkit,11,2204.9,9.0,0,Bike,0.3
+W00217,26,South Delhi,Zepto,31,4446.2,7.5,0,Bicycle,0.1
+W00218,26,Dwarka,Swiggy,28,3512.48,6.9,1,Bike,0.22
+W00219,40,South Delhi,BigBasket,44,3805.09,11.1,0,EV Scooter,0.1
+W00220,20,Lajpat Nagar,Instamart,6,3608.06,9.7,0,Bicycle,0.12
+W00221,44,South Delhi,Instamart,41,2665.58,8.5,1,Bike,0.1
+W00222,44,North Delhi,Zepto,16,4041.4,8.1,0,Bike,0.2
+W00223,27,North Delhi,Instamart,4,3931.17,10.0,0,Bicycle,0.2
+W00224,24,Saket,Blinkit,35,3409.37,10.0,0,Bike,0.14
+W00225,38,Noida,Instamart,26,4126.88,7.7,0,Bike,0.28
+W00226,27,Connaught Place,Swiggy,12,2650.8,7.3,0,Bike,0.15
+W00227,36,Gurgaon,Swiggy,11,3534.8,7.4,0,Bike,0.3
+W00228,38,South Delhi,BigBasket,37,3770.9,8.3,0,Bike,0.1
+W00229,31,South Delhi,Zomato,25,2362.06,8.0,0,Bike,0.1
+W00230,42,East Delhi,Blinkit,18,3704.32,11.4,0,Bike,0.35
+W00231,34,North Delhi,BigBasket,19,4336.92,8.2,1,Bike,0.2
+W00232,23,Gurgaon,Blinkit,23,3507.42,7.1,0,Bike,0.3
+W00233,42,Saket,Zomato,38,3722.71,7.2,0,Bike,0.14
+W00234,31,Faridabad,Instamart,18,4199.88,8.7,0,Bike,0.32
+W00235,32,Noida,Instamart,26,3439.76,6.3,0,Bike,0.28
+W00236,33,Connaught Place,Zomato,6,3511.76,8.9,0,Bike,0.15
+W00237,24,West Delhi,BigBasket,4,2808.64,7.0,0,Bicycle,0.25
+W00238,41,Connaught Place,Zomato,44,3738.05,10.7,0,Bike,0.15
+W00239,35,Lajpat Nagar,Zepto,29,3482.12,9.2,0,Bicycle,0.12
+W00240,26,Dwarka,Swiggy,34,4149.27,12.2,0,Bike,0.22
+W00241,34,Lajpat Nagar,BigBasket,17,4200.77,8.7,0,EV Scooter,0.12
+W00242,32,South Delhi,Blinkit,43,4382.97,4.3,0,Bike,0.1
+W00243,35,Noida,Zepto,43,3343.39,11.2,0,Bike,0.28
+W00244,31,Dwarka,BigBasket,16,2008.74,9.8,0,Bike,0.22
+W00245,26,Gurgaon,Zomato,2,4343.31,10.0,0,Bike,0.3
+W00246,35,West Delhi,Zomato,34,4094.9,7.5,0,Bicycle,0.25
+W00247,42,North Delhi,Zomato,8,3241.77,8.9,0,Bike,0.2
+W00248,42,Noida,Zomato,13,4193.95,9.3,0,Bike,0.28
+W00249,32,Noida,Blinkit,42,2591.13,8.6,0,EV Scooter,0.28
+W00250,42,Lajpat Nagar,Zepto,8,4574.19,6.4,0,Bike,0.12
+W00251,22,South Delhi,Instamart,30,3483.1,13.2,0,Bike,0.1
+W00252,34,Rohini,Swiggy,32,3086.86,10.3,0,Bike,0.18
+W00253,22,Saket,Blinkit,36,3252.64,9.6,0,Bike,0.14
+W00254,26,Lajpat Nagar,Blinkit,47,3564.81,11.0,0,EV Scooter,0.12
+W00255,37,Noida,Instamart,30,3740.39,10.0,0,Bicycle,0.28
+W00256,33,East Delhi,Instamart,1,3788.62,8.0,0,Bicycle,0.35
+W00257,37,West Delhi,Swiggy,43,3406.31,10.9,0,EV Scooter,0.25
+W00258,38,Saket,Swiggy,39,3910.19,10.3,0,Bike,0.14
+W00259,33,Lajpat Nagar,Instamart,17,3756.62,8.0,0,Bike,0.12
+W00260,39,West Delhi,Zomato,20,3231.94,10.2,0,Bike,0.25
+W00261,25,East Delhi,Blinkit,24,3111.45,8.6,0,Bicycle,0.35
+W00262,27,Faridabad,BigBasket,22,4236.69,9.3,0,EV Scooter,0.32
+W00263,26,East Delhi,Swiggy,29,4169.46,9.9,0,Bike,0.35
+W00264,39,East Delhi,Swiggy,22,3795.71,11.1,0,Bike,0.35
+W00265,37,West Delhi,Instamart,44,4489.36,8.0,0,EV Scooter,0.25
+W00266,37,Connaught Place,Zepto,9,2180.94,9.5,0,Bike,0.15
+W00267,34,West Delhi,BigBasket,37,3298.48,12.0,1,EV Scooter,0.25
+W00268,39,Rohini,BigBasket,10,2824.95,8.7,0,Bike,0.18
+W00269,41,South Delhi,Swiggy,36,5555.02,9.3,0,Bike,0.1
+W00270,38,Dwarka,Zomato,37,4320.58,12.0,0,Bike,0.22
+W00271,41,Connaught Place,Zepto,28,3686.75,10.0,1,Bike,0.15
+W00272,40,North Delhi,BigBasket,28,4377.99,6.8,0,Bike,0.2
+W00273,40,Dwarka,Swiggy,42,4643.02,7.8,0,Bike,0.22
+W00274,21,South Delhi,BigBasket,43,4634.51,10.0,0,EV Scooter,0.1
+W00275,27,Lajpat Nagar,Zepto,21,4487.36,9.6,0,Bicycle,0.12
+W00276,40,Saket,Zepto,24,3539.97,9.2,0,Bicycle,0.14
+W00277,30,Rohini,Blinkit,42,3348.91,12.2,0,Bike,0.18
+W00278,37,Rohini,Instamart,40,2980.25,8.1,0,EV Scooter,0.18
+W00279,42,North Delhi,Instamart,2,4151.96,8.9,0,Bike,0.2
+W00280,32,Connaught Place,Swiggy,8,3622.85,6.1,0,Bike,0.15
+W00281,28,Faridabad,Zepto,27,3415.22,10.7,0,Bike,0.32
+W00282,28,East Delhi,Blinkit,22,3373.47,7.8,0,Bike,0.35
+W00283,36,Connaught Place,Blinkit,37,4910.15,10.6,0,EV Scooter,0.15
+W00284,26,Saket,BigBasket,27,4512.14,10.4,0,Bike,0.14
+W00285,28,Faridabad,BigBasket,29,5214.32,12.5,0,Bike,0.32
+W00286,41,Rohini,Blinkit,3,4173.21,10.0,0,Bicycle,0.18
+W00287,20,West Delhi,BigBasket,44,3795.56,8.5,0,Bike,0.25
+W00288,21,Saket,Zepto,13,3729.68,9.7,0,Bicycle,0.14
+W00289,23,South Delhi,Zomato,45,2933.76,7.9,0,Bike,0.1
+W00290,33,North Delhi,Zepto,10,2740.86,9.5,0,Bicycle,0.2
+W00291,23,South Delhi,Blinkit,36,4155.87,8.7,0,Bike,0.1
+W00292,21,Saket,Blinkit,9,3002.26,8.9,0,EV Scooter,0.14
+W00293,27,Gurgaon,Zepto,27,3919.17,7.7,0,Bike,0.3
+W00294,37,Gurgaon,BigBasket,34,4642.37,9.5,0,Bicycle,0.3
+W00295,38,Lajpat Nagar,BigBasket,1,3217.64,10.2,0,Bike,0.12
+W00296,33,Connaught Place,Instamart,32,5358.39,6.5,0,Bike,0.15
+W00297,39,Rohini,Blinkit,25,2957.44,8.0,0,Bike,0.18
+W00298,44,Rohini,Swiggy,29,4542.16,9.3,0,Bike,0.18
+W00299,29,East Delhi,Instamart,7,4089.8,5.5,0,Bike,0.35
+W00300,36,East Delhi,BigBasket,3,4705.28,11.6,0,Bicycle,0.35
+W00301,27,East Delhi,Zepto,20,2857.04,7.9,0,Bike,0.35
+W00302,33,West Delhi,BigBasket,20,5595.62,7.6,0,Bicycle,0.25
+W00303,40,Dwarka,Zepto,30,3606.98,8.7,0,Bike,0.22
+W00304,42,Noida,Instamart,35,4291.32,9.2,1,Bike,0.28
+W00305,27,Dwarka,Blinkit,35,4905.59,7.9,0,Bicycle,0.22
+W00306,24,South Delhi,BigBasket,39,3266.27,10.5,0,Bicycle,0.1
+W00307,35,Dwarka,Zepto,27,4410.58,9.6,0,Bike,0.22
+W00308,27,West Delhi,Blinkit,26,3132.82,7.7,0,Bike,0.25
+W00309,29,Lajpat Nagar,Swiggy,14,4867.57,8.2,0,Bike,0.12
+W00310,27,South Delhi,Zepto,17,3141.86,6.7,0,Bike,0.1
+W00311,28,Dwarka,Instamart,18,3780.81,7.1,0,Bike,0.22
+W00312,37,West Delhi,Swiggy,45,3994.9,9.6,0,Bike,0.25
+W00313,22,Noida,Swiggy,29,4377.44,7.8,1,Bike,0.28
+W00314,36,Dwarka,Zomato,20,5324.78,11.7,0,Bike,0.22
+W00315,39,West Delhi,BigBasket,27,3388.42,9.1,1,EV Scooter,0.25
+W00316,34,East Delhi,Zepto,18,4660.99,7.0,0,Bicycle,0.35
+W00317,40,Rohini,Swiggy,4,5326.21,7.3,0,Bike,0.18
+W00318,36,East Delhi,Zomato,1,3882.59,10.6,0,Bike,0.35
+W00319,27,Rohini,Instamart,1,3309.89,8.9,0,Bike,0.18
+W00320,21,North Delhi,Blinkit,26,2365.97,10.5,1,Bicycle,0.2
+W00321,36,North Delhi,Zepto,45,5256.62,8.5,0,Bike,0.2
+W00322,37,North Delhi,Swiggy,20,3554.44,8.2,0,Bike,0.2
+W00323,24,Noida,BigBasket,23,2948.91,10.7,1,Bike,0.28
+W00324,28,East Delhi,Zomato,10,2663.34,7.7,0,Bike,0.35
+W00325,28,Rohini,Swiggy,11,2947.43,9.7,0,Bike,0.18
+W00326,21,West Delhi,BigBasket,41,4485.76,8.7,0,Bicycle,0.25
+W00327,21,South Delhi,Swiggy,41,4596.29,10.3,0,Bike,0.1
+W00328,38,West Delhi,Zepto,5,4271.7,11.7,0,Bike,0.25
+W00329,42,South Delhi,Zepto,1,3855.87,8.4,0,Bike,0.1
+W00330,22,Gurgaon,Zepto,17,2753.58,8.2,0,Bike,0.3
+W00331,36,West Delhi,Instamart,22,3166.05,10.0,0,Bike,0.25
+W00332,33,Dwarka,Instamart,34,2864.7,7.4,0,Bike,0.22
+W00333,33,Dwarka,Zomato,45,4208.26,11.4,1,Bicycle,0.22
+W00334,33,Connaught Place,Zepto,41,2899.35,11.2,0,EV Scooter,0.15
+W00335,25,East Delhi,BigBasket,29,3178.6,7.5,0,EV Scooter,0.35
+W00336,22,South Delhi,Swiggy,4,3603.21,6.6,0,Bike,0.1
+W00337,20,South Delhi,Blinkit,5,2414.16,7.3,0,Bicycle,0.1
+W00338,35,Saket,BigBasket,11,3787.42,7.3,0,EV Scooter,0.14
+W00339,23,Lajpat Nagar,Instamart,21,3664.28,10.2,0,Bike,0.12
+W00340,20,East Delhi,Instamart,35,4697.37,11.3,1,Bike,0.35
+W00341,36,Noida,BigBasket,12,3094.11,10.2,0,Bike,0.28
+W00342,37,Connaught Place,Instamart,26,2710.64,8.6,0,Bike,0.15
+W00343,27,Noida,Zepto,19,3450.75,9.5,0,Bicycle,0.28
+W00344,21,Noida,Zomato,45,2871.53,7.7,0,Bike,0.28
+W00345,37,Noida,Swiggy,7,3781.32,10.6,0,Bike,0.28
+W00346,35,East Delhi,Zomato,47,2262.05,9.6,0,Bike,0.35
+W00347,29,Noida,Swiggy,7,3265.72,10.2,0,Bike,0.28
+W00348,27,Dwarka,Swiggy,26,3007.3,7.9,1,Bike,0.22
+W00349,31,Lajpat Nagar,Zomato,40,4204.21,8.7,0,Bike,0.12
+W00350,41,Lajpat Nagar,BigBasket,5,3101.55,10.1,0,Bike,0.12
+W00351,35,North Delhi,Swiggy,21,2361.12,11.2,0,Bicycle,0.2
+W00352,31,Gurgaon,Zomato,14,3588.54,8.1,0,Bicycle,0.3
+W00353,30,South Delhi,Swiggy,4,4005.91,10.2,0,Bicycle,0.1
+W00354,39,Saket,Blinkit,23,3533.04,7.9,0,Bicycle,0.14
+W00355,38,South Delhi,BigBasket,42,3260.94,12.2,0,Bicycle,0.1
+W00356,20,Gurgaon,Zepto,20,3212.75,8.4,0,Bicycle,0.3
+W00357,22,Saket,Swiggy,15,3840.36,10.0,0,Bicycle,0.14
+W00358,31,East Delhi,Blinkit,45,3038.44,9.2,0,Bicycle,0.35
+W00359,28,West Delhi,Zepto,29,3487.21,12.9,0,Bike,0.25
+W00360,40,East Delhi,Zepto,8,4350.36,9.3,0,Bike,0.35
+W00361,41,South Delhi,Swiggy,41,2708.94,8.2,0,Bicycle,0.1
+W00362,24,South Delhi,Zomato,19,3715.07,10.0,0,Bike,0.1
+W00363,20,Saket,Swiggy,39,2318.81,9.9,0,Bike,0.14
+W00364,29,Saket,Blinkit,46,3932.34,8.8,0,Bike,0.14
+W00365,36,Gurgaon,Zepto,28,2966.95,7.4,0,Bike,0.3
+W00366,23,Noida,Swiggy,46,4565.67,8.2,0,EV Scooter,0.28
+W00367,34,East Delhi,Zomato,27,2568.44,10.3,0,Bike,0.35
+W00368,38,Saket,Swiggy,4,4103.66,6.4,0,Bike,0.14
+W00369,27,Rohini,BigBasket,15,4726.9,8.6,0,Bike,0.18
+W00370,42,Gurgaon,Zomato,35,2925.45,10.5,0,Bicycle,0.3
+W00371,34,Dwarka,Blinkit,37,3060.49,8.9,0,Bike,0.22
+W00372,26,South Delhi,Zepto,1,2994.64,12.3,0,Bike,0.1
+W00373,34,Gurgaon,Swiggy,3,3361.31,6.4,0,Bicycle,0.3
+W00374,27,East Delhi,Zomato,47,4163.94,7.6,0,Bike,0.35
+W00375,42,Saket,BigBasket,24,3296.0,5.5,0,Bike,0.14
+W00376,29,South Delhi,Zomato,27,2853.23,12.0,0,Bike,0.1
+W00377,37,West Delhi,Instamart,40,2135.0,7.6,0,Bicycle,0.25
+W00378,23,Gurgaon,BigBasket,36,5031.56,6.0,0,Bike,0.3
+W00379,34,Connaught Place,Blinkit,34,5094.4,8.1,0,Bike,0.15
+W00380,30,South Delhi,Zepto,29,4198.19,6.9,0,Bike,0.1
+W00381,41,East Delhi,Blinkit,24,3101.69,8.1,0,Bike,0.35
+W00382,22,North Delhi,Swiggy,24,4348.16,9.1,0,Bike,0.2
+W00383,34,Rohini,Zomato,42,4508.97,10.2,0,Bike,0.18
+W00384,22,Faridabad,Instamart,4,3546.6,8.7,0,Bike,0.32
+W00385,34,Noida,BigBasket,3,3783.09,9.0,0,Bike,0.28
+W00386,25,Faridabad,BigBasket,34,4735.41,8.1,0,Bicycle,0.32
+W00387,20,East Delhi,Zomato,23,2437.63,6.7,0,Bicycle,0.35
+W00388,33,Dwarka,Instamart,23,4548.74,6.2,0,Bike,0.22
+W00389,35,Dwarka,Zomato,45,3502.68,8.5,0,Bicycle,0.22
+W00390,20,North Delhi,Swiggy,5,2859.94,9.1,0,Bike,0.2
+W00391,40,Noida,Blinkit,31,2925.75,8.3,1,EV Scooter,0.28
+W00392,36,Connaught Place,BigBasket,41,3058.22,6.3,1,Bike,0.15
+W00393,27,North Delhi,Swiggy,6,2781.94,9.3,0,Bike,0.2
+W00394,37,Lajpat Nagar,Blinkit,37,5167.11,11.4,1,Bike,0.12
+W00395,35,Faridabad,Swiggy,10,4142.96,8.8,0,Bike,0.32
+W00396,25,North Delhi,Instamart,40,4601.59,8.1,0,Bicycle,0.2
+W00397,29,Faridabad,BigBasket,7,4199.89,8.9,0,Bike,0.32
+W00398,29,South Delhi,Zomato,39,3798.98,7.3,0,Bike,0.1
+W00399,24,Dwarka,Zomato,38,3809.8,7.2,0,Bike,0.22
+W00400,31,South Delhi,Blinkit,21,3431.99,9.7,1,Bike,0.1
+W00401,39,Rohini,Zepto,20,3497.37,10.5,0,Bike,0.18
+W00402,36,Lajpat Nagar,Instamart,3,2623.52,8.8,0,Bike,0.12
+W00403,33,Noida,Blinkit,22,4615.46,6.0,0,Bicycle,0.28
+W00404,33,Connaught Place,Zepto,47,2299.41,9.5,0,Bicycle,0.15
+W00405,22,Faridabad,Swiggy,4,2903.11,12.1,0,Bike,0.32
+W00406,31,Connaught Place,Instamart,28,5359.63,8.6,0,Bike,0.15
+W00407,39,Faridabad,Swiggy,12,3858.94,8.7,0,EV Scooter,0.32
+W00408,37,East Delhi,BigBasket,38,3892.17,7.7,0,Bike,0.35
+W00409,31,North Delhi,Instamart,36,4259.87,9.7,0,Bike,0.2
+W00410,21,Rohini,Zepto,47,2517.73,8.0,0,Bicycle,0.18
+W00411,21,Dwarka,BigBasket,41,2634.97,10.5,1,Bike,0.22
+W00412,36,Saket,Zomato,5,3394.08,8.0,0,Bike,0.14
+W00413,29,Faridabad,Zepto,13,3027.31,9.5,0,Bike,0.32
+W00414,37,Connaught Place,Blinkit,23,3690.04,8.9,0,Bike,0.15
+W00415,41,Rohini,Zomato,30,4138.44,11.3,0,EV Scooter,0.18
+W00416,38,West Delhi,Zomato,37,4861.33,9.6,1,Bike,0.25
+W00417,40,West Delhi,Blinkit,25,4398.87,11.1,0,EV Scooter,0.25
+W00418,20,South Delhi,Instamart,27,2954.58,9.2,0,Bike,0.1
+W00419,43,Dwarka,Zomato,14,3450.03,8.7,0,Bike,0.22
+W00420,23,Saket,Zepto,47,3232.44,8.9,1,Bike,0.14
+W00421,44,East Delhi,BigBasket,36,2936.75,7.8,0,Bike,0.35
+W00422,23,Connaught Place,Zomato,39,2754.66,9.8,0,Bike,0.15
+W00423,21,Saket,Zepto,16,5081.45,8.0,0,Bike,0.14
+W00424,38,North Delhi,Swiggy,22,3758.51,9.2,0,EV Scooter,0.2
+W00425,40,North Delhi,Zepto,21,3570.62,10.3,0,EV Scooter,0.2
+W00426,31,Connaught Place,BigBasket,21,4137.41,11.4,0,Bike,0.15
+W00427,29,Noida,Zepto,8,4177.0,9.2,0,Bike,0.28
+W00428,32,East Delhi,Blinkit,16,4645.06,10.3,0,Bicycle,0.35
+W00429,41,Rohini,BigBasket,31,3155.07,10.1,0,Bike,0.18
+W00430,42,Faridabad,Instamart,42,4072.18,8.4,0,Bike,0.32
+W00431,39,Noida,Swiggy,10,3021.06,12.2,0,EV Scooter,0.28
+W00432,42,Faridabad,Blinkit,32,3597.87,8.1,0,Bike,0.32
+W00433,34,Faridabad,Instamart,34,3795.39,9.1,0,Bike,0.32
+W00434,22,Noida,Zepto,9,3873.59,11.2,0,Bike,0.28
+W00435,42,South Delhi,BigBasket,17,3838.26,11.1,0,Bike,0.1
+W00436,39,West Delhi,Swiggy,11,4391.46,9.0,0,Bike,0.25
+W00437,32,Faridabad,Blinkit,32,3272.41,10.5,0,Bicycle,0.32
+W00438,27,Noida,Instamart,10,3895.34,8.7,0,EV Scooter,0.28
+W00439,44,Noida,Instamart,22,3142.88,8.3,0,Bike,0.28
+W00440,26,Lajpat Nagar,Swiggy,17,6086.6,7.2,0,Bike,0.12
+W00441,43,Saket,Zepto,4,3019.71,10.1,0,Bike,0.14
+W00442,27,Gurgaon,Swiggy,47,3189.48,10.2,0,EV Scooter,0.3
+W00443,37,South Delhi,Instamart,25,4456.12,8.1,1,EV Scooter,0.1
+W00444,28,Dwarka,Zomato,21,3406.43,9.4,0,Bicycle,0.22
+W00445,25,Gurgaon,Blinkit,37,4456.44,13.0,0,Bike,0.3
+W00446,23,Saket,Swiggy,38,3872.42,10.7,0,EV Scooter,0.14
+W00447,34,Saket,Instamart,1,3427.45,7.6,0,Bike,0.14
+W00448,24,Saket,Zepto,25,3147.8,10.5,0,Bike,0.14
+W00449,24,Gurgaon,Instamart,36,3118.93,7.7,1,Bike,0.3
+W00450,26,Connaught Place,Zepto,17,3436.14,4.7,0,Bike,0.15
+W00451,28,West Delhi,Swiggy,41,3610.48,9.0,0,Bicycle,0.25
+W00452,26,Noida,Zepto,24,3084.5,11.3,0,Bicycle,0.28
+W00453,28,West Delhi,BigBasket,2,3662.61,11.1,0,Bike,0.25
+W00454,39,East Delhi,BigBasket,40,2874.71,9.6,0,Bike,0.35
+W00455,29,Connaught Place,BigBasket,15,4354.72,8.2,0,Bike,0.15
+W00456,23,Dwarka,Zomato,32,4507.89,9.7,0,Bike,0.22
+W00457,25,West Delhi,Swiggy,39,3186.54,8.6,0,Bike,0.25
+W00458,43,North Delhi,Instamart,6,3141.86,8.2,0,Bike,0.2
+W00459,33,Saket,Instamart,1,3892.33,10.6,0,Bicycle,0.14
+W00460,28,Faridabad,Zomato,47,4762.29,8.2,0,EV Scooter,0.32
+W00461,20,East Delhi,Zepto,23,4939.33,10.7,0,EV Scooter,0.35
+W00462,36,South Delhi,Zomato,39,2627.81,8.1,0,EV Scooter,0.1
+W00463,32,Dwarka,Zepto,17,4555.04,12.1,0,Bicycle,0.22
+W00464,43,East Delhi,Zepto,34,3700.76,6.5,0,Bike,0.35
+W00465,26,Saket,Blinkit,41,3716.25,7.6,0,EV Scooter,0.14
+W00466,28,Faridabad,Instamart,29,4153.77,8.8,0,Bike,0.32
+W00467,30,Connaught Place,BigBasket,9,3365.23,6.0,0,Bicycle,0.15
+W00468,22,Faridabad,Zepto,13,4627.36,5.1,0,Bike,0.32
+W00469,31,Gurgaon,Blinkit,6,4889.17,6.0,1,Bicycle,0.3
+W00470,40,Faridabad,Instamart,6,4919.03,8.6,0,Bike,0.32
+W00471,22,Gurgaon,BigBasket,20,2274.87,8.6,0,Bike,0.3
+W00472,34,Connaught Place,Zepto,3,3566.27,9.5,0,Bike,0.15
+W00473,40,Rohini,Zepto,17,2201.82,8.7,0,Bike,0.18
+W00474,29,Saket,Zomato,12,3137.78,9.4,0,EV Scooter,0.14
+W00475,20,Gurgaon,Zomato,47,1832.0,8.3,0,Bike,0.3
+W00476,33,South Delhi,Instamart,45,4110.21,10.1,0,Bike,0.1
+W00477,39,Faridabad,BigBasket,1,3925.45,9.9,0,EV Scooter,0.32
+W00478,25,Faridabad,Zepto,17,3403.92,8.5,0,Bike,0.32
+W00479,21,South Delhi,Instamart,3,3117.08,9.8,0,Bike,0.1
+W00480,42,North Delhi,Instamart,26,4001.23,8.7,0,Bike,0.2
+W00481,27,Noida,Swiggy,15,2940.86,6.7,0,Bike,0.28
+W00482,20,Rohini,Zomato,36,2886.43,10.4,0,EV Scooter,0.18
+W00483,23,Dwarka,BigBasket,32,2788.07,7.6,0,Bicycle,0.22
+W00484,23,Gurgaon,Zepto,32,3586.93,10.3,0,EV Scooter,0.3
+W00485,24,South Delhi,Instamart,4,3284.15,9.5,1,Bike,0.1
+W00486,39,Connaught Place,Zepto,18,3442.61,8.9,0,Bike,0.15
+W00487,28,Gurgaon,Swiggy,19,4167.45,6.2,0,Bike,0.3
+W00488,42,Noida,BigBasket,43,4520.64,11.3,0,Bicycle,0.28
+W00489,32,Connaught Place,Instamart,35,4910.38,8.5,1,Bike,0.15
+W00490,37,East Delhi,Zepto,40,3798.11,10.0,0,Bike,0.35
+W00491,36,Saket,Zomato,14,4028.07,8.8,0,Bike,0.14
+W00492,44,Faridabad,Swiggy,33,3901.08,8.6,0,Bike,0.32
+W00493,20,East Delhi,BigBasket,14,2410.65,9.3,0,Bicycle,0.35
+W00494,41,Gurgaon,Swiggy,34,3454.24,9.0,0,Bike,0.3
+W00495,34,Noida,Zomato,4,3457.92,8.6,0,Bike,0.28
+W00496,21,Rohini,BigBasket,24,3341.35,8.9,0,Bike,0.18
+W00497,35,Saket,Swiggy,29,3717.25,9.6,0,EV Scooter,0.14
+W00498,39,Gurgaon,Blinkit,19,3574.42,9.7,0,Bike,0.3
+W00499,41,South Delhi,Zomato,6,2960.94,9.1,0,Bike,0.1
+W00500,24,West Delhi,Zomato,33,3629.18,9.9,0,Bike,0.25
+W00501,41,Gurgaon,Zomato,40,3238.76,8.4,0,Bike,0.3
+W00502,38,Saket,Blinkit,19,1654.61,12.3,0,EV Scooter,0.14
+W00503,24,Faridabad,Blinkit,1,2632.34,11.2,1,Bike,0.32
+W00504,21,Faridabad,Zepto,5,3821.13,10.1,0,EV Scooter,0.32
+W00505,26,Gurgaon,Instamart,27,4623.51,6.1,0,Bike,0.3
+W00506,22,Connaught Place,Swiggy,16,1808.24,9.9,0,EV Scooter,0.15
+W00507,36,West Delhi,Zepto,6,3053.69,8.5,0,Bicycle,0.25
+W00508,43,South Delhi,Swiggy,40,4095.16,7.5,1,Bike,0.1
+W00509,43,Gurgaon,Instamart,13,4452.56,8.5,0,Bicycle,0.3
+W00510,22,Connaught Place,Blinkit,35,3413.91,7.7,0,Bike,0.15
+W00511,32,Faridabad,Instamart,19,3203.77,9.8,0,Bike,0.32
+W00512,26,Faridabad,Blinkit,12,4725.77,11.4,1,Bike,0.32
+W00513,44,Noida,Instamart,16,4386.87,10.2,0,Bike,0.28
+W00514,43,Gurgaon,Zepto,43,4436.89,13.1,0,Bicycle,0.3
+W00515,22,West Delhi,BigBasket,10,3375.55,6.7,0,Bike,0.25
+W00516,34,North Delhi,Zepto,25,4640.96,8.2,0,Bicycle,0.2
+W00517,37,West Delhi,Swiggy,20,2193.95,7.6,0,Bike,0.25
+W00518,29,Faridabad,Zepto,31,4654.98,10.8,1,Bike,0.32
+W00519,42,Faridabad,Zomato,4,3696.77,8.7,1,EV Scooter,0.32
+W00520,26,East Delhi,Swiggy,44,3853.15,9.3,0,Bicycle,0.35
+W00521,28,Faridabad,Instamart,23,2993.8,10.0,0,Bike,0.32
+W00522,24,South Delhi,Swiggy,2,2298.78,6.8,0,Bicycle,0.1
+W00523,39,Dwarka,BigBasket,22,3836.16,8.1,1,EV Scooter,0.22
+W00524,27,Gurgaon,Blinkit,37,4191.12,10.5,0,Bike,0.3
+W00525,33,West Delhi,Instamart,8,4312.15,8.2,0,Bike,0.25
+W00526,23,Dwarka,Swiggy,7,4225.82,6.4,1,Bike,0.22
+W00527,39,Connaught Place,Instamart,14,4044.53,7.6,0,Bike,0.15
+W00528,33,North Delhi,Instamart,3,3010.97,8.6,0,Bike,0.2
+W00529,31,South Delhi,Instamart,16,4363.98,9.3,0,Bike,0.1
+W00530,21,Saket,Blinkit,19,2921.5,8.9,0,Bike,0.14
+W00531,32,Lajpat Nagar,Zepto,18,4635.65,8.1,0,EV Scooter,0.12
+W00532,20,West Delhi,Instamart,16,3682.81,10.4,0,Bicycle,0.25
+W00533,39,Dwarka,Zomato,8,3709.43,8.8,0,Bike,0.22
+W00534,26,Saket,BigBasket,33,4442.74,9.3,0,Bike,0.14
+W00535,44,North Delhi,Blinkit,12,4551.17,8.2,0,Bike,0.2
+W00536,28,East Delhi,Swiggy,11,4366.51,11.3,0,Bike,0.35
+W00537,36,Saket,Blinkit,5,3093.63,8.4,1,Bike,0.14
+W00538,40,South Delhi,Swiggy,27,4360.14,9.1,0,Bike,0.1
+W00539,42,South Delhi,Blinkit,12,3098.17,10.6,0,Bike,0.1
+W00540,32,East Delhi,Swiggy,17,4380.32,9.4,0,EV Scooter,0.35
+W00541,42,Lajpat Nagar,Instamart,6,2609.87,9.4,1,Bicycle,0.12
+W00542,29,Gurgaon,Zepto,33,3675.06,6.0,0,Bicycle,0.3
+W00543,35,Saket,Swiggy,5,3093.29,10.0,0,Bicycle,0.14
+W00544,25,East Delhi,Swiggy,28,4445.95,9.1,1,Bike,0.35
+W00545,35,South Delhi,Zomato,14,4642.13,9.8,0,Bike,0.1
+W00546,30,South Delhi,Swiggy,5,3909.2,9.3,1,Bicycle,0.1
+W00547,39,Dwarka,Zomato,33,3882.89,8.2,1,Bicycle,0.22
+W00548,22,Faridabad,BigBasket,41,4313.34,10.3,1,Bike,0.32
+W00549,28,Lajpat Nagar,Instamart,19,4646.89,9.3,0,Bike,0.12
+W00550,34,Saket,Zomato,22,3779.85,7.1,0,Bike,0.14
+W00551,32,Saket,Zepto,5,3350.26,11.0,0,Bike,0.14
+W00552,29,North Delhi,Instamart,2,4267.81,6.9,0,Bike,0.2
+W00553,39,East Delhi,Zomato,30,2263.02,10.4,0,Bike,0.35
+W00554,43,North Delhi,Instamart,47,4477.72,11.2,0,Bike,0.2
+W00555,32,East Delhi,Instamart,39,3181.85,7.3,0,Bike,0.35
+W00556,36,Connaught Place,Instamart,4,3557.82,8.8,0,Bike,0.15
+W00557,26,South Delhi,BigBasket,33,4482.84,8.7,0,Bicycle,0.1
+W00558,25,Faridabad,Zepto,13,3417.59,8.7,0,Bike,0.32
+W00559,32,Dwarka,Blinkit,20,4267.93,11.7,0,Bike,0.22
+W00560,36,Faridabad,Blinkit,7,4661.13,7.4,0,Bike,0.32
+W00561,34,Faridabad,Zomato,15,3838.03,8.5,0,EV Scooter,0.32
+W00562,23,Faridabad,Instamart,23,3999.16,11.3,0,Bike,0.32
+W00563,34,North Delhi,Zomato,14,3654.45,8.5,0,Bike,0.2
+W00564,33,East Delhi,BigBasket,23,3842.48,7.6,0,Bike,0.35
+W00565,40,Rohini,BigBasket,19,2856.88,9.4,0,Bike,0.18
+W00566,30,Connaught Place,Swiggy,29,3515.01,10.2,0,Bike,0.15
+W00567,43,West Delhi,BigBasket,20,2719.44,8.4,0,Bike,0.25
+W00568,23,Faridabad,Swiggy,29,3030.99,9.8,0,EV Scooter,0.32
+W00569,22,Gurgaon,Zepto,24,2147.64,6.9,0,EV Scooter,0.3
+W00570,21,North Delhi,Zomato,18,3961.14,7.0,0,EV Scooter,0.2
+W00571,39,Lajpat Nagar,Zepto,10,5103.28,8.3,0,Bike,0.12
+W00572,29,Dwarka,BigBasket,41,3385.12,9.9,1,EV Scooter,0.22
+W00573,32,West Delhi,Zepto,8,4522.11,10.1,0,Bike,0.25
+W00574,39,Rohini,Zepto,26,4650.55,7.2,1,Bike,0.18
+W00575,40,Gurgaon,Zepto,29,2790.69,10.1,0,Bicycle,0.3
+W00576,42,Rohini,BigBasket,10,2962.96,9.2,0,Bike,0.18
+W00577,44,West Delhi,Instamart,17,4542.64,7.7,0,Bike,0.25
+W00578,37,Faridabad,Zepto,2,3676.13,7.0,0,Bike,0.32
+W00579,40,Gurgaon,Swiggy,6,2717.37,9.3,0,Bike,0.3
+W00580,35,Rohini,BigBasket,5,3240.51,10.9,0,EV Scooter,0.18
+W00581,30,Dwarka,Zepto,28,4085.73,9.1,0,Bike,0.22
+W00582,29,East Delhi,Instamart,41,3114.85,7.6,0,Bike,0.35
+W00583,28,South Delhi,BigBasket,5,1530.37,6.2,0,Bike,0.1
+W00584,31,East Delhi,Blinkit,18,3492.39,11.3,0,EV Scooter,0.35
+W00585,38,West Delhi,Instamart,26,3557.21,10.6,1,Bike,0.25
+W00586,20,North Delhi,Swiggy,20,3757.38,9.5,0,Bike,0.2
+W00587,37,South Delhi,Zepto,41,4757.11,11.2,0,EV Scooter,0.1
+W00588,33,Connaught Place,Blinkit,27,3792.82,9.3,0,Bike,0.15
+W00589,41,Dwarka,Blinkit,12,3944.35,8.2,0,Bike,0.22
+W00590,40,Connaught Place,BigBasket,7,4594.43,9.8,0,Bicycle,0.15
+W00591,20,Gurgaon,Blinkit,3,3758.28,7.8,0,Bike,0.3
+W00592,36,Saket,Swiggy,10,5459.22,7.5,0,Bicycle,0.14
+W00593,30,South Delhi,Swiggy,34,2739.03,10.2,1,Bike,0.1
+W00594,39,Connaught Place,Zomato,25,3002.68,10.3,0,EV Scooter,0.15
+W00595,34,Connaught Place,Swiggy,35,4241.17,7.1,1,EV Scooter,0.15
+W00596,23,Rohini,Instamart,16,4753.45,7.1,1,Bike,0.18
+W00597,34,East Delhi,Blinkit,2,3589.36,8.3,0,Bike,0.35
+W00598,41,Rohini,Swiggy,24,2941.5,7.9,0,EV Scooter,0.18
+W00599,41,South Delhi,BigBasket,10,5158.79,9.7,0,Bike,0.1
+W00600,33,South Delhi,Zomato,38,3116.1,9.1,0,Bike,0.1
+W00601,41,West Delhi,Blinkit,22,4021.24,10.7,0,Bike,0.25
+W00602,20,Rohini,Zomato,26,4801.32,9.5,0,Bicycle,0.18
+W00603,28,Noida,Blinkit,43,3396.72,8.0,0,Bicycle,0.28
+W00604,26,Lajpat Nagar,BigBasket,39,3252.3,6.2,0,Bike,0.12
+W00605,42,East Delhi,Zomato,27,3307.05,9.3,0,Bike,0.35
+W00606,30,South Delhi,Zepto,29,4471.24,6.4,0,EV Scooter,0.1
+W00607,42,West Delhi,Instamart,47,4598.12,8.0,0,Bicycle,0.25
+W00608,21,Saket,Instamart,38,3776.98,7.9,0,Bike,0.14
+W00609,21,Rohini,Blinkit,20,5256.47,8.2,0,EV Scooter,0.18
+W00610,25,East Delhi,Zepto,27,3775.57,7.0,0,Bicycle,0.35
+W00611,42,Saket,Zomato,41,4783.87,7.9,0,Bike,0.14
+W00612,38,Rohini,Zepto,20,3404.4,10.7,0,Bicycle,0.18
+W00613,39,Connaught Place,Zepto,44,5617.01,10.7,0,Bike,0.15
+W00614,33,Saket,Zomato,19,5006.11,11.3,0,Bike,0.14
+W00615,22,West Delhi,BigBasket,20,3647.62,9.0,0,Bike,0.25
+W00616,26,East Delhi,Zepto,35,4897.63,9.4,0,Bicycle,0.35
+W00617,26,Faridabad,Zepto,47,4857.18,10.7,0,EV Scooter,0.32
+W00618,23,Gurgaon,BigBasket,2,4992.43,6.8,0,Bike,0.3
+W00619,42,Gurgaon,Zepto,30,1764.41,10.2,0,Bike,0.3
+W00620,24,East Delhi,Zepto,34,4325.48,11.0,0,Bike,0.35
+W00621,36,Saket,Zepto,22,4183.84,7.7,0,Bicycle,0.14
+W00622,23,Rohini,Instamart,3,4126.86,11.1,0,Bicycle,0.18
+W00623,42,West Delhi,Swiggy,6,3924.68,12.1,0,Bike,0.25
+W00624,32,Lajpat Nagar,BigBasket,15,3948.25,10.2,0,Bike,0.12
+W00625,35,Gurgaon,Zepto,27,4776.51,9.9,0,Bike,0.3
+W00626,35,West Delhi,Instamart,10,4181.58,7.3,0,Bike,0.25
+W00627,21,Gurgaon,BigBasket,9,3923.53,10.6,0,Bike,0.3
+W00628,37,Connaught Place,Blinkit,33,4661.5,7.5,0,EV Scooter,0.15
+W00629,20,Rohini,Blinkit,32,4084.42,9.6,0,Bike,0.18
+W00630,37,Connaught Place,Zepto,6,4160.85,9.7,0,Bicycle,0.15
+W00631,27,Gurgaon,Instamart,41,5243.63,4.1,0,Bike,0.3
+W00632,30,Faridabad,Instamart,36,3402.42,9.6,0,Bike,0.32
+W00633,43,Faridabad,BigBasket,2,2537.43,12.9,0,Bike,0.32
+W00634,43,Connaught Place,BigBasket,29,3807.89,5.9,0,Bike,0.15
+W00635,34,Faridabad,Instamart,4,3921.63,8.9,0,Bike,0.32
+W00636,35,Gurgaon,BigBasket,1,4327.22,6.1,0,Bicycle,0.3
+W00637,36,East Delhi,Instamart,19,3835.85,7.7,0,Bike,0.35
+W00638,36,Connaught Place,Swiggy,26,4354.1,6.1,1,Bicycle,0.15
+W00639,31,Lajpat Nagar,Instamart,25,5753.69,9.2,0,Bike,0.12
+W00640,29,Lajpat Nagar,Blinkit,10,4391.21,10.2,0,Bike,0.12
+W00641,39,North Delhi,BigBasket,15,4531.85,9.6,0,Bike,0.2
+W00642,25,Saket,Instamart,22,3646.37,7.6,0,EV Scooter,0.14
+W00643,27,Rohini,Instamart,21,2641.79,8.1,0,Bike,0.18
+W00644,32,Faridabad,BigBasket,22,1911.51,9.4,1,Bike,0.32
+W00645,21,Faridabad,Swiggy,36,3335.06,7.7,0,EV Scooter,0.32
+W00646,38,Saket,Swiggy,34,1685.7,7.0,0,Bike,0.14
+W00647,41,South Delhi,BigBasket,30,4160.84,8.6,0,Bicycle,0.1
+W00648,29,Noida,Zomato,25,3443.75,7.6,0,Bike,0.28
+W00649,23,Connaught Place,BigBasket,45,2699.3,9.6,1,Bicycle,0.15
+W00650,31,Dwarka,BigBasket,28,3854.7,10.9,0,Bike,0.22
+W00651,37,Faridabad,Swiggy,1,3159.09,12.9,0,EV Scooter,0.32
+W00652,26,Rohini,Swiggy,45,4110.62,9.5,0,Bike,0.18
+W00653,39,North Delhi,BigBasket,4,4316.1,10.0,0,Bike,0.2
+W00654,43,Lajpat Nagar,BigBasket,7,3188.53,8.1,0,Bike,0.12
+W00655,43,Faridabad,BigBasket,9,3560.18,8.2,0,Bike,0.32
+W00656,42,North Delhi,Swiggy,36,3921.92,10.9,0,Bicycle,0.2
+W00657,44,Gurgaon,BigBasket,19,2624.37,8.6,0,Bike,0.3
+W00658,23,Gurgaon,BigBasket,1,3921.85,9.1,0,Bike,0.3
+W00659,26,Noida,Zepto,10,2605.19,10.8,0,Bike,0.28
+W00660,29,East Delhi,Zomato,36,4202.57,8.6,0,Bike,0.35
+W00661,34,Dwarka,Blinkit,9,3401.87,11.3,0,Bike,0.22
+W00662,31,South Delhi,Zomato,45,2600.77,9.9,0,Bike,0.1
+W00663,20,Noida,Zepto,46,3286.02,9.7,0,Bicycle,0.28
+W00664,39,West Delhi,Blinkit,42,3319.86,8.0,0,EV Scooter,0.25
+W00665,37,South Delhi,BigBasket,32,4604.82,9.8,0,Bike,0.1
+W00666,44,Connaught Place,Zepto,32,3888.64,8.4,0,Bicycle,0.15
+W00667,35,Rohini,BigBasket,6,2984.98,9.7,0,Bike,0.18
+W00668,24,West Delhi,Swiggy,38,5069.25,8.8,0,Bike,0.25
+W00669,38,West Delhi,Instamart,17,4251.19,10.5,0,Bike,0.25
+W00670,23,Noida,Zepto,10,3480.94,9.0,1,Bike,0.28
+W00671,25,Saket,Swiggy,27,2506.93,12.1,0,Bike,0.14
+W00672,36,East Delhi,Zepto,35,3410.33,8.6,0,EV Scooter,0.35
+W00673,26,Saket,Zepto,21,3573.59,8.2,0,EV Scooter,0.14
+W00674,43,Noida,Swiggy,25,4045.23,9.5,0,Bike,0.28
+W00675,42,Connaught Place,Blinkit,28,4235.81,10.6,0,Bike,0.15
+W00676,26,Lajpat Nagar,Zomato,47,4395.27,10.6,0,EV Scooter,0.12
+W00677,28,Faridabad,BigBasket,15,2460.83,9.3,0,Bike,0.32
+W00678,32,Faridabad,Zepto,4,3916.8,9.5,0,Bicycle,0.32
+W00679,39,East Delhi,BigBasket,29,3622.31,9.5,0,Bike,0.35
+W00680,33,Connaught Place,Instamart,9,5892.38,7.4,0,Bike,0.15
+W00681,35,East Delhi,Swiggy,27,3801.76,10.5,0,Bike,0.35
+W00682,42,North Delhi,BigBasket,26,3251.88,7.1,0,EV Scooter,0.2
+W00683,28,Saket,Swiggy,19,3838.3,7.4,0,EV Scooter,0.14
+W00684,34,Faridabad,BigBasket,28,3743.15,9.1,0,Bike,0.32
+W00685,24,West Delhi,Zomato,17,2158.77,8.5,0,Bicycle,0.25
+W00686,37,Saket,Zomato,43,4076.64,10.2,1,Bike,0.14
+W00687,40,Dwarka,Zomato,41,3501.55,9.7,0,Bike,0.22
+W00688,39,Rohini,Zomato,42,3728.65,9.2,0,Bicycle,0.18
+W00689,27,Connaught Place,Zomato,20,3051.15,7.3,0,Bike,0.15
+W00690,34,South Delhi,Zomato,45,2874.87,9.0,0,Bike,0.1
+W00691,40,East Delhi,Swiggy,40,4453.11,8.9,1,Bike,0.35
+W00692,44,Saket,Zepto,39,4636.77,9.3,0,EV Scooter,0.14
+W00693,28,Rohini,BigBasket,23,4084.48,8.4,0,EV Scooter,0.18
+W00694,38,Saket,Zomato,47,2301.36,9.8,0,Bicycle,0.14
+W00695,41,South Delhi,Swiggy,32,4136.45,8.5,0,Bike,0.1
+W00696,25,Rohini,Swiggy,47,2313.25,9.6,0,Bicycle,0.18
+W00697,23,Dwarka,Swiggy,33,3221.06,10.2,0,Bike,0.22
+W00698,30,South Delhi,Zepto,46,4442.45,8.2,0,EV Scooter,0.1
+W00699,29,Noida,BigBasket,5,4276.08,7.8,0,Bike,0.28
+W00700,22,Gurgaon,Zepto,43,4115.57,9.7,0,Bike,0.3
+W00701,20,Noida,Blinkit,34,4800.32,7.0,0,Bike,0.28
+W00702,31,Faridabad,Swiggy,40,4198.01,10.7,0,Bicycle,0.32
+W00703,42,Saket,Blinkit,11,2134.78,9.0,0,Bicycle,0.14
+W00704,34,Gurgaon,Instamart,3,3454.38,8.8,0,Bike,0.3
+W00705,34,Noida,Zomato,33,3716.71,9.8,0,Bike,0.28
+W00706,40,Gurgaon,Zomato,11,3623.01,9.7,0,Bicycle,0.3
+W00707,33,Lajpat Nagar,Zepto,16,3256.29,9.0,0,Bike,0.12
+W00708,26,Saket,BigBasket,18,2925.88,10.3,0,Bicycle,0.14
+W00709,36,Gurgaon,Blinkit,30,5670.6,8.0,0,EV Scooter,0.3
+W00710,43,West Delhi,BigBasket,10,3439.0,10.1,0,Bike,0.25
+W00711,38,East Delhi,Zepto,18,5631.28,7.4,0,Bike,0.35
+W00712,26,East Delhi,Zomato,38,2836.97,9.8,0,Bike,0.35
+W00713,22,West Delhi,BigBasket,19,4275.65,8.5,1,Bike,0.25
+W00714,22,Rohini,BigBasket,36,3933.71,7.0,1,Bike,0.18
+W00715,44,North Delhi,Zomato,13,3012.44,9.4,1,Bicycle,0.2
+W00716,37,Rohini,Blinkit,46,3375.95,8.9,0,Bike,0.18
+W00717,39,South Delhi,Zomato,3,3737.9,6.7,0,Bike,0.1
+W00718,41,South Delhi,BigBasket,10,3074.71,5.8,0,Bicycle,0.1
+W00719,33,Gurgaon,Blinkit,38,3545.09,8.8,0,Bicycle,0.3
+W00720,22,Noida,Blinkit,1,1858.08,11.4,0,EV Scooter,0.28
+W00721,26,Noida,Zomato,27,4319.21,9.5,0,Bike,0.28
+W00722,26,East Delhi,BigBasket,46,4731.72,8.0,0,Bicycle,0.35
+W00723,24,Connaught Place,Zepto,8,4113.49,10.6,1,EV Scooter,0.15
+W00724,22,Rohini,BigBasket,46,5561.41,10.4,0,Bike,0.18
+W00725,37,Lajpat Nagar,Swiggy,42,4295.68,10.9,0,Bike,0.12
+W00726,34,Saket,Instamart,17,4664.25,10.0,0,Bike,0.14
+W00727,39,Faridabad,Zepto,9,4740.69,10.3,0,EV Scooter,0.32
+W00728,33,Dwarka,Blinkit,6,1549.19,10.1,0,Bike,0.22
+W00729,23,Noida,Zepto,43,4088.94,8.3,1,EV Scooter,0.28
+W00730,43,Saket,Blinkit,25,2643.65,6.5,0,Bicycle,0.14
+W00731,27,Dwarka,Blinkit,39,2805.28,8.2,0,Bike,0.22
+W00732,40,Saket,Zepto,28,2944.42,10.7,0,Bike,0.14
+W00733,32,Gurgaon,Blinkit,33,3499.83,8.4,0,Bike,0.3
+W00734,41,Dwarka,Blinkit,37,4270.37,8.8,0,Bike,0.22
+W00735,27,Faridabad,Swiggy,9,4097.19,7.3,0,Bicycle,0.32
+W00736,34,Saket,BigBasket,18,3739.93,8.2,0,Bicycle,0.14
+W00737,36,West Delhi,BigBasket,21,4328.15,9.0,0,Bike,0.25
+W00738,24,Faridabad,Instamart,2,4376.79,9.7,0,Bicycle,0.32
+W00739,39,Dwarka,Instamart,43,4104.1,8.3,0,Bike,0.22
+W00740,23,Faridabad,Swiggy,38,2370.4,8.2,1,Bike,0.32
+W00741,30,Saket,Instamart,40,3158.53,10.3,0,Bike,0.14
+W00742,37,North Delhi,Zepto,36,3771.06,9.5,0,Bike,0.2
+W00743,29,Saket,Zomato,43,4336.76,9.7,0,EV Scooter,0.14
+W00744,36,Saket,Zomato,37,2687.14,11.3,1,Bicycle,0.14
+W00745,34,Gurgaon,Zomato,15,3740.92,8.2,0,Bike,0.3
+W00746,25,Rohini,Swiggy,28,2497.5,8.9,0,Bike,0.18
+W00747,42,West Delhi,Swiggy,18,4570.73,9.8,0,Bike,0.25
+W00748,40,Lajpat Nagar,Blinkit,34,3943.88,7.7,0,Bike,0.12
+W00749,35,Noida,Zomato,22,2673.09,9.3,0,Bicycle,0.28
+W00750,34,South Delhi,Zepto,11,2667.82,9.0,0,EV Scooter,0.1
+W00751,27,Rohini,Instamart,13,4059.95,13.2,0,Bicycle,0.18
+W00752,28,South Delhi,Zepto,4,4849.84,9.1,0,Bike,0.1
+W00753,30,Gurgaon,Instamart,22,2872.57,10.7,1,Bike,0.3
+W00754,21,West Delhi,Zomato,7,4379.28,10.2,0,Bike,0.25
+W00755,32,Saket,Zomato,43,3316.21,7.3,0,Bike,0.14
+W00756,23,East Delhi,Zomato,24,4408.56,6.7,0,Bike,0.35
+W00757,28,Noida,Swiggy,4,4296.55,9.4,0,Bike,0.28
+W00758,24,North Delhi,Instamart,28,3874.24,10.9,0,Bike,0.2
+W00759,38,East Delhi,Swiggy,15,2282.49,9.4,0,Bike,0.35
+W00760,41,Gurgaon,Swiggy,1,4294.95,9.1,0,Bicycle,0.3
+W00761,22,Rohini,BigBasket,3,4151.62,8.6,0,Bike,0.18
+W00762,40,North Delhi,Zepto,14,4078.34,7.0,0,Bicycle,0.2
+W00763,22,Faridabad,Zepto,38,3906.54,7.6,0,Bike,0.32
+W00764,25,Dwarka,Blinkit,1,3046.97,6.6,0,Bike,0.22
+W00765,29,North Delhi,Swiggy,38,4616.37,7.3,0,Bicycle,0.2
+W00766,24,Lajpat Nagar,Instamart,38,4468.51,8.2,0,Bike,0.12
+W00767,44,Gurgaon,BigBasket,21,2889.66,10.2,0,EV Scooter,0.3
+W00768,22,Connaught Place,BigBasket,29,4801.44,8.3,0,Bike,0.15
+W00769,41,Dwarka,Zepto,5,3855.34,9.4,0,Bike,0.22
+W00770,43,South Delhi,Swiggy,10,3853.31,9.2,0,Bike,0.1
+W00771,26,Noida,Blinkit,28,3608.92,9.7,0,Bicycle,0.28
+W00772,41,South Delhi,Swiggy,21,3687.61,7.4,1,Bicycle,0.1
+W00773,37,North Delhi,Zomato,7,4846.72,10.6,0,Bicycle,0.2
+W00774,42,South Delhi,Swiggy,3,4576.46,6.9,0,Bicycle,0.1
+W00775,27,Lajpat Nagar,Zomato,45,4559.48,8.3,0,Bike,0.12
+W00776,20,Gurgaon,Zomato,47,3897.65,9.0,0,Bike,0.3
+W00777,44,Faridabad,Blinkit,20,4461.34,10.1,0,Bike,0.32
+W00778,23,Rohini,Instamart,19,3082.55,11.1,0,Bike,0.18
+W00779,43,Noida,Zepto,35,4216.75,10.2,0,EV Scooter,0.28
+W00780,26,Lajpat Nagar,Swiggy,4,3627.21,11.1,0,Bike,0.12
+W00781,33,Lajpat Nagar,Zomato,5,2102.16,7.8,1,Bike,0.12
+W00782,32,South Delhi,Swiggy,1,2481.12,10.8,0,Bike,0.1
+W00783,29,South Delhi,Instamart,4,3219.62,10.5,0,EV Scooter,0.1
+W00784,42,North Delhi,Zepto,12,4082.12,5.4,0,EV Scooter,0.2
+W00785,37,Rohini,Instamart,27,3220.34,8.7,1,Bike,0.18
+W00786,20,East Delhi,Zepto,42,3277.11,9.9,0,Bike,0.35
+W00787,23,South Delhi,BigBasket,23,4360.61,8.2,0,Bike,0.1
+W00788,35,Gurgaon,Zepto,25,3305.99,7.4,0,Bike,0.3
+W00789,35,Connaught Place,Blinkit,21,4814.65,12.2,0,EV Scooter,0.15
+W00790,37,Noida,Instamart,24,4682.1,9.2,0,Bike,0.28
+W00791,27,Saket,Zomato,25,3767.51,9.2,0,Bike,0.14
+W00792,29,South Delhi,BigBasket,45,4352.77,7.0,0,Bike,0.1
+W00793,35,Gurgaon,Blinkit,46,4243.79,8.1,1,Bike,0.3
+W00794,42,Gurgaon,Swiggy,32,3553.47,7.7,0,Bicycle,0.3
+W00795,43,Noida,Instamart,32,4439.31,10.6,1,Bike,0.28
+W00796,30,East Delhi,Zomato,5,4557.12,9.8,1,Bike,0.35
+W00797,25,Gurgaon,Zepto,36,2988.05,8.1,0,EV Scooter,0.3
+W00798,20,Connaught Place,Zomato,46,3872.84,9.8,0,Bike,0.15
+W00799,31,Gurgaon,Swiggy,42,3864.0,8.6,0,Bicycle,0.3
+W00800,44,Gurgaon,BigBasket,42,4429.7,9.4,0,Bike,0.3
+W00801,25,Gurgaon,BigBasket,39,3394.91,9.3,0,Bike,0.3
+W00802,32,Faridabad,Instamart,16,3271.79,9.6,0,Bike,0.32
+W00803,36,Faridabad,BigBasket,33,3885.2,9.4,0,Bike,0.32
+W00804,20,East Delhi,Instamart,21,4695.09,9.6,0,Bike,0.35
+W00805,27,South Delhi,Instamart,9,2790.5,10.9,0,Bike,0.1
+W00806,41,Gurgaon,Instamart,6,2930.16,10.0,1,Bike,0.3
+W00807,27,Rohini,Zepto,45,3333.6,8.5,0,Bike,0.18
+W00808,43,South Delhi,Blinkit,35,3475.94,8.9,1,Bicycle,0.1
+W00809,30,East Delhi,Instamart,39,2337.53,10.8,0,EV Scooter,0.35
+W00810,33,West Delhi,Instamart,22,4948.56,9.2,0,Bike,0.25
+W00811,43,South Delhi,Blinkit,41,3645.75,8.4,0,Bike,0.1
+W00812,29,South Delhi,Zomato,5,3525.92,8.1,0,Bicycle,0.1
+W00813,34,Dwarka,Instamart,42,5048.11,9.4,0,Bike,0.22
+W00814,26,North Delhi,Zepto,23,4324.23,7.7,0,Bike,0.2
+W00815,26,Saket,BigBasket,17,3321.66,10.9,0,Bike,0.14
+W00816,29,Dwarka,BigBasket,12,3881.69,7.4,0,Bike,0.22
+W00817,23,Connaught Place,Swiggy,23,3716.61,11.2,0,Bike,0.15
+W00818,44,Faridabad,Swiggy,16,4908.68,8.6,0,EV Scooter,0.32
+W00819,37,Faridabad,BigBasket,3,3616.06,7.4,0,Bicycle,0.32
+W00820,44,North Delhi,BigBasket,30,2596.35,9.3,0,Bicycle,0.2
+W00821,29,Noida,Zepto,22,2248.22,7.6,1,Bike,0.28
+W00822,38,Noida,Blinkit,9,4930.13,9.1,1,Bike,0.28
+W00823,33,East Delhi,Swiggy,29,3119.11,8.1,1,EV Scooter,0.35
+W00824,32,Lajpat Nagar,Blinkit,47,4286.17,10.4,0,Bike,0.12
+W00825,34,North Delhi,Zepto,37,3807.41,9.2,0,Bike,0.2
+W00826,35,Saket,BigBasket,23,3416.68,7.2,0,Bike,0.14
+W00827,21,South Delhi,Instamart,13,3542.12,8.1,0,Bike,0.1
+W00828,23,Noida,Blinkit,32,5016.7,10.1,0,Bike,0.28
+W00829,40,Saket,BigBasket,46,2591.55,10.9,0,Bike,0.14
+W00830,37,Gurgaon,BigBasket,47,3440.84,8.9,0,EV Scooter,0.3
+W00831,36,Lajpat Nagar,Zomato,23,4475.25,7.4,0,Bike,0.12
+W00832,29,Rohini,Blinkit,45,2723.48,10.6,0,Bike,0.18
+W00833,40,South Delhi,Instamart,17,4803.83,10.1,0,Bicycle,0.1
+W00834,28,Connaught Place,Blinkit,40,4463.8,11.0,0,Bike,0.15
+W00835,34,Gurgaon,BigBasket,21,3967.44,9.4,0,Bike,0.3
+W00836,31,Gurgaon,Instamart,2,3347.47,8.2,0,Bike,0.3
+W00837,40,North Delhi,Zepto,37,2620.75,9.8,1,Bike,0.2
+W00838,28,Lajpat Nagar,Zomato,6,4315.64,9.5,0,Bike,0.12
+W00839,33,East Delhi,BigBasket,44,5948.92,8.1,0,Bicycle,0.35
+W00840,32,Connaught Place,Swiggy,18,3866.71,9.3,1,EV Scooter,0.15
+W00841,25,Noida,Swiggy,30,2289.16,8.7,0,Bike,0.28
+W00842,38,Saket,Zomato,22,4116.01,10.1,0,Bike,0.14
+W00843,23,North Delhi,Zepto,33,4438.21,9.7,0,Bike,0.2
+W00844,39,Noida,BigBasket,30,3015.72,7.4,0,Bike,0.28
+W00845,36,North Delhi,Blinkit,17,3233.59,7.3,0,Bike,0.2
+W00846,38,North Delhi,Zomato,43,3152.1,8.9,0,Bike,0.2
+W00847,22,North Delhi,Zepto,32,3324.91,9.0,0,Bike,0.2
+W00848,33,Lajpat Nagar,Blinkit,42,3612.27,10.1,0,Bike,0.12
+W00849,36,East Delhi,Swiggy,14,3061.28,9.8,1,Bike,0.35
+W00850,32,North Delhi,Swiggy,10,2761.33,11.2,0,Bike,0.2
+W00851,28,West Delhi,Blinkit,47,3889.5,8.3,0,Bike,0.25
+W00852,20,Rohini,Zomato,36,3603.87,8.2,0,EV Scooter,0.18
+W00853,44,Noida,Swiggy,34,3401.01,7.6,0,Bike,0.28
+W00854,36,South Delhi,BigBasket,9,3816.55,10.1,0,EV Scooter,0.1
+W00855,35,Dwarka,Instamart,42,2533.86,9.0,0,EV Scooter,0.22
+W00856,37,Saket,Blinkit,28,3960.56,6.2,0,Bicycle,0.14
+W00857,21,Connaught Place,Blinkit,11,3417.45,9.3,0,Bike,0.15
+W00858,33,Faridabad,Swiggy,14,3941.59,9.4,0,EV Scooter,0.32
+W00859,41,East Delhi,Zomato,39,4069.72,8.8,0,Bike,0.35
+W00860,42,South Delhi,BigBasket,47,4654.92,9.4,0,Bike,0.1
+W00861,36,Gurgaon,Zomato,19,3832.36,7.2,0,Bike,0.3
+W00862,22,West Delhi,Zepto,15,4603.38,11.5,1,Bike,0.25
+W00863,21,Faridabad,Zepto,28,3492.47,9.6,0,Bike,0.32
+W00864,27,Dwarka,Instamart,24,3530.66,6.3,0,Bike,0.22
+W00865,44,South Delhi,Swiggy,8,3677.26,9.0,0,Bike,0.1
+W00866,21,Faridabad,Swiggy,43,4369.3,9.6,0,Bicycle,0.32
+W00867,21,South Delhi,Swiggy,9,4254.77,7.3,0,Bike,0.1
+W00868,28,Saket,Instamart,47,3858.06,9.8,0,Bike,0.14
+W00869,39,West Delhi,Zepto,33,2767.81,11.5,0,EV Scooter,0.25
+W00870,40,Dwarka,Zomato,33,4240.45,8.0,0,Bike,0.22
+W00871,44,Gurgaon,Instamart,19,3060.88,9.6,0,Bike,0.3
+W00872,25,North Delhi,Instamart,3,3017.28,9.3,0,EV Scooter,0.2
+W00873,31,Noida,Zomato,10,2839.21,10.5,1,Bike,0.28
+W00874,44,Gurgaon,Swiggy,40,3683.47,8.8,0,Bike,0.3
+W00875,28,North Delhi,BigBasket,47,4719.38,7.4,0,EV Scooter,0.2
+W00876,26,Lajpat Nagar,Zomato,42,2977.71,10.4,0,EV Scooter,0.12
+W00877,31,Lajpat Nagar,Zepto,1,5092.86,7.5,0,Bike,0.12
+W00878,44,Lajpat Nagar,Blinkit,29,4477.85,11.7,0,Bike,0.12
+W00879,24,East Delhi,Blinkit,34,2578.32,9.8,0,EV Scooter,0.35
+W00880,35,Rohini,Instamart,13,3443.78,8.1,0,Bike,0.18
+W00881,24,Connaught Place,Blinkit,1,2917.8,10.7,1,Bike,0.15
+W00882,31,Connaught Place,BigBasket,34,4281.96,9.0,0,Bike,0.15
+W00883,43,Lajpat Nagar,Swiggy,29,2959.47,8.7,1,Bike,0.12
+W00884,39,Noida,Zepto,47,2453.1,8.0,0,Bicycle,0.28
+W00885,28,Dwarka,BigBasket,13,3489.42,6.2,0,Bicycle,0.22
+W00886,42,West Delhi,Zepto,29,4685.52,9.9,0,Bicycle,0.25
+W00887,26,Dwarka,Zepto,39,3595.99,6.6,0,Bike,0.22
+W00888,38,West Delhi,Swiggy,24,4068.76,7.8,0,Bike,0.25
+W00889,39,Dwarka,Instamart,26,4099.78,9.6,0,Bicycle,0.22
+W00890,42,Rohini,Blinkit,17,2540.18,8.2,0,Bike,0.18
+W00891,30,East Delhi,Swiggy,7,3030.5,9.2,0,EV Scooter,0.35
+W00892,40,East Delhi,BigBasket,13,3755.17,7.2,1,Bicycle,0.35
+W00893,31,Lajpat Nagar,Instamart,5,3304.12,8.5,0,Bike,0.12
+W00894,22,North Delhi,BigBasket,26,5113.56,9.2,1,Bike,0.2
+W00895,36,Faridabad,Instamart,3,2767.34,7.6,0,Bicycle,0.32
+W00896,26,East Delhi,BigBasket,7,3022.59,11.5,1,EV Scooter,0.35
+W00897,41,East Delhi,Swiggy,39,3982.44,8.0,0,Bike,0.35
+W00898,29,Gurgaon,Instamart,1,3247.69,11.1,0,Bicycle,0.3
+W00899,42,Gurgaon,Instamart,17,1500.0,8.7,0,Bike,0.3
+W00900,34,North Delhi,Zepto,43,5297.74,6.6,0,Bike,0.2
+W00901,21,Saket,Zepto,25,2890.56,7.3,0,Bike,0.14
+W00902,32,Faridabad,Zomato,3,4198.71,9.3,0,Bicycle,0.32
+W00903,23,Noida,BigBasket,15,2747.29,10.5,0,EV Scooter,0.28
+W00904,37,Gurgaon,Zepto,29,3059.57,11.7,0,Bike,0.3
+W00905,43,Noida,Zomato,43,2451.65,9.2,0,Bike,0.28
+W00906,42,South Delhi,Zepto,32,3157.05,7.2,0,Bicycle,0.1
+W00907,20,Gurgaon,BigBasket,26,3234.57,9.4,0,Bike,0.3
+W00908,21,Rohini,Instamart,16,3643.95,7.8,1,Bike,0.18
+W00909,21,Saket,Blinkit,25,3451.94,9.6,0,Bike,0.14
+W00910,23,Faridabad,BigBasket,28,2596.78,7.6,0,Bike,0.32
+W00911,22,North Delhi,Swiggy,9,3330.88,5.9,1,Bicycle,0.2
+W00912,36,South Delhi,Zepto,1,4907.61,11.0,0,Bicycle,0.1
+W00913,33,Faridabad,Zepto,29,4812.71,8.7,0,Bike,0.32
+W00914,21,Lajpat Nagar,Instamart,22,4114.55,9.1,0,Bike,0.12
+W00915,35,Rohini,Swiggy,16,4280.48,10.5,0,Bike,0.18
+W00916,30,Faridabad,Instamart,41,5398.66,11.8,0,Bike,0.32
+W00917,44,Rohini,Swiggy,44,4207.0,10.1,0,Bike,0.18
+W00918,32,Rohini,Blinkit,41,4265.35,9.2,0,Bike,0.18
+W00919,20,Noida,Zepto,7,2498.33,9.7,0,Bicycle,0.28
+W00920,44,Dwarka,Zepto,14,2859.9,8.6,0,Bicycle,0.22
+W00921,42,Lajpat Nagar,Blinkit,29,3723.85,9.1,1,Bike,0.12
+W00922,21,South Delhi,Zomato,19,3104.05,9.2,0,Bicycle,0.1
+W00923,21,Faridabad,Instamart,19,2951.64,7.8,1,EV Scooter,0.32
+W00924,40,West Delhi,Blinkit,2,3044.03,9.0,1,Bike,0.25
+W00925,24,South Delhi,Instamart,41,2611.14,9.6,0,Bike,0.1
+W00926,23,Dwarka,BigBasket,45,3116.89,9.8,0,Bike,0.22
+W00927,31,South Delhi,Zepto,15,4021.55,9.7,0,Bike,0.1
+W00928,22,East Delhi,Instamart,3,5187.06,7.0,0,Bicycle,0.35
+W00929,39,West Delhi,Swiggy,11,4387.59,10.8,0,Bicycle,0.25
+W00930,29,Dwarka,Instamart,46,4258.92,10.7,1,Bike,0.22
+W00931,39,Noida,BigBasket,30,2451.17,8.9,0,Bicycle,0.28
+W00932,37,Faridabad,Zepto,40,3845.44,9.7,0,Bicycle,0.32
+W00933,40,Saket,Blinkit,18,3696.43,8.7,0,Bike,0.14
+W00934,40,Connaught Place,BigBasket,2,3982.59,10.1,0,Bike,0.15
+W00935,40,Dwarka,Zepto,32,3461.45,7.8,0,EV Scooter,0.22
+W00936,29,North Delhi,Instamart,8,5079.66,11.0,0,EV Scooter,0.2
+W00937,20,Faridabad,Zomato,22,3792.22,10.1,0,Bicycle,0.32
+W00938,25,Lajpat Nagar,Zomato,6,3870.18,10.1,0,EV Scooter,0.12
+W00939,30,Dwarka,Swiggy,12,2180.05,8.8,1,Bike,0.22
+W00940,21,East Delhi,Zepto,47,3664.66,6.9,1,Bike,0.35
+W00941,26,Connaught Place,Zomato,40,4669.41,10.3,0,Bike,0.15
+W00942,39,East Delhi,Blinkit,36,4194.46,6.9,0,Bike,0.35
+W00943,40,Connaught Place,Zepto,15,2025.53,10.3,0,Bicycle,0.15
+W00944,40,Lajpat Nagar,Blinkit,28,3390.26,7.8,0,EV Scooter,0.12
+W00945,40,Saket,Blinkit,45,5135.52,6.6,0,Bicycle,0.14
+W00946,37,North Delhi,Zomato,18,3629.49,9.0,0,Bike,0.2
+W00947,40,Faridabad,Zepto,2,4007.93,10.8,0,Bike,0.32
+W00948,38,Noida,Instamart,13,5045.21,7.6,1,Bike,0.28
+W00949,23,East Delhi,BigBasket,45,3626.31,11.4,0,Bike,0.35
+W00950,32,East Delhi,Zomato,15,4382.82,10.0,0,Bicycle,0.35
+W00951,37,Rohini,Zomato,20,4079.12,9.2,0,Bike,0.18
+W00952,39,Connaught Place,Instamart,29,4250.12,8.3,0,EV Scooter,0.15
+W00953,44,Gurgaon,Zepto,42,4053.37,8.5,0,EV Scooter,0.3
+W00954,43,Saket,Zepto,29,3311.9,9.6,0,Bike,0.14
+W00955,32,Faridabad,Blinkit,3,3391.76,10.3,0,Bike,0.32
+W00956,38,Connaught Place,Instamart,19,3066.34,8.1,0,Bicycle,0.15
+W00957,36,Rohini,Instamart,3,2438.23,7.8,0,Bike,0.18
+W00958,20,South Delhi,Zepto,14,4745.62,8.7,1,Bicycle,0.1
+W00959,25,Connaught Place,Blinkit,40,3758.07,11.1,0,Bike,0.15
+W00960,38,Noida,Zomato,4,4705.33,7.2,1,Bike,0.28
+W00961,39,Faridabad,Swiggy,11,5002.3,10.7,0,Bike,0.32
+W00962,20,Saket,BigBasket,31,3792.73,9.1,0,Bike,0.14
+W00963,27,Rohini,Zomato,43,2699.21,6.5,0,EV Scooter,0.18
+W00964,36,South Delhi,Zepto,32,3593.05,8.3,0,Bike,0.1
+W00965,40,West Delhi,BigBasket,27,3213.09,9.9,0,EV Scooter,0.25
+W00966,41,Rohini,Swiggy,30,2165.88,11.7,0,Bicycle,0.18
+W00967,34,West Delhi,Swiggy,43,3348.62,7.0,0,Bicycle,0.25
+W00968,37,Faridabad,Blinkit,2,3692.77,4.8,0,Bike,0.32
+W00969,26,East Delhi,BigBasket,9,3235.34,7.0,1,Bike,0.35
+W00970,35,Rohini,Blinkit,28,3132.76,10.7,0,Bike,0.18
+W00971,26,North Delhi,Zomato,31,2727.97,6.3,0,Bike,0.2
+W00972,36,West Delhi,Instamart,34,3906.74,11.2,0,Bicycle,0.25
+W00973,23,Noida,Instamart,15,5245.42,10.8,0,Bike,0.28
+W00974,31,North Delhi,Instamart,25,4772.9,9.3,0,EV Scooter,0.2
+W00975,32,Dwarka,BigBasket,36,4272.9,8.1,0,Bike,0.22
+W00976,23,Dwarka,Instamart,8,4290.33,9.1,0,Bicycle,0.22
+W00977,40,South Delhi,Zomato,9,3643.89,9.9,0,Bike,0.1
+W00978,20,Saket,Blinkit,37,2306.39,9.7,0,Bicycle,0.14
+W00979,20,East Delhi,BigBasket,45,3454.45,11.6,0,EV Scooter,0.35
+W00980,26,Faridabad,Blinkit,39,2974.58,8.6,0,Bike,0.32
+W00981,28,Rohini,BigBasket,32,3873.76,7.0,0,Bike,0.18
+W00982,20,Gurgaon,Blinkit,17,4736.57,6.8,0,Bicycle,0.3
+W00983,35,Noida,Swiggy,35,5328.73,6.5,1,Bike,0.28
+W00984,37,West Delhi,Blinkit,37,3801.7,9.3,1,Bike,0.25
+W00985,41,Faridabad,Instamart,19,2416.27,8.6,0,Bike,0.32
+W00986,34,North Delhi,Swiggy,44,3800.14,9.0,0,EV Scooter,0.2
+W00987,25,Lajpat Nagar,Blinkit,29,3821.88,8.2,0,EV Scooter,0.12
+W00988,21,Dwarka,BigBasket,7,4293.08,7.3,0,Bicycle,0.22
+W00989,28,Lajpat Nagar,BigBasket,28,3734.64,9.9,0,Bicycle,0.12
+W00990,23,Noida,BigBasket,9,3803.21,5.3,0,Bicycle,0.28
+W00991,32,Gurgaon,Zepto,28,3244.35,7.8,0,Bike,0.3
+W00992,42,Rohini,Zomato,6,3500.48,10.2,0,Bike,0.18
+W00993,41,South Delhi,BigBasket,29,4160.59,7.6,0,Bike,0.1
+W00994,30,Gurgaon,Swiggy,17,2143.21,9.6,0,EV Scooter,0.3
+W00995,32,Noida,BigBasket,16,3496.17,7.8,0,Bicycle,0.28
+W00996,30,Gurgaon,Zepto,23,4300.32,8.3,0,Bike,0.3
+W00997,38,Noida,Instamart,31,5062.58,9.9,0,Bicycle,0.28
+W00998,27,Noida,Swiggy,3,3431.33,7.1,0,Bike,0.28
+W00999,26,Connaught Place,Zepto,21,4698.3,10.1,0,Bicycle,0.15
+W01000,44,West Delhi,Instamart,26,5102.02,9.1,0,Bike,0.25
+W01001,35,Lajpat Nagar,Swiggy,36,3441.69,10.9,0,Bike,0.12
+W01002,22,Dwarka,Blinkit,42,3303.43,9.3,0,Bike,0.22
+W01003,36,Connaught Place,Zomato,37,3604.34,7.4,0,Bicycle,0.15
+W01004,37,Rohini,Zomato,22,3684.44,11.6,0,Bike,0.18
+W01005,34,Connaught Place,Zepto,42,4622.66,7.5,0,Bike,0.15
+W01006,36,East Delhi,Instamart,12,3131.02,8.7,0,Bicycle,0.35
+W01007,30,East Delhi,Zomato,42,4980.45,10.4,1,Bicycle,0.35
+W01008,24,Dwarka,Instamart,13,3109.39,6.2,1,EV Scooter,0.22
+W01009,35,Gurgaon,Instamart,11,2738.46,11.2,0,Bike,0.3
+W01010,34,West Delhi,Zepto,16,4169.02,7.3,1,EV Scooter,0.25
+W01011,29,Dwarka,Zepto,8,4734.45,8.3,0,Bike,0.22
+W01012,33,Noida,Zepto,40,3892.92,9.4,0,Bicycle,0.28
+W01013,21,North Delhi,Zomato,40,4098.07,8.9,0,Bicycle,0.2
+W01014,35,West Delhi,Zepto,45,5313.44,10.2,0,Bike,0.25
+W01015,38,Saket,Zomato,2,4745.72,6.6,0,Bike,0.14
+W01016,27,Lajpat Nagar,Zepto,30,3774.74,10.1,0,Bicycle,0.12
+W01017,34,West Delhi,BigBasket,30,3405.08,10.2,0,Bike,0.25
+W01018,29,Noida,Instamart,12,4626.05,10.5,0,Bicycle,0.28
+W01019,24,Noida,Zepto,10,4413.43,6.6,0,Bike,0.28
+W01020,39,South Delhi,Swiggy,44,4084.86,6.8,0,Bike,0.1
+W01021,35,Dwarka,Instamart,11,3488.39,8.5,0,Bike,0.22
+W01022,40,Noida,Instamart,15,3688.89,7.0,0,Bicycle,0.28
+W01023,41,East Delhi,Zepto,16,3631.98,6.3,0,Bike,0.35
+W01024,31,Rohini,Blinkit,17,3501.7,8.4,0,Bicycle,0.18
+W01025,42,North Delhi,Zepto,26,3269.08,9.4,0,Bike,0.2
+W01026,32,Lajpat Nagar,Instamart,2,3962.16,13.2,0,Bicycle,0.12
+W01027,28,Dwarka,Swiggy,12,3232.95,9.8,0,Bike,0.22
+W01028,36,Faridabad,Instamart,26,3891.9,11.6,0,Bike,0.32
+W01029,39,East Delhi,Swiggy,23,2070.1,8.9,0,Bicycle,0.35
+W01030,31,Saket,Zomato,18,3270.1,9.8,0,Bike,0.14
+W01031,44,Gurgaon,BigBasket,32,4628.66,8.8,1,Bike,0.3
+W01032,24,Noida,Instamart,38,3029.66,13.0,0,EV Scooter,0.28
+W01033,43,Faridabad,Zepto,47,4223.68,8.0,0,Bike,0.32
+W01034,31,Noida,Zomato,3,3096.17,8.2,0,Bike,0.28
+W01035,20,West Delhi,BigBasket,38,4370.63,10.2,1,Bike,0.25
+W01036,39,East Delhi,Zepto,3,3512.31,9.3,1,Bike,0.35
+W01037,35,West Delhi,Blinkit,30,3480.68,8.4,0,Bike,0.25
+W01038,31,South Delhi,Zepto,1,3793.48,10.4,0,Bike,0.1
+W01039,28,West Delhi,Swiggy,30,2675.26,8.9,0,Bicycle,0.25
+W01040,32,South Delhi,Swiggy,45,4527.67,8.9,0,Bike,0.1
+W01041,36,Saket,Blinkit,32,4792.75,9.3,0,Bicycle,0.14
+W01042,36,South Delhi,Zomato,28,3461.97,6.4,0,Bike,0.1
+W01043,23,Faridabad,BigBasket,21,4169.36,6.6,0,Bike,0.32
+W01044,33,Noida,Zepto,46,4373.13,10.6,0,Bike,0.28
+W01045,38,Gurgaon,Swiggy,13,3676.99,8.0,0,Bicycle,0.3
+W01046,26,Lajpat Nagar,Zomato,27,2863.4,8.8,0,Bike,0.12
+W01047,22,West Delhi,Blinkit,36,5025.27,11.4,0,Bicycle,0.25
+W01048,20,Lajpat Nagar,Instamart,7,3435.98,8.9,0,Bike,0.12
+W01049,31,East Delhi,Swiggy,22,3262.69,8.7,0,Bicycle,0.35
+W01050,34,South Delhi,Blinkit,10,5061.03,10.3,0,Bike,0.1
+W01051,30,Noida,Zepto,39,4238.05,8.1,0,Bike,0.28
+W01052,29,North Delhi,BigBasket,15,3955.94,10.8,0,Bike,0.2
+W01053,21,Dwarka,Swiggy,15,2973.39,10.3,0,Bike,0.22
+W01054,23,Faridabad,Swiggy,4,4392.24,11.7,0,Bike,0.32
+W01055,36,Gurgaon,Zepto,32,6067.21,8.0,0,Bike,0.3
+W01056,36,Connaught Place,Instamart,23,4454.41,11.1,0,Bicycle,0.15
+W01057,27,Faridabad,Zomato,6,4146.87,9.8,0,Bike,0.32
+W01058,42,Saket,BigBasket,24,4326.87,7.0,0,Bike,0.14
+W01059,33,North Delhi,Swiggy,20,3487.51,5.1,0,Bike,0.2
+W01060,43,Dwarka,BigBasket,37,3479.88,7.8,0,Bike,0.22
+W01061,23,North Delhi,Swiggy,20,3469.64,9.4,0,Bike,0.2
+W01062,25,West Delhi,BigBasket,12,3290.04,9.7,0,Bike,0.25
+W01063,38,South Delhi,Blinkit,33,3468.04,8.9,0,Bicycle,0.1
+W01064,43,Gurgaon,Swiggy,28,3464.31,8.9,0,Bike,0.3
+W01065,23,Rohini,BigBasket,8,3554.25,8.8,0,Bike,0.18
+W01066,22,South Delhi,Zomato,1,3531.86,10.5,0,Bike,0.1
+W01067,39,Rohini,Blinkit,37,3944.41,6.8,0,Bike,0.18
+W01068,25,Lajpat Nagar,Blinkit,22,3813.03,9.4,0,Bike,0.12
+W01069,42,Dwarka,Zomato,6,3883.89,7.8,0,Bike,0.22
+W01070,26,Noida,BigBasket,21,4967.84,7.6,0,Bike,0.28
+W01071,33,Connaught Place,Zepto,32,3811.39,10.8,0,Bike,0.15
+W01072,31,East Delhi,Zomato,35,5518.71,7.5,0,EV Scooter,0.35
+W01073,35,South Delhi,BigBasket,15,4032.15,8.8,1,Bike,0.1
+W01074,39,Gurgaon,Zomato,5,3392.19,11.9,0,Bike,0.3
+W01075,27,Saket,Zomato,46,4829.67,10.3,0,Bike,0.14
+W01076,42,Saket,Swiggy,6,3686.38,8.3,0,Bike,0.14
+W01077,21,North Delhi,BigBasket,25,1835.05,8.4,0,EV Scooter,0.2
+W01078,32,Gurgaon,Zepto,46,3746.8,7.2,0,Bike,0.3
+W01079,27,Dwarka,Swiggy,40,3550.66,11.0,0,Bike,0.22
+W01080,44,Lajpat Nagar,Zomato,29,5035.24,10.5,0,Bicycle,0.12
+W01081,40,Rohini,Instamart,7,3031.95,10.0,0,Bike,0.18
+W01082,39,North Delhi,Zomato,40,3483.88,10.2,0,EV Scooter,0.2
+W01083,35,Saket,Zomato,13,4764.11,7.8,0,EV Scooter,0.14
+W01084,23,East Delhi,BigBasket,38,4065.53,6.7,0,Bike,0.35
+W01085,35,East Delhi,BigBasket,18,3612.83,9.8,0,Bike,0.35
+W01086,39,South Delhi,Swiggy,2,3144.81,10.3,1,Bike,0.1
+W01087,25,Dwarka,Zepto,8,4031.4,11.4,0,Bike,0.22
+W01088,23,Noida,Swiggy,11,3726.56,8.7,0,Bike,0.28
+W01089,35,Saket,Blinkit,33,3135.74,8.5,0,Bike,0.14
+W01090,42,Dwarka,Zomato,38,3177.32,8.6,0,EV Scooter,0.22
+W01091,42,Lajpat Nagar,Instamart,27,3098.42,10.0,0,Bike,0.12
+W01092,40,Rohini,Zomato,20,2955.96,8.6,0,Bicycle,0.18
+W01093,32,Gurgaon,Zomato,12,4497.23,8.9,0,Bicycle,0.3
+W01094,24,Saket,Swiggy,43,4389.51,10.2,1,EV Scooter,0.14
+W01095,34,East Delhi,Instamart,31,4498.54,8.1,0,Bike,0.35
+W01096,27,Gurgaon,Instamart,27,3753.6,11.1,0,Bike,0.3
+W01097,26,Gurgaon,Instamart,32,3555.9,9.9,0,Bicycle,0.3
+W01098,33,Gurgaon,Swiggy,10,3570.49,6.2,0,Bicycle,0.3
+W01099,26,East Delhi,Zomato,3,4566.88,8.2,0,EV Scooter,0.35
+W01100,41,Lajpat Nagar,Swiggy,45,2293.88,6.0,0,Bicycle,0.12
+W01101,26,Faridabad,BigBasket,27,3338.41,8.7,0,Bike,0.32
+W01102,42,West Delhi,BigBasket,35,3040.12,8.3,1,Bike,0.25
+W01103,37,Rohini,Swiggy,31,4837.91,10.3,1,Bike,0.18
+W01104,29,Faridabad,Instamart,15,3368.03,7.7,1,Bike,0.32
+W01105,37,Rohini,Zomato,16,2441.21,9.6,0,Bike,0.18
+W01106,33,North Delhi,Swiggy,13,3928.74,9.9,0,Bicycle,0.2
+W01107,29,Dwarka,Swiggy,35,3453.91,9.4,0,EV Scooter,0.22
+W01108,26,Dwarka,Swiggy,11,3304.46,10.7,0,Bicycle,0.22
+W01109,26,Connaught Place,Blinkit,21,3221.97,12.1,0,Bike,0.15
+W01110,26,Dwarka,BigBasket,11,3190.41,9.2,0,Bike,0.22
+W01111,24,East Delhi,Instamart,30,4316.85,9.6,0,EV Scooter,0.35
+W01112,20,Noida,Zepto,35,3929.03,7.7,0,Bike,0.28
+W01113,33,South Delhi,Instamart,22,3591.63,7.5,0,Bike,0.1
+W01114,37,Connaught Place,Zepto,38,2871.41,10.6,0,Bike,0.15
+W01115,32,South Delhi,Blinkit,31,3614.89,10.4,0,Bike,0.1
+W01116,44,Rohini,Swiggy,14,3958.5,7.5,0,Bike,0.18
+W01117,27,South Delhi,Blinkit,24,3988.92,7.0,0,EV Scooter,0.1
+W01118,27,South Delhi,Blinkit,32,3878.71,8.0,0,EV Scooter,0.1
+W01119,29,Connaught Place,Zomato,36,3011.93,8.8,0,EV Scooter,0.15
+W01120,36,North Delhi,BigBasket,32,1827.46,8.4,0,Bike,0.2
+W01121,25,Gurgaon,Zepto,15,5189.7,9.2,0,EV Scooter,0.3
+W01122,34,Dwarka,Swiggy,43,2702.29,10.4,0,EV Scooter,0.22
+W01123,34,Dwarka,Zepto,35,2178.03,9.7,0,EV Scooter,0.22
+W01124,44,East Delhi,Instamart,3,3854.41,9.8,1,Bicycle,0.35
+W01125,35,Connaught Place,Zepto,16,2383.19,5.3,0,Bicycle,0.15
+W01126,27,East Delhi,Instamart,5,3106.16,6.6,0,Bike,0.35
+W01127,38,Noida,BigBasket,21,4189.08,7.8,0,EV Scooter,0.28
+W01128,39,Noida,Instamart,10,5168.15,8.1,0,Bike,0.28
+W01129,34,East Delhi,Zepto,19,4060.01,10.3,0,Bike,0.35
+W01130,22,Connaught Place,Zepto,25,3398.67,7.7,0,EV Scooter,0.15
+W01131,25,East Delhi,Instamart,4,3708.86,10.0,0,Bike,0.35
+W01132,44,Dwarka,Blinkit,29,2303.13,7.8,0,Bike,0.22
+W01133,27,Faridabad,BigBasket,19,3389.4,7.2,0,EV Scooter,0.32
+W01134,35,West Delhi,Zomato,43,3390.17,7.3,0,EV Scooter,0.25
+W01135,34,South Delhi,Swiggy,2,3872.66,12.4,0,Bike,0.1
+W01136,32,West Delhi,Zepto,10,5303.75,7.8,0,EV Scooter,0.25
+W01137,39,Connaught Place,Swiggy,43,2200.56,10.0,0,Bike,0.15
+W01138,34,Lajpat Nagar,Zomato,25,3423.86,6.7,0,Bike,0.12
+W01139,37,West Delhi,Swiggy,20,2283.19,11.1,1,Bike,0.25
+W01140,32,Noida,Zomato,19,3347.31,9.5,0,Bike,0.28
+W01141,43,Rohini,Instamart,23,3058.32,9.4,1,Bike,0.18
+W01142,27,South Delhi,Blinkit,24,2554.52,9.6,0,Bike,0.1
+W01143,33,Gurgaon,Zepto,11,4480.47,9.8,1,EV Scooter,0.3
+W01144,30,Lajpat Nagar,Zomato,46,3954.52,10.2,0,Bicycle,0.12
+W01145,25,Connaught Place,Swiggy,34,4386.68,8.1,0,EV Scooter,0.15
+W01146,43,South Delhi,Zepto,28,3324.68,8.0,1,Bicycle,0.1
+W01147,44,West Delhi,Blinkit,5,3693.43,9.1,0,Bike,0.25
+W01148,20,Noida,Instamart,5,5025.71,10.0,0,EV Scooter,0.28
+W01149,44,North Delhi,Zepto,21,3747.82,8.9,0,EV Scooter,0.2
+W01150,21,Faridabad,Zomato,12,4396.37,10.2,0,Bike,0.32
+W01151,32,Gurgaon,Blinkit,4,3256.03,9.9,0,Bike,0.3
+W01152,20,Lajpat Nagar,Swiggy,42,4322.81,8.7,0,Bicycle,0.12
+W01153,43,Faridabad,Blinkit,20,3310.86,6.4,1,Bicycle,0.32
+W01154,43,South Delhi,Blinkit,38,2232.86,8.2,0,EV Scooter,0.1
+W01155,23,Noida,BigBasket,25,3743.93,11.6,1,Bike,0.28
+W01156,43,Noida,Blinkit,14,3373.76,9.5,1,Bike,0.28
+W01157,42,West Delhi,Blinkit,11,2450.17,8.0,0,Bike,0.25
+W01158,21,Dwarka,Zepto,32,3903.19,9.4,0,Bike,0.22
+W01159,40,West Delhi,Swiggy,11,3035.18,10.0,0,Bike,0.25
+W01160,39,Dwarka,Zepto,18,6224.11,8.0,0,Bike,0.22
+W01161,35,Dwarka,Zepto,27,2578.45,10.9,0,Bike,0.22
+W01162,22,Gurgaon,Zomato,18,2779.66,9.7,0,Bicycle,0.3
+W01163,36,West Delhi,Zepto,23,4445.64,7.4,0,Bike,0.25
+W01164,24,Saket,BigBasket,11,3643.58,10.3,0,Bike,0.14
+W01165,27,North Delhi,BigBasket,21,4429.36,8.4,0,Bicycle,0.2
+W01166,31,Lajpat Nagar,Zomato,44,4054.31,8.7,0,EV Scooter,0.12
+W01167,44,East Delhi,Instamart,5,3284.15,7.5,0,Bike,0.35
+W01168,42,East Delhi,Swiggy,23,2646.73,9.9,0,Bike,0.35
+W01169,31,West Delhi,Swiggy,41,4606.87,8.8,0,EV Scooter,0.25
+W01170,20,West Delhi,Zepto,25,2719.24,10.0,1,Bike,0.25
+W01171,20,Faridabad,Zepto,41,4197.12,8.2,0,Bicycle,0.32
+W01172,34,Lajpat Nagar,Instamart,10,4485.2,8.0,0,Bike,0.12
+W01173,36,Lajpat Nagar,Zepto,22,3648.47,7.9,0,Bike,0.12
+W01174,21,Gurgaon,Swiggy,19,3506.68,9.6,1,Bicycle,0.3
+W01175,36,West Delhi,Blinkit,1,2963.02,8.0,0,Bicycle,0.25
+W01176,39,Lajpat Nagar,BigBasket,7,4120.19,8.7,0,Bike,0.12
+W01177,28,Faridabad,Blinkit,4,1500.0,8.2,1,Bike,0.32
+W01178,31,Dwarka,Blinkit,1,4322.58,9.7,0,EV Scooter,0.22
+W01179,23,Noida,Swiggy,15,3845.58,6.4,0,Bike,0.28
+W01180,32,Noida,Blinkit,40,3571.75,9.4,0,Bike,0.28
+W01181,23,Dwarka,Instamart,12,3943.84,11.6,1,EV Scooter,0.22
+W01182,26,Connaught Place,Zomato,22,2651.15,10.9,0,Bike,0.15
+W01183,33,Faridabad,Zepto,22,1819.61,8.1,0,Bicycle,0.32
+W01184,28,Lajpat Nagar,Zomato,47,4124.86,9.7,0,EV Scooter,0.12
+W01185,42,Saket,BigBasket,17,4803.24,9.5,0,Bike,0.14
+W01186,20,Faridabad,Zepto,29,2358.48,11.2,0,Bike,0.32
+W01187,20,Dwarka,Blinkit,46,2908.02,5.2,0,EV Scooter,0.22
+W01188,39,North Delhi,BigBasket,14,4351.86,10.7,0,Bike,0.2
+W01189,23,Rohini,Zepto,20,4037.11,8.6,0,Bike,0.18
+W01190,20,South Delhi,Instamart,33,6120.49,7.9,0,EV Scooter,0.1
+W01191,41,Dwarka,Instamart,43,4610.53,7.8,0,Bicycle,0.22
+W01192,29,Saket,Instamart,15,4418.34,7.1,0,EV Scooter,0.14
+W01193,21,Lajpat Nagar,Instamart,12,3138.97,8.1,0,Bike,0.12
+W01194,40,Saket,Blinkit,40,4169.84,7.4,0,Bike,0.14
+W01195,43,Saket,Zomato,20,4946.33,9.3,0,Bike,0.14
+W01196,34,West Delhi,Zepto,30,3618.49,9.9,0,Bicycle,0.25
+W01197,22,West Delhi,Blinkit,38,3656.23,8.6,0,Bike,0.25
+W01198,44,Gurgaon,Instamart,3,3863.08,11.2,0,Bike,0.3
+W01199,42,Dwarka,Zomato,28,3218.4,8.2,0,Bike,0.22
+W01200,28,Gurgaon,BigBasket,26,3965.17,8.5,0,Bike,0.3
+W01201,36,Dwarka,BigBasket,30,3945.18,8.3,1,Bike,0.22
+W01202,40,Faridabad,BigBasket,13,4933.99,9.9,0,Bike,0.32
+W01203,32,South Delhi,Instamart,13,3598.49,10.0,0,EV Scooter,0.1
+W01204,22,Saket,BigBasket,2,4289.78,9.7,1,Bike,0.14
+W01205,23,Faridabad,Swiggy,37,3622.35,8.8,0,Bicycle,0.32
+W01206,23,Rohini,Zepto,38,4261.81,7.0,0,EV Scooter,0.18
+W01207,30,Noida,Zepto,2,3549.95,8.5,0,Bike,0.28
+W01208,26,East Delhi,Instamart,36,4208.78,11.2,0,Bike,0.35
+W01209,30,Dwarka,Swiggy,26,4332.59,10.5,0,Bike,0.22
+W01210,43,Rohini,Blinkit,11,2896.68,9.4,0,EV Scooter,0.18
+W01211,30,Noida,Blinkit,8,4631.9,8.4,0,Bike,0.28
+W01212,29,Lajpat Nagar,BigBasket,44,3616.82,9.0,0,Bicycle,0.12
+W01213,24,Connaught Place,Zomato,40,3374.16,8.4,0,EV Scooter,0.15
+W01214,32,South Delhi,Blinkit,43,3181.99,10.8,1,EV Scooter,0.1
+W01215,31,Gurgaon,Zomato,22,3988.56,7.7,0,Bike,0.3
+W01216,29,Gurgaon,Zepto,20,3746.3,10.4,0,Bicycle,0.3
+W01217,26,Faridabad,Zomato,8,4046.65,8.2,0,EV Scooter,0.32
+W01218,38,West Delhi,Zepto,29,4062.18,11.0,0,Bike,0.25
+W01219,38,Noida,Swiggy,40,4236.87,9.6,0,Bike,0.28
+W01220,38,Connaught Place,Swiggy,26,5971.03,7.9,0,Bike,0.15
+W01221,31,Rohini,Instamart,30,3781.75,8.5,0,Bike,0.18
+W01222,39,South Delhi,Instamart,17,3162.34,10.1,0,EV Scooter,0.1
+W01223,41,Noida,BigBasket,20,2134.15,8.3,0,Bike,0.28
+W01224,34,Connaught Place,Blinkit,16,2793.75,9.0,0,EV Scooter,0.15
+W01225,24,East Delhi,BigBasket,46,4738.28,8.2,1,Bicycle,0.35
+W01226,43,Dwarka,Zepto,43,4325.94,11.6,1,Bicycle,0.22
+W01227,33,Gurgaon,BigBasket,7,2670.01,11.9,0,Bike,0.3
+W01228,31,Rohini,Zomato,16,5721.37,11.2,0,Bike,0.18
+W01229,40,Gurgaon,Zepto,45,4011.41,8.8,0,EV Scooter,0.3
+W01230,30,Rohini,Instamart,47,4118.25,8.4,0,Bike,0.18
+W01231,24,Faridabad,Swiggy,27,5545.38,7.8,1,Bike,0.32
+W01232,35,West Delhi,Instamart,23,5141.56,11.3,0,Bike,0.25
+W01233,37,Rohini,Blinkit,24,4374.91,10.4,0,EV Scooter,0.18
+W01234,31,Gurgaon,Zepto,9,4413.37,10.5,1,EV Scooter,0.3
+W01235,24,Faridabad,Zepto,35,4488.23,8.6,0,Bike,0.32
+W01236,35,Rohini,Zomato,20,3557.23,6.4,0,Bike,0.18
+W01237,31,East Delhi,Blinkit,37,3979.43,6.7,0,Bicycle,0.35
+W01238,42,West Delhi,Swiggy,42,4209.46,9.1,0,Bike,0.25
+W01239,21,Rohini,Zepto,17,3648.57,8.2,0,Bike,0.18
+W01240,25,Faridabad,Zepto,47,2977.66,8.0,0,Bicycle,0.32
+W01241,42,Lajpat Nagar,Zomato,31,3537.1,9.5,0,Bike,0.12
+W01242,40,Noida,BigBasket,8,2959.65,10.5,0,Bike,0.28
+W01243,44,North Delhi,Swiggy,15,3801.5,7.9,0,Bike,0.2
+W01244,23,Connaught Place,Instamart,31,2325.63,7.0,0,Bike,0.15
+W01245,32,North Delhi,Blinkit,30,4022.83,8.0,0,Bike,0.2
+W01246,29,Lajpat Nagar,Zepto,46,2444.98,7.4,0,Bike,0.12
+W01247,36,North Delhi,Zepto,20,3427.22,9.9,0,Bike,0.2
+W01248,33,Lajpat Nagar,Instamart,39,4153.28,9.0,0,Bike,0.12
+W01249,43,South Delhi,Swiggy,12,4382.92,11.8,0,Bicycle,0.1
+W01250,34,Lajpat Nagar,BigBasket,17,4287.89,10.1,0,EV Scooter,0.12
+W01251,27,Lajpat Nagar,Zepto,42,4005.79,11.7,0,Bike,0.12
+W01252,42,Saket,Swiggy,30,2854.58,6.9,0,EV Scooter,0.14
+W01253,43,Lajpat Nagar,Instamart,29,4534.49,4.1,0,Bike,0.12
+W01254,37,East Delhi,Zomato,19,2872.88,9.4,0,Bike,0.35
+W01255,22,Noida,BigBasket,46,4625.66,9.2,0,Bike,0.28
+W01256,44,Dwarka,Blinkit,11,4252.16,8.8,0,Bike,0.22
+W01257,36,Rohini,Zepto,34,4837.12,9.1,0,Bicycle,0.18
+W01258,43,Connaught Place,Swiggy,7,3769.89,7.3,0,Bike,0.15
+W01259,43,West Delhi,Zomato,44,3094.99,9.8,0,Bike,0.25
+W01260,26,Noida,Blinkit,34,2715.88,10.1,1,EV Scooter,0.28
+W01261,32,Gurgaon,Swiggy,20,2804.74,7.2,0,Bike,0.3
+W01262,35,Dwarka,Swiggy,38,2440.58,8.5,0,Bike,0.22
+W01263,24,South Delhi,Blinkit,24,4503.6,8.6,0,Bike,0.1
+W01264,23,South Delhi,Zomato,10,4603.93,8.0,0,Bike,0.1
+W01265,29,Lajpat Nagar,Instamart,32,4192.96,7.3,0,Bike,0.12
+W01266,32,Noida,Zomato,15,3723.57,9.0,0,Bike,0.28
+W01267,29,Faridabad,BigBasket,37,5398.77,9.4,0,Bike,0.32
+W01268,33,Saket,Zepto,20,3671.48,8.1,0,Bike,0.14
+W01269,41,North Delhi,Blinkit,3,3926.73,7.4,0,Bicycle,0.2
+W01270,31,Gurgaon,Instamart,37,3711.72,9.6,0,Bicycle,0.3
+W01271,20,South Delhi,Blinkit,40,3479.35,7.8,0,EV Scooter,0.1
+W01272,40,Connaught Place,Blinkit,8,4254.78,8.5,0,EV Scooter,0.15
+W01273,39,South Delhi,Zomato,40,3243.2,8.3,0,EV Scooter,0.1
+W01274,39,West Delhi,Zepto,44,3189.54,10.9,0,Bicycle,0.25
+W01275,26,Rohini,BigBasket,23,4295.18,7.9,0,Bike,0.18
+W01276,28,South Delhi,Swiggy,40,3351.91,11.6,0,Bike,0.1
+W01277,27,West Delhi,Swiggy,11,3856.79,10.1,0,Bike,0.25
+W01278,32,Noida,Blinkit,46,3476.94,11.7,0,Bike,0.28
+W01279,33,Noida,Zepto,8,3740.76,10.0,0,EV Scooter,0.28
+W01280,31,Saket,Instamart,29,3211.37,8.7,0,Bike,0.14
+W01281,27,Dwarka,Zomato,30,3237.53,7.6,0,Bicycle,0.22
+W01282,40,South Delhi,Zepto,10,3094.21,8.5,0,Bike,0.1
+W01283,41,Connaught Place,Zepto,39,4424.66,11.2,1,Bike,0.15
+W01284,37,South Delhi,Zomato,28,3887.51,8.9,0,Bike,0.1
+W01285,35,Connaught Place,Blinkit,36,4484.84,10.0,0,Bike,0.15
+W01286,30,East Delhi,Zepto,13,4570.31,9.3,0,Bike,0.35
+W01287,35,Lajpat Nagar,Swiggy,32,3382.07,9.4,0,Bike,0.12
+W01288,33,Dwarka,Zomato,36,4455.27,9.4,0,Bike,0.22
+W01289,22,East Delhi,Instamart,37,3738.7,9.7,0,Bike,0.35
+W01290,40,South Delhi,BigBasket,26,3623.06,7.8,1,EV Scooter,0.1
+W01291,21,Dwarka,Blinkit,22,4751.89,8.6,0,Bike,0.22
+W01292,22,East Delhi,Zomato,4,4193.01,9.5,0,Bike,0.35
+W01293,23,North Delhi,BigBasket,31,3468.06,9.2,0,EV Scooter,0.2
+W01294,41,South Delhi,BigBasket,18,4141.03,8.3,0,Bike,0.1
+W01295,24,East Delhi,Instamart,38,2737.43,9.6,0,Bike,0.35
+W01296,29,North Delhi,Zepto,24,3947.85,7.8,0,Bike,0.2
+W01297,39,North Delhi,Instamart,23,2550.33,7.2,0,Bicycle,0.2
+W01298,21,Noida,Zepto,22,2962.48,9.4,0,Bike,0.28
+W01299,31,Saket,Zepto,2,4217.71,7.2,0,Bike,0.14
+W01300,24,South Delhi,Zomato,31,1613.8,9.4,0,Bicycle,0.1
+W01301,24,North Delhi,Zomato,11,5192.01,6.1,1,Bike,0.2
+W01302,42,Noida,Blinkit,28,4417.59,7.9,0,EV Scooter,0.28
+W01303,20,East Delhi,Zepto,46,2279.17,8.5,0,Bike,0.35
+W01304,23,West Delhi,BigBasket,32,5668.8,6.6,0,Bike,0.25
+W01305,40,South Delhi,Swiggy,5,5889.28,8.4,0,Bicycle,0.1
+W01306,43,Dwarka,Blinkit,38,3605.61,10.8,0,Bike,0.22
+W01307,31,Connaught Place,Zomato,10,3008.81,7.1,0,EV Scooter,0.15
+W01308,31,Connaught Place,Instamart,40,5099.04,8.5,0,EV Scooter,0.15
+W01309,35,East Delhi,Blinkit,46,3474.97,11.6,0,Bike,0.35
+W01310,43,Faridabad,Blinkit,24,3878.83,7.4,0,EV Scooter,0.32
+W01311,36,Faridabad,Blinkit,35,4723.83,11.1,0,Bike,0.32
+W01312,40,East Delhi,Blinkit,44,3627.19,8.6,0,EV Scooter,0.35
+W01313,29,North Delhi,Swiggy,23,3557.16,9.2,0,Bike,0.2
+W01314,36,Saket,Instamart,17,2732.08,10.9,0,Bike,0.14
+W01315,36,South Delhi,Instamart,1,3245.57,8.3,0,Bike,0.1
+W01316,37,Connaught Place,Instamart,31,3541.38,9.9,0,Bike,0.15
+W01317,21,Connaught Place,Zepto,31,2759.15,10.3,0,Bike,0.15
+W01318,44,Saket,BigBasket,42,2831.65,8.0,0,EV Scooter,0.14
+W01319,23,North Delhi,Instamart,42,3776.88,7.9,0,EV Scooter,0.2
+W01320,38,Connaught Place,Blinkit,34,2270.24,8.7,1,Bike,0.15
+W01321,30,Dwarka,Blinkit,9,3046.67,8.7,1,Bike,0.22
+W01322,36,South Delhi,Instamart,22,5305.68,7.4,0,EV Scooter,0.1
+W01323,31,Rohini,Instamart,13,3473.63,8.0,1,Bike,0.18
+W01324,21,Connaught Place,Blinkit,25,3373.42,4.0,0,Bike,0.15
+W01325,25,East Delhi,Zepto,18,3470.04,8.5,0,Bike,0.35
+W01326,28,Dwarka,Zomato,12,3482.68,10.3,0,Bike,0.22
+W01327,24,Connaught Place,Zomato,40,4209.9,6.5,0,Bike,0.15
+W01328,39,Lajpat Nagar,Instamart,17,4153.89,8.3,0,Bicycle,0.12
+W01329,40,Dwarka,Swiggy,15,3437.39,12.7,0,Bike,0.22
+W01330,28,Noida,Instamart,42,3578.93,9.0,1,Bike,0.28
+W01331,42,Rohini,Instamart,15,4800.22,11.0,0,EV Scooter,0.18
+W01332,27,Gurgaon,Zomato,15,2541.76,7.5,0,Bike,0.3
+W01333,39,East Delhi,Blinkit,39,3703.93,9.7,0,Bike,0.35
+W01334,27,East Delhi,Instamart,13,3858.2,7.2,0,Bike,0.35
+W01335,41,South Delhi,Blinkit,17,3128.65,9.6,0,Bike,0.1
+W01336,40,Saket,Blinkit,32,3657.89,10.3,0,Bike,0.14
+W01337,42,Dwarka,Swiggy,9,3020.66,9.9,1,Bike,0.22
+W01338,25,North Delhi,Blinkit,40,4259.74,8.5,0,Bike,0.2
+W01339,22,East Delhi,Zomato,20,2679.43,9.4,0,Bike,0.35
+W01340,24,Dwarka,Zepto,26,4599.87,9.4,0,Bicycle,0.22
+W01341,28,Dwarka,Zepto,27,3691.36,10.0,0,Bicycle,0.22
+W01342,26,Lajpat Nagar,BigBasket,21,3391.57,8.8,1,Bike,0.12
+W01343,23,West Delhi,Instamart,18,2946.24,10.4,0,Bicycle,0.25
+W01344,26,West Delhi,Zomato,13,4574.53,11.2,0,EV Scooter,0.25
+W01345,24,Gurgaon,Blinkit,16,3228.51,8.5,0,Bike,0.3
+W01346,30,Noida,Zepto,9,2816.2,9.1,0,Bike,0.28
+W01347,34,Gurgaon,Zomato,12,4591.17,7.6,0,Bike,0.3
+W01348,21,Connaught Place,Zepto,44,3026.56,9.5,0,EV Scooter,0.15
+W01349,32,North Delhi,Blinkit,38,3674.41,9.5,0,Bike,0.2
+W01350,41,Connaught Place,Zepto,19,4405.04,9.1,0,Bike,0.15
+W01351,35,Faridabad,Instamart,7,3876.37,9.2,0,Bike,0.32
+W01352,26,Connaught Place,Instamart,35,5134.68,11.9,0,Bicycle,0.15
+W01353,27,South Delhi,BigBasket,18,3082.04,4.7,0,Bicycle,0.1
+W01354,25,Connaught Place,BigBasket,16,3581.59,8.3,0,Bike,0.15
+W01355,43,Gurgaon,Zepto,39,3643.46,8.5,1,Bike,0.3
+W01356,26,East Delhi,Zomato,4,4246.99,11.2,0,EV Scooter,0.35
+W01357,37,East Delhi,Instamart,25,4780.9,9.7,0,Bike,0.35
+W01358,41,West Delhi,Zomato,32,3808.89,9.7,0,Bike,0.25
+W01359,44,Saket,Zomato,40,3639.87,10.9,0,Bike,0.14
+W01360,41,North Delhi,Zepto,13,2563.61,8.7,0,Bicycle,0.2
+W01361,39,North Delhi,Zomato,45,3839.9,10.0,0,Bicycle,0.2
+W01362,26,South Delhi,Instamart,17,3229.76,8.2,0,EV Scooter,0.1
+W01363,22,Gurgaon,Blinkit,37,4244.75,7.4,0,Bike,0.3
+W01364,24,West Delhi,BigBasket,6,3422.25,11.7,0,Bike,0.25
+W01365,20,Lajpat Nagar,Blinkit,19,3557.49,9.6,1,Bike,0.12
+W01366,34,Faridabad,Zomato,13,2581.79,10.0,0,EV Scooter,0.32
+W01367,22,North Delhi,Blinkit,26,2300.84,7.4,0,Bike,0.2
+W01368,27,East Delhi,Instamart,14,5238.79,9.8,1,Bike,0.35
+W01369,44,Connaught Place,Instamart,31,3853.75,11.7,0,Bicycle,0.15
+W01370,28,Connaught Place,Zomato,4,4073.47,8.6,0,Bike,0.15
+W01371,34,Saket,Zepto,39,3020.16,7.1,0,Bike,0.14
+W01372,29,West Delhi,Blinkit,8,4450.42,9.3,0,EV Scooter,0.25
+W01373,21,Gurgaon,Zepto,25,4306.11,7.4,0,Bike,0.3
+W01374,39,Gurgaon,Zepto,13,3108.06,6.7,0,Bike,0.3
+W01375,24,Noida,Swiggy,32,2902.4,7.9,0,Bike,0.28
+W01376,38,Rohini,Zomato,38,3163.98,8.3,0,Bike,0.18
+W01377,32,North Delhi,BigBasket,38,3727.37,7.5,0,Bike,0.2
+W01378,30,Gurgaon,Instamart,28,3883.69,11.0,0,Bicycle,0.3
+W01379,20,Saket,Instamart,30,3780.72,11.8,0,Bike,0.14
+W01380,41,East Delhi,Zomato,3,4788.98,9.9,0,EV Scooter,0.35
+W01381,34,West Delhi,BigBasket,28,3178.03,9.6,0,Bike,0.25
+W01382,37,Faridabad,Instamart,3,2880.67,8.8,0,Bike,0.32
+W01383,35,Noida,Zomato,45,3750.08,7.7,0,Bike,0.28
+W01384,28,Saket,Instamart,34,2395.53,11.4,0,Bicycle,0.14
+W01385,20,Dwarka,Zepto,16,4306.59,8.9,0,Bike,0.22
+W01386,30,South Delhi,Blinkit,22,3828.37,8.3,0,Bicycle,0.1
+W01387,28,Faridabad,Blinkit,32,3479.57,10.5,0,Bicycle,0.32
+W01388,42,Dwarka,Instamart,38,3435.16,8.9,0,EV Scooter,0.22
+W01389,30,Lajpat Nagar,Swiggy,8,4478.0,10.5,0,Bicycle,0.12
+W01390,32,Connaught Place,BigBasket,8,4452.52,8.4,0,Bike,0.15
+W01391,21,South Delhi,BigBasket,6,3552.9,10.5,0,Bicycle,0.1
+W01392,33,North Delhi,BigBasket,14,4223.42,10.5,0,EV Scooter,0.2
+W01393,25,East Delhi,Zepto,32,4440.7,11.0,0,EV Scooter,0.35
+W01394,27,South Delhi,BigBasket,35,4018.42,7.9,0,Bike,0.1
+W01395,37,Rohini,Blinkit,10,3585.63,8.9,0,Bike,0.18
+W01396,35,Dwarka,Zepto,3,4054.93,11.9,1,Bike,0.22
+W01397,40,North Delhi,Zomato,12,2918.73,8.6,0,Bike,0.2
+W01398,31,Rohini,BigBasket,31,3806.88,10.2,0,Bicycle,0.18
+W01399,30,Connaught Place,BigBasket,29,3563.5,12.4,0,EV Scooter,0.15
+W01400,25,Rohini,Zomato,5,3438.11,6.2,0,Bike,0.18
+W01401,22,Noida,BigBasket,25,2368.78,8.6,0,EV Scooter,0.28
+W01402,33,Noida,Zomato,41,2927.92,9.0,0,Bike,0.28
+W01403,21,Lajpat Nagar,Zepto,31,3361.28,6.3,0,Bike,0.12
+W01404,30,West Delhi,Blinkit,21,4466.03,8.3,0,Bike,0.25
+W01405,41,Faridabad,Zomato,20,3978.66,7.5,0,Bike,0.32
+W01406,22,Faridabad,Swiggy,39,4501.74,10.3,0,EV Scooter,0.32
+W01407,37,North Delhi,Zomato,22,4744.33,6.4,0,Bike,0.2
+W01408,20,Connaught Place,BigBasket,4,4013.45,11.8,0,Bike,0.15
+W01409,43,Gurgaon,Zepto,13,3862.23,10.0,1,Bike,0.3
+W01410,20,Lajpat Nagar,Instamart,45,2971.6,7.4,0,Bike,0.12
+W01411,31,Noida,Zepto,42,5339.34,10.5,1,EV Scooter,0.28
+W01412,34,North Delhi,Instamart,20,2615.72,9.9,0,Bike,0.2
+W01413,24,Gurgaon,Zomato,13,3844.99,8.9,0,Bike,0.3
+W01414,25,Faridabad,Blinkit,17,4416.24,7.9,0,Bicycle,0.32
+W01415,35,West Delhi,Swiggy,36,4427.39,9.8,0,Bike,0.25
+W01416,31,Rohini,Zepto,33,2825.93,9.2,0,Bicycle,0.18
+W01417,31,Noida,BigBasket,1,3414.08,8.0,0,Bike,0.28
+W01418,22,North Delhi,Instamart,15,3110.84,7.0,0,Bike,0.2
+W01419,42,South Delhi,BigBasket,13,2165.65,7.7,0,EV Scooter,0.1
+W01420,21,Gurgaon,Blinkit,17,3854.26,8.2,0,Bicycle,0.3
+W01421,26,Rohini,Instamart,24,3175.91,10.7,0,Bike,0.18
+W01422,21,Noida,Zepto,8,4954.39,10.3,0,Bike,0.28
+W01423,40,Faridabad,Zomato,27,4242.14,8.3,0,EV Scooter,0.32
+W01424,26,Saket,BigBasket,45,3783.12,8.4,0,Bike,0.14
+W01425,30,Connaught Place,Blinkit,23,3371.84,10.5,0,Bike,0.15
+W01426,30,Gurgaon,Zepto,46,3842.09,9.4,0,Bike,0.3
+W01427,33,Faridabad,Zepto,8,3545.3,9.4,1,Bike,0.32
+W01428,22,Noida,Zepto,8,3805.63,7.9,0,Bike,0.28
+W01429,33,Gurgaon,Zepto,26,5271.31,8.8,0,EV Scooter,0.3
+W01430,30,Lajpat Nagar,Instamart,47,2898.2,9.0,0,Bike,0.12
+W01431,23,Rohini,Zepto,13,3615.09,8.9,0,Bicycle,0.18
+W01432,36,Noida,BigBasket,39,4315.11,10.1,0,Bike,0.28
+W01433,35,Lajpat Nagar,Blinkit,37,3429.89,10.1,0,Bike,0.12
+W01434,22,Dwarka,Instamart,28,5014.43,7.6,0,Bicycle,0.22
+W01435,44,North Delhi,Zepto,25,4292.77,8.2,0,Bike,0.2
+W01436,29,Saket,Swiggy,16,3174.89,8.0,0,Bike,0.14
+W01437,40,Rohini,Swiggy,2,3913.25,11.1,0,Bike,0.18
+W01438,34,Gurgaon,Blinkit,18,3186.31,12.4,0,Bicycle,0.3
+W01439,27,Connaught Place,Zomato,17,3112.67,8.3,0,Bike,0.15
+W01440,37,Faridabad,Zomato,30,3637.84,8.7,0,Bike,0.32
+W01441,22,South Delhi,Instamart,39,4761.01,10.3,0,EV Scooter,0.1
+W01442,26,Faridabad,Instamart,13,4346.36,7.9,0,EV Scooter,0.32
+W01443,29,Gurgaon,Instamart,32,3731.94,10.3,0,Bike,0.3
+W01444,39,Saket,Zomato,29,4374.95,9.0,0,Bike,0.14
+W01445,28,Faridabad,Swiggy,46,3964.89,6.4,0,Bicycle,0.32
+W01446,33,North Delhi,Zomato,30,2814.09,7.0,0,Bicycle,0.2
+W01447,42,Saket,BigBasket,18,3633.89,8.5,0,Bike,0.14
+W01448,33,Noida,Zepto,13,3691.47,10.8,0,Bike,0.28
+W01449,30,Lajpat Nagar,Instamart,43,4359.35,7.7,0,Bicycle,0.12
+W01450,20,South Delhi,Swiggy,21,3296.82,8.2,0,EV Scooter,0.1
+W01451,23,East Delhi,Blinkit,30,3019.87,9.3,0,Bicycle,0.35
+W01452,25,Gurgaon,Blinkit,21,3713.56,6.5,1,Bike,0.3
+W01453,41,West Delhi,Zepto,17,3233.66,9.4,0,Bike,0.25
+W01454,41,East Delhi,Swiggy,40,3491.19,6.7,1,Bike,0.35
+W01455,24,Faridabad,Zomato,19,3685.3,9.9,0,Bike,0.32
+W01456,22,Gurgaon,Zomato,15,3443.56,7.8,0,Bike,0.3
+W01457,21,Lajpat Nagar,BigBasket,9,4520.55,7.6,0,Bike,0.12
+W01458,22,Dwarka,BigBasket,10,4881.44,9.4,0,Bike,0.22
+W01459,28,Lajpat Nagar,Zomato,44,4440.33,10.2,0,Bike,0.12
+W01460,38,West Delhi,Blinkit,31,2333.04,9.6,0,Bicycle,0.25
+W01461,38,South Delhi,Instamart,23,3236.42,9.3,0,Bicycle,0.1
+W01462,36,Lajpat Nagar,Blinkit,30,3607.08,9.3,0,EV Scooter,0.12
+W01463,37,Connaught Place,BigBasket,33,2272.98,9.6,0,Bicycle,0.15
+W01464,30,Dwarka,Zepto,9,3049.29,9.7,0,Bike,0.22
+W01465,31,East Delhi,Zomato,47,3596.86,8.4,0,Bike,0.35
+W01466,22,Noida,BigBasket,1,3390.82,10.0,0,Bike,0.28
+W01467,37,North Delhi,BigBasket,44,3756.92,7.8,0,Bike,0.2
+W01468,43,Connaught Place,Instamart,35,2645.34,10.6,0,EV Scooter,0.15
+W01469,25,Dwarka,Zomato,11,3381.77,10.2,0,Bike,0.22
+W01470,26,Noida,Instamart,34,3871.53,12.3,0,Bike,0.28
+W01471,20,Noida,Zomato,16,3758.16,9.8,1,Bike,0.28
+W01472,25,Gurgaon,Instamart,9,4107.51,10.4,0,Bike,0.3
+W01473,37,Dwarka,Blinkit,32,4060.86,6.7,0,Bicycle,0.22
+W01474,32,South Delhi,Zepto,15,3424.31,10.4,0,Bike,0.1
+W01475,41,Faridabad,Zepto,12,3846.1,10.8,0,Bike,0.32
+W01476,38,West Delhi,Zomato,33,3110.01,11.3,0,Bike,0.25
+W01477,26,West Delhi,Swiggy,45,3533.82,9.2,0,EV Scooter,0.25
+W01478,38,East Delhi,BigBasket,14,2905.51,8.5,0,Bike,0.35
+W01479,28,East Delhi,BigBasket,8,4602.34,7.4,0,Bike,0.35
+W01480,22,West Delhi,Zomato,8,3531.2,7.5,0,Bike,0.25
+W01481,42,Lajpat Nagar,Instamart,27,4601.15,9.0,0,Bike,0.12
+W01482,31,South Delhi,Swiggy,12,3999.2,6.4,0,Bike,0.1
+W01483,39,Lajpat Nagar,Blinkit,1,3041.47,7.8,0,Bicycle,0.12
+W01484,43,Lajpat Nagar,Instamart,43,3950.89,9.1,0,Bicycle,0.12
+W01485,37,North Delhi,Instamart,40,4397.77,9.1,0,Bicycle,0.2
+W01486,27,Rohini,Zomato,42,3687.94,7.5,0,Bike,0.18
+W01487,28,Faridabad,Zomato,11,3809.22,7.1,0,Bike,0.32
+W01488,32,North Delhi,BigBasket,39,3308.83,7.4,0,Bike,0.2
+W01489,27,Gurgaon,Zomato,43,3769.28,8.7,0,Bike,0.3
+W01490,41,Rohini,Zomato,31,3940.32,12.2,0,Bike,0.18
+W01491,29,Rohini,Zomato,17,3286.95,10.6,1,Bike,0.18
+W01492,36,Dwarka,BigBasket,33,2886.56,9.3,0,Bicycle,0.22
+W01493,26,South Delhi,Blinkit,32,4780.38,9.8,0,Bicycle,0.1
+W01494,36,South Delhi,Blinkit,29,4233.3,10.5,1,EV Scooter,0.1
+W01495,42,Rohini,Zomato,21,3311.87,10.0,0,Bicycle,0.18
+W01496,37,Lajpat Nagar,BigBasket,21,3925.73,8.5,1,Bike,0.12
+W01497,43,Dwarka,Blinkit,40,2567.14,7.7,0,Bike,0.22
+W01498,21,Faridabad,Instamart,23,2168.34,8.8,0,Bike,0.32
+W01499,22,Rohini,Blinkit,6,4617.31,10.5,0,Bike,0.18
+W01500,38,Connaught Place,Blinkit,22,3933.64,8.6,1,Bike,0.15
+W01501,20,East Delhi,BigBasket,38,3711.84,7.3,0,Bike,0.35
+W01502,40,East Delhi,Instamart,37,3936.13,6.4,1,Bike,0.35
+W01503,40,North Delhi,BigBasket,45,6330.91,8.8,0,Bicycle,0.2
+W01504,29,Gurgaon,Zomato,8,4445.28,7.5,0,Bicycle,0.3
+W01505,40,Saket,Zepto,41,2913.65,8.3,0,Bike,0.14
+W01506,33,Saket,Blinkit,35,2405.7,11.2,0,Bike,0.14
+W01507,32,East Delhi,Zepto,11,4593.63,8.9,1,Bike,0.35
+W01508,28,Noida,BigBasket,24,4434.88,7.9,1,Bicycle,0.28
+W01509,25,North Delhi,BigBasket,21,4210.05,9.5,0,Bike,0.2
+W01510,25,Saket,BigBasket,2,3099.7,11.9,0,Bicycle,0.14
+W01511,38,East Delhi,Zepto,40,4040.63,8.8,0,Bike,0.35
+W01512,40,Gurgaon,BigBasket,19,3171.32,5.5,0,Bike,0.3
+W01513,29,Saket,Zomato,39,4280.23,10.0,0,Bike,0.14
+W01514,42,Lajpat Nagar,BigBasket,28,4536.13,9.5,0,Bike,0.12
+W01515,22,Lajpat Nagar,Swiggy,17,3315.22,9.1,0,Bike,0.12
+W01516,37,South Delhi,Zepto,6,4655.45,8.7,0,Bicycle,0.1
+W01517,40,South Delhi,Swiggy,19,3841.88,7.8,0,Bike,0.1
+W01518,38,Faridabad,BigBasket,38,4143.5,11.3,0,Bike,0.32
+W01519,24,Rohini,Zomato,28,2702.29,6.2,0,EV Scooter,0.18
+W01520,44,Connaught Place,Blinkit,2,3935.77,8.5,0,Bike,0.15
+W01521,30,South Delhi,Instamart,38,3209.53,8.5,0,Bike,0.1
+W01522,29,Saket,Instamart,37,4129.71,10.3,0,Bike,0.14
+W01523,36,Dwarka,BigBasket,4,4923.73,10.9,0,Bicycle,0.22
+W01524,23,East Delhi,Zomato,22,3981.62,8.7,0,Bike,0.35
+W01525,40,Dwarka,Zepto,26,3029.32,9.3,0,Bike,0.22
+W01526,37,Gurgaon,Swiggy,43,4251.17,9.4,1,EV Scooter,0.3
+W01527,37,South Delhi,Swiggy,36,4071.43,10.6,0,Bicycle,0.1
+W01528,20,Connaught Place,Swiggy,13,5396.88,10.5,0,Bike,0.15
+W01529,33,Gurgaon,Zepto,32,3953.17,8.2,0,Bicycle,0.3
+W01530,27,Noida,Instamart,17,3281.62,9.7,0,Bike,0.28
+W01531,21,Noida,Zomato,41,4366.51,9.6,0,Bicycle,0.28
+W01532,38,Dwarka,Zepto,36,3647.86,8.8,0,Bike,0.22
+W01533,34,Rohini,Swiggy,46,3814.2,9.6,0,Bicycle,0.18
+W01534,21,North Delhi,BigBasket,19,3007.22,9.0,0,Bike,0.2
+W01535,23,Rohini,Blinkit,35,3652.05,9.2,0,EV Scooter,0.18
+W01536,20,Saket,Zepto,46,3774.64,7.0,0,Bike,0.14
+W01537,38,Lajpat Nagar,Zepto,40,3647.32,7.6,0,Bike,0.12
+W01538,40,Faridabad,Zomato,28,3277.29,10.2,1,Bike,0.32
+W01539,29,Rohini,Zomato,1,3980.58,7.2,0,EV Scooter,0.18
+W01540,20,Faridabad,Zepto,42,3011.22,9.7,0,Bicycle,0.32
+W01541,39,Faridabad,Swiggy,18,2822.8,8.9,0,Bike,0.32
+W01542,41,Connaught Place,Blinkit,40,4317.63,10.5,1,EV Scooter,0.15
+W01543,34,South Delhi,Zomato,33,4244.2,10.0,0,Bike,0.1
+W01544,23,Connaught Place,Swiggy,12,2703.92,8.3,0,Bicycle,0.15
+W01545,26,Faridabad,BigBasket,8,2286.36,8.7,0,Bicycle,0.32
+W01546,26,Gurgaon,Zomato,24,2943.01,6.0,0,Bike,0.3
+W01547,41,Noida,Swiggy,16,3647.36,8.8,0,EV Scooter,0.28
+W01548,44,Faridabad,Swiggy,4,4673.48,7.1,0,Bike,0.32
+W01549,37,Connaught Place,Blinkit,38,3627.8,8.7,0,Bike,0.15
+W01550,32,Gurgaon,Blinkit,44,3134.51,8.0,0,EV Scooter,0.3
+W01551,29,Connaught Place,BigBasket,27,3868.87,7.7,0,Bicycle,0.15
+W01552,43,Rohini,Swiggy,9,3658.79,10.8,0,Bike,0.18
+W01553,27,East Delhi,Instamart,47,2645.19,7.1,0,Bike,0.35
+W01554,29,Dwarka,Swiggy,16,2649.95,7.6,0,Bicycle,0.22
+W01555,33,North Delhi,Blinkit,12,2671.44,8.0,0,Bike,0.2
+W01556,33,Lajpat Nagar,Instamart,31,5733.88,8.3,0,EV Scooter,0.12
+W01557,39,Connaught Place,Zomato,24,4437.99,7.7,0,Bicycle,0.15
+W01558,41,North Delhi,Zomato,14,3275.03,8.5,0,Bike,0.2
+W01559,30,West Delhi,Zepto,45,4636.61,9.5,0,Bike,0.25
+W01560,25,Connaught Place,Blinkit,25,3295.55,10.0,0,Bike,0.15
+W01561,40,East Delhi,Zepto,34,4610.14,9.9,0,Bike,0.35
+W01562,20,North Delhi,Instamart,3,3814.25,6.1,0,Bicycle,0.2
+W01563,38,Lajpat Nagar,Blinkit,24,3222.92,9.6,0,EV Scooter,0.12
+W01564,26,Faridabad,BigBasket,42,4293.86,9.7,0,Bike,0.32
+W01565,43,Connaught Place,Swiggy,9,3860.02,8.0,0,Bike,0.15
+W01566,37,South Delhi,BigBasket,26,4068.61,11.5,0,Bike,0.1
+W01567,22,Dwarka,Instamart,20,3922.41,10.6,0,Bicycle,0.22
+W01568,39,East Delhi,Blinkit,40,3914.01,8.7,1,Bicycle,0.35
+W01569,30,Saket,Instamart,10,4390.44,8.1,0,Bicycle,0.14
+W01570,24,Saket,Swiggy,19,5817.05,11.5,0,Bike,0.14
+W01571,38,North Delhi,Zomato,3,4749.03,9.0,0,EV Scooter,0.2
+W01572,40,East Delhi,Zomato,24,3925.72,9.1,0,Bike,0.35
+W01573,43,Gurgaon,Instamart,5,3501.51,9.1,1,Bicycle,0.3
+W01574,43,Lajpat Nagar,Zepto,3,3589.41,12.5,0,Bicycle,0.12
+W01575,21,Dwarka,Blinkit,27,2745.1,8.7,0,Bicycle,0.22
+W01576,41,Faridabad,Blinkit,16,4281.63,9.0,0,Bike,0.32
+W01577,23,Connaught Place,Zomato,15,2938.06,7.8,0,Bike,0.15
+W01578,44,Connaught Place,BigBasket,35,3452.04,8.4,0,Bike,0.15
+W01579,29,Saket,Swiggy,12,4286.28,7.5,1,Bicycle,0.14
+W01580,21,Connaught Place,BigBasket,41,3560.14,7.8,0,Bike,0.15
+W01581,27,Dwarka,BigBasket,44,3356.17,6.3,0,Bike,0.22
+W01582,20,South Delhi,Instamart,26,2792.02,10.3,0,Bike,0.1
+W01583,25,West Delhi,Zomato,47,4714.26,9.2,0,Bicycle,0.25
+W01584,30,Noida,Zomato,34,3083.42,9.4,0,Bike,0.28
+W01585,29,Rohini,Zomato,23,3281.3,8.9,0,Bicycle,0.18
+W01586,32,North Delhi,Instamart,31,2316.62,9.1,0,Bicycle,0.2
+W01587,20,South Delhi,Zepto,20,3734.11,11.4,0,Bicycle,0.1
+W01588,21,Faridabad,BigBasket,12,3483.36,7.8,0,Bike,0.32
+W01589,22,Saket,Instamart,23,3895.49,9.4,0,Bicycle,0.14
+W01590,28,North Delhi,Blinkit,4,2810.29,9.4,0,Bike,0.2
+W01591,24,Connaught Place,Swiggy,23,4337.34,10.7,0,Bike,0.15
+W01592,29,East Delhi,Zepto,1,2278.63,9.7,0,Bike,0.35
+W01593,29,Faridabad,Blinkit,25,3676.26,9.7,0,Bike,0.32
+W01594,31,North Delhi,BigBasket,2,3842.39,7.1,0,Bike,0.2
+W01595,37,Lajpat Nagar,Zomato,30,3796.22,7.8,0,Bike,0.12
+W01596,40,Connaught Place,BigBasket,3,3876.2,7.2,0,Bike,0.15
+W01597,40,North Delhi,Instamart,21,4380.94,5.3,0,Bike,0.2
+W01598,20,East Delhi,Swiggy,25,4809.76,9.6,0,Bike,0.35
+W01599,22,Lajpat Nagar,Instamart,20,3625.51,8.6,0,Bike,0.12
+W01600,24,Connaught Place,Zepto,22,2975.73,9.6,0,EV Scooter,0.15
+W01601,44,West Delhi,Zepto,21,4198.57,9.1,0,Bike,0.25
+W01602,36,South Delhi,Swiggy,33,3525.81,9.4,0,Bike,0.1
+W01603,27,Gurgaon,Blinkit,38,4761.7,11.0,1,Bike,0.3
+W01604,36,Saket,Blinkit,15,3268.43,9.0,0,Bike,0.14
+W01605,28,Rohini,Zepto,46,3063.59,10.0,0,Bike,0.18
+W01606,25,Dwarka,Zepto,15,3865.04,8.5,1,Bike,0.22
+W01607,36,Saket,Zomato,46,2357.67,10.2,0,EV Scooter,0.14
+W01608,27,Rohini,Blinkit,25,3376.06,7.1,0,Bicycle,0.18
+W01609,40,Faridabad,Swiggy,21,3486.13,6.2,1,Bicycle,0.32
+W01610,26,Rohini,Blinkit,24,3926.38,12.2,0,EV Scooter,0.18
+W01611,26,Connaught Place,Zomato,5,2952.98,11.8,0,EV Scooter,0.15
+W01612,34,West Delhi,Instamart,6,3046.4,6.1,1,Bicycle,0.25
+W01613,26,Gurgaon,Zepto,43,4675.53,8.9,0,Bicycle,0.3
+W01614,41,South Delhi,Zepto,44,3739.23,9.2,0,Bike,0.1
+W01615,27,South Delhi,Zomato,47,4441.71,10.1,0,Bike,0.1
+W01616,28,East Delhi,Swiggy,23,3316.57,11.6,0,Bike,0.35
+W01617,34,Dwarka,Zepto,4,3706.44,7.4,0,Bike,0.22
+W01618,21,North Delhi,BigBasket,27,3921.63,7.5,1,EV Scooter,0.2
+W01619,26,West Delhi,Zepto,18,5148.04,9.0,0,Bike,0.25
+W01620,34,North Delhi,BigBasket,21,3575.91,7.6,0,Bicycle,0.2
+W01621,37,Gurgaon,Zomato,28,3616.98,4.9,0,Bike,0.3
+W01622,41,Rohini,Zomato,35,4628.52,8.7,0,Bike,0.18
+W01623,37,South Delhi,Zepto,22,3446.15,10.3,0,Bike,0.1
+W01624,29,Gurgaon,Blinkit,40,3977.7,9.0,0,Bike,0.3
+W01625,41,Rohini,BigBasket,23,4558.77,9.9,0,Bike,0.18
+W01626,37,South Delhi,Swiggy,3,3289.33,9.7,0,Bike,0.1
+W01627,20,Rohini,Zepto,40,4022.37,7.5,0,Bike,0.18
+W01628,26,Dwarka,Swiggy,10,5146.44,9.1,0,Bike,0.22
+W01629,22,West Delhi,Zepto,25,4487.05,6.7,0,Bike,0.25
+W01630,33,Saket,Blinkit,8,3977.95,8.2,0,Bike,0.14
+W01631,31,Lajpat Nagar,Blinkit,11,3570.54,9.1,0,Bike,0.12
+W01632,33,Faridabad,Blinkit,5,3266.55,9.0,0,Bike,0.32
+W01633,23,Gurgaon,Instamart,45,2959.45,7.1,0,Bike,0.3
+W01634,32,Gurgaon,Blinkit,37,4957.7,7.4,0,Bike,0.3
+W01635,35,Lajpat Nagar,Zomato,45,4802.38,9.4,0,Bike,0.12
+W01636,35,Saket,Zomato,38,3224.31,10.2,0,Bike,0.14
+W01637,41,Noida,Instamart,29,4020.15,8.7,0,EV Scooter,0.28
+W01638,24,Connaught Place,BigBasket,5,3839.06,8.6,0,Bike,0.15
+W01639,39,Dwarka,Swiggy,9,4697.53,10.4,0,Bike,0.22
+W01640,44,Dwarka,Zepto,2,4056.24,7.8,0,Bike,0.22
+W01641,25,Lajpat Nagar,Zepto,1,3731.74,11.6,0,Bike,0.12
+W01642,25,North Delhi,Instamart,40,3316.65,7.0,0,Bike,0.2
+W01643,37,Rohini,Zomato,30,4022.69,10.6,0,Bicycle,0.18
+W01644,25,Connaught Place,Zepto,11,3471.45,9.8,0,Bicycle,0.15
+W01645,26,West Delhi,Zomato,28,3926.55,12.6,0,Bike,0.25
+W01646,43,West Delhi,BigBasket,44,3689.22,7.3,0,EV Scooter,0.25
+W01647,43,Lajpat Nagar,Swiggy,12,3452.01,5.5,0,Bike,0.12
+W01648,35,Dwarka,BigBasket,39,2971.81,10.9,0,Bike,0.22
+W01649,28,West Delhi,Instamart,26,4161.36,6.8,0,Bicycle,0.25
+W01650,32,Noida,Blinkit,13,3784.06,9.9,1,Bicycle,0.28
+W01651,31,Gurgaon,Blinkit,8,5179.94,10.8,1,Bike,0.3
+W01652,38,East Delhi,Blinkit,28,2924.12,9.6,0,Bike,0.35
+W01653,42,Faridabad,BigBasket,30,4250.24,9.3,0,Bike,0.32
+W01654,42,Lajpat Nagar,Zepto,9,3683.88,9.6,0,Bike,0.12
+W01655,20,North Delhi,Swiggy,39,5429.81,10.3,0,Bike,0.2
+W01656,27,Rohini,Blinkit,31,4189.18,9.9,0,Bike,0.18
+W01657,23,Faridabad,Instamart,21,4009.75,7.2,1,Bike,0.32
+W01658,40,Rohini,Instamart,47,3685.92,11.7,0,Bicycle,0.18
+W01659,41,South Delhi,Blinkit,34,3187.5,9.1,1,Bike,0.1
+W01660,38,Faridabad,Blinkit,31,3999.11,9.8,0,Bicycle,0.32
+W01661,40,East Delhi,Swiggy,25,2644.16,10.1,0,Bike,0.35
+W01662,24,Dwarka,Blinkit,12,2680.97,10.7,0,EV Scooter,0.22
+W01663,36,Noida,Swiggy,1,4559.95,10.6,1,Bike,0.28
+W01664,22,Gurgaon,Instamart,22,2340.3,9.2,0,Bike,0.3
+W01665,38,Gurgaon,Blinkit,40,3494.34,9.1,0,EV Scooter,0.3
+W01666,20,Noida,BigBasket,37,2910.7,9.6,0,Bike,0.28
+W01667,42,Connaught Place,BigBasket,47,3428.02,10.7,0,Bike,0.15
+W01668,20,South Delhi,Instamart,1,3897.64,7.3,0,Bike,0.1
+W01669,42,Rohini,Swiggy,1,4537.64,10.0,0,Bike,0.18
+W01670,39,East Delhi,BigBasket,42,4724.11,7.7,0,Bike,0.35
+W01671,28,West Delhi,Swiggy,42,3014.84,11.8,0,Bike,0.25
+W01672,42,Faridabad,BigBasket,21,3377.23,9.6,0,EV Scooter,0.32
+W01673,24,South Delhi,BigBasket,15,6992.04,8.4,0,Bike,0.1
+W01674,26,Lajpat Nagar,Swiggy,17,3549.99,9.6,0,Bike,0.12
+W01675,44,Faridabad,Zepto,22,3044.23,9.0,0,Bicycle,0.32
+W01676,25,East Delhi,BigBasket,38,3177.36,8.8,0,Bike,0.35
+W01677,36,North Delhi,Blinkit,35,3554.69,6.3,1,Bike,0.2
+W01678,41,North Delhi,Instamart,45,3435.81,7.5,0,Bike,0.2
+W01679,36,South Delhi,Zepto,16,3562.5,8.8,0,Bike,0.1
+W01680,32,Dwarka,Swiggy,8,3732.86,6.5,0,Bike,0.22
+W01681,31,East Delhi,Zepto,47,3727.27,8.1,0,Bike,0.35
+W01682,23,East Delhi,Zomato,17,2985.61,8.3,0,Bike,0.35
+W01683,27,Noida,Zomato,17,4045.46,7.8,0,EV Scooter,0.28
+W01684,24,Dwarka,BigBasket,26,3846.84,10.2,0,Bicycle,0.22
+W01685,24,Rohini,BigBasket,13,4147.27,7.7,0,Bike,0.18
+W01686,32,Rohini,Blinkit,17,2378.44,9.1,0,Bicycle,0.18
+W01687,30,West Delhi,Instamart,38,3875.48,8.5,0,Bike,0.25
+W01688,27,Gurgaon,Zepto,17,2161.52,8.8,0,Bike,0.3
+W01689,27,North Delhi,Zomato,14,3609.54,11.4,0,Bike,0.2
+W01690,20,Lajpat Nagar,BigBasket,45,4276.35,9.3,0,Bike,0.12
+W01691,32,Rohini,Instamart,6,4586.62,9.6,0,Bicycle,0.18
+W01692,24,Dwarka,Zepto,35,4017.57,7.9,1,Bike,0.22
+W01693,40,East Delhi,BigBasket,46,4290.31,9.9,0,Bike,0.35
+W01694,27,Lajpat Nagar,BigBasket,14,3510.8,9.9,0,Bike,0.12
+W01695,36,Saket,Zomato,47,3342.67,9.7,0,Bike,0.14
+W01696,42,Rohini,Zomato,8,5904.21,7.2,0,Bike,0.18
+W01697,42,East Delhi,BigBasket,15,4411.73,8.1,0,Bicycle,0.35
+W01698,32,Rohini,Swiggy,27,2811.61,11.2,0,EV Scooter,0.18
+W01699,28,North Delhi,BigBasket,13,2362.27,8.0,0,Bike,0.2
+W01700,21,Saket,Instamart,31,3377.94,11.4,0,Bike,0.14
+W01701,38,Faridabad,BigBasket,35,4703.49,8.2,0,Bike,0.32
+W01702,39,Rohini,Blinkit,6,3788.99,9.2,0,Bicycle,0.18
+W01703,36,Dwarka,Blinkit,5,1970.78,8.7,0,Bike,0.22
+W01704,26,Rohini,Blinkit,22,3608.17,7.7,1,Bike,0.18
+W01705,22,Gurgaon,Swiggy,23,3748.08,7.8,0,Bicycle,0.3
+W01706,38,Lajpat Nagar,Swiggy,25,1817.47,7.9,0,Bike,0.12
+W01707,38,Lajpat Nagar,BigBasket,34,3769.33,9.2,0,Bike,0.12
+W01708,43,North Delhi,Blinkit,26,2939.31,10.3,0,Bike,0.2
+W01709,28,Dwarka,Swiggy,47,2281.56,9.1,0,Bike,0.22
+W01710,29,Saket,Zomato,5,5033.61,8.9,0,Bike,0.14
+W01711,33,Noida,BigBasket,26,2903.92,10.8,0,Bike,0.28
+W01712,37,Dwarka,Instamart,20,3216.17,9.1,0,Bike,0.22
+W01713,34,Lajpat Nagar,Zepto,6,3205.53,8.2,0,Bike,0.12
+W01714,20,Gurgaon,BigBasket,6,3751.79,7.5,0,EV Scooter,0.3
+W01715,44,Faridabad,Zepto,18,5163.05,10.9,0,Bike,0.32
+W01716,25,North Delhi,Blinkit,4,2793.05,8.5,0,Bicycle,0.2
+W01717,34,Noida,Zepto,17,3504.56,8.1,0,Bike,0.28
+W01718,44,Gurgaon,Blinkit,14,3846.69,8.0,0,Bike,0.3
+W01719,25,Saket,Zomato,14,3054.97,10.8,1,Bike,0.14
+W01720,37,Saket,Zepto,13,3491.69,8.1,0,Bike,0.14
+W01721,20,Gurgaon,BigBasket,7,4225.6,10.5,0,Bike,0.3
+W01722,43,South Delhi,Blinkit,44,3145.44,8.7,1,Bike,0.1
+W01723,22,North Delhi,BigBasket,15,3479.09,7.2,0,Bike,0.2
+W01724,36,Dwarka,Swiggy,19,3404.92,8.5,0,Bike,0.22
+W01725,35,East Delhi,Blinkit,43,3666.95,9.0,0,EV Scooter,0.35
+W01726,27,Faridabad,Zepto,47,3944.52,8.8,0,Bike,0.32
+W01727,36,East Delhi,Blinkit,44,4219.25,8.8,0,Bike,0.35
+W01728,27,Dwarka,BigBasket,35,5300.04,8.5,0,Bike,0.22
+W01729,36,Dwarka,Zomato,17,1623.22,7.8,0,Bike,0.22
+W01730,44,North Delhi,Blinkit,35,3616.09,9.0,0,Bicycle,0.2
+W01731,28,Dwarka,Zepto,19,2658.45,9.8,0,Bike,0.22
+W01732,31,Lajpat Nagar,Swiggy,20,3441.7,6.8,0,Bike,0.12
+W01733,44,South Delhi,Instamart,36,4454.69,10.9,0,Bike,0.1
+W01734,38,Noida,Zomato,35,4708.23,4.0,0,Bicycle,0.28
+W01735,23,Dwarka,Swiggy,32,4745.77,9.1,0,Bike,0.22
+W01736,40,East Delhi,Blinkit,44,4738.23,9.7,0,Bike,0.35
+W01737,41,Dwarka,BigBasket,40,3610.85,8.1,0,Bike,0.22
+W01738,44,Saket,BigBasket,24,4868.82,5.8,1,Bike,0.14
+W01739,30,South Delhi,Zepto,17,5027.48,8.9,0,Bike,0.1
+W01740,23,Lajpat Nagar,BigBasket,7,3861.04,9.3,0,EV Scooter,0.12
+W01741,33,Lajpat Nagar,Zomato,43,4691.79,7.3,0,Bicycle,0.12
+W01742,33,Rohini,BigBasket,1,3782.99,7.8,0,Bike,0.18
+W01743,25,Lajpat Nagar,Zepto,35,4878.19,10.4,0,Bike,0.12
+W01744,36,Rohini,Instamart,32,3620.67,9.2,0,Bike,0.18
+W01745,21,Gurgaon,Blinkit,36,3262.38,6.7,0,Bike,0.3
+W01746,27,Faridabad,Blinkit,13,2854.01,9.7,0,Bike,0.32
+W01747,23,West Delhi,BigBasket,6,3611.1,7.6,0,Bike,0.25
+W01748,29,Lajpat Nagar,Swiggy,14,3817.51,7.8,0,EV Scooter,0.12
+W01749,26,Noida,Blinkit,37,2993.32,9.3,0,Bike,0.28
+W01750,23,Saket,Instamart,15,3549.91,9.2,0,EV Scooter,0.14
+W01751,35,Connaught Place,BigBasket,47,3328.76,8.4,0,Bike,0.15
+W01752,33,Gurgaon,Zepto,4,2888.42,8.2,0,Bike,0.3
+W01753,35,Lajpat Nagar,Instamart,40,4578.71,8.6,0,Bike,0.12
+W01754,44,Faridabad,BigBasket,16,4719.52,7.8,0,Bicycle,0.32
+W01755,28,Rohini,Instamart,28,4575.15,10.6,0,Bike,0.18
+W01756,23,East Delhi,Blinkit,16,3682.68,6.6,0,Bicycle,0.35
+W01757,43,Connaught Place,Zepto,4,3732.09,8.6,0,Bicycle,0.15
+W01758,25,Faridabad,BigBasket,45,2899.46,6.8,0,Bicycle,0.32
+W01759,20,Faridabad,Zomato,26,4081.71,10.4,0,Bicycle,0.32
+W01760,26,Lajpat Nagar,Zepto,28,3885.71,8.6,0,Bicycle,0.12
+W01761,20,Gurgaon,Zomato,32,6025.16,7.4,1,Bicycle,0.3
+W01762,38,Connaught Place,Instamart,45,4619.68,10.0,1,Bike,0.15
+W01763,27,North Delhi,Swiggy,2,4002.2,5.6,0,Bicycle,0.2
+W01764,44,West Delhi,Zepto,31,3716.71,9.4,0,EV Scooter,0.25
+W01765,22,North Delhi,Instamart,3,4551.05,10.7,0,Bike,0.2
+W01766,20,Saket,Zomato,8,3017.41,9.3,0,EV Scooter,0.14
+W01767,20,Connaught Place,Blinkit,24,4661.71,8.2,0,Bike,0.15
+W01768,26,North Delhi,Blinkit,15,2880.29,7.1,1,Bike,0.2
+W01769,40,Lajpat Nagar,Swiggy,43,3300.78,10.6,0,Bike,0.12
+W01770,32,South Delhi,Zepto,31,2279.46,10.4,0,Bike,0.1
+W01771,20,Rohini,Zepto,9,4241.26,8.0,0,Bicycle,0.18
+W01772,35,South Delhi,Zepto,39,3949.94,8.1,0,EV Scooter,0.1
+W01773,41,Dwarka,Instamart,45,3300.81,10.8,0,Bicycle,0.22
+W01774,41,North Delhi,Swiggy,2,3006.69,9.8,0,EV Scooter,0.2
+W01775,33,Saket,Zepto,8,4852.98,6.3,0,Bike,0.14
+W01776,23,Dwarka,Instamart,7,3643.12,8.7,0,Bike,0.22
+W01777,42,East Delhi,Blinkit,44,3136.16,8.7,0,Bike,0.35
+W01778,42,Noida,Zomato,39,5287.55,9.4,0,Bicycle,0.28
+W01779,31,East Delhi,Instamart,42,3224.35,9.0,0,Bike,0.35
+W01780,44,Connaught Place,Blinkit,16,4660.89,8.2,0,EV Scooter,0.15
+W01781,31,Faridabad,Blinkit,35,2829.21,9.3,0,Bike,0.32
+W01782,36,Rohini,Zomato,30,3466.04,8.3,0,EV Scooter,0.18
+W01783,40,North Delhi,Blinkit,10,4151.83,14.0,0,Bike,0.2
+W01784,34,Saket,Swiggy,38,3703.73,9.2,0,Bike,0.14
+W01785,29,Saket,Zomato,18,3945.01,9.0,0,Bicycle,0.14
+W01786,22,Gurgaon,Blinkit,5,3318.93,11.8,0,Bicycle,0.3
+W01787,42,Noida,BigBasket,29,2471.76,7.0,0,Bike,0.28
+W01788,39,West Delhi,Instamart,39,4922.46,8.8,1,EV Scooter,0.25
+W01789,39,West Delhi,Blinkit,34,3367.74,7.6,0,EV Scooter,0.25
+W01790,31,West Delhi,Swiggy,43,3981.21,10.0,0,Bike,0.25
+W01791,20,North Delhi,Zepto,45,4311.57,8.3,0,Bike,0.2
+W01792,20,West Delhi,Blinkit,23,3997.01,9.9,0,Bike,0.25
+W01793,29,Lajpat Nagar,Zepto,5,3183.13,9.8,0,Bike,0.12
+W01794,37,South Delhi,BigBasket,30,4677.81,10.2,0,Bicycle,0.1
+W01795,34,Saket,Blinkit,6,4160.94,9.8,0,Bike,0.14
+W01796,21,Noida,Zomato,46,3909.02,8.7,0,Bike,0.28
+W01797,36,South Delhi,Zepto,44,3890.47,6.9,1,Bike,0.1
+W01798,27,Faridabad,BigBasket,4,5095.81,10.5,0,Bike,0.32
+W01799,41,Noida,Zomato,29,3165.95,11.1,0,Bike,0.28
+W01800,41,South Delhi,Zomato,23,4082.2,7.6,0,Bike,0.1
+W01801,28,Noida,Zomato,6,3327.1,10.1,0,Bike,0.28
+W01802,40,Faridabad,Zomato,32,2200.96,7.2,0,Bike,0.32
+W01803,39,Dwarka,Blinkit,42,2179.81,9.3,0,EV Scooter,0.22
+W01804,30,Lajpat Nagar,Instamart,18,2938.29,9.6,0,Bike,0.12
+W01805,25,North Delhi,Blinkit,15,3223.25,8.4,0,Bike,0.2
+W01806,43,North Delhi,Blinkit,40,5488.36,9.1,0,Bike,0.2
+W01807,33,Saket,BigBasket,32,4308.71,10.3,0,Bike,0.14
+W01808,20,West Delhi,BigBasket,9,4380.67,8.8,0,Bike,0.25
+W01809,26,Lajpat Nagar,Instamart,37,3240.34,8.0,0,Bicycle,0.12
+W01810,43,East Delhi,BigBasket,10,3799.06,7.2,1,Bike,0.35
+W01811,28,West Delhi,Swiggy,20,5594.92,8.4,0,EV Scooter,0.25
+W01812,30,Saket,Instamart,6,2778.47,7.2,0,Bike,0.14
+W01813,43,Connaught Place,BigBasket,3,4114.99,8.4,0,EV Scooter,0.15
+W01814,42,Lajpat Nagar,Instamart,42,5039.04,8.3,0,EV Scooter,0.12
+W01815,35,South Delhi,Blinkit,11,4522.75,10.2,0,Bike,0.1
+W01816,38,Noida,Blinkit,43,5191.23,9.1,1,Bike,0.28
+W01817,21,East Delhi,Instamart,17,3920.29,12.8,0,Bike,0.35
+W01818,34,Lajpat Nagar,Swiggy,32,4232.76,6.0,0,Bike,0.12
+W01819,22,Faridabad,Swiggy,4,3837.82,9.5,0,EV Scooter,0.32
+W01820,23,Connaught Place,Instamart,4,4176.68,8.3,0,Bike,0.15
+W01821,39,Faridabad,BigBasket,17,3017.83,7.6,0,Bike,0.32
+W01822,41,North Delhi,Zepto,41,4383.88,9.0,0,Bicycle,0.2
+W01823,26,North Delhi,Swiggy,19,3985.4,8.8,0,EV Scooter,0.2
+W01824,31,West Delhi,Zomato,5,3800.13,10.6,1,Bike,0.25
+W01825,23,South Delhi,Blinkit,32,5147.11,9.1,0,EV Scooter,0.1
+W01826,29,East Delhi,Instamart,22,3537.69,8.0,0,Bike,0.35
+W01827,25,Rohini,Zomato,6,4716.26,9.5,0,Bicycle,0.18
+W01828,44,Connaught Place,Instamart,35,4795.82,8.7,0,Bicycle,0.15
+W01829,41,Connaught Place,Blinkit,22,4434.44,7.3,0,Bicycle,0.15
+W01830,33,Lajpat Nagar,Blinkit,1,2977.92,8.6,0,Bike,0.12
+W01831,22,West Delhi,Swiggy,20,4037.26,9.3,0,Bike,0.25
+W01832,36,North Delhi,Swiggy,22,5316.78,9.1,1,Bike,0.2
+W01833,30,West Delhi,Zomato,11,2295.16,9.5,1,Bike,0.25
+W01834,29,Noida,Instamart,13,3599.87,8.2,1,Bike,0.28
+W01835,40,Lajpat Nagar,Blinkit,42,4679.85,9.5,0,Bicycle,0.12
+W01836,29,Lajpat Nagar,Zomato,3,3657.74,9.2,0,Bike,0.12
+W01837,29,East Delhi,Zepto,9,4397.91,9.2,1,Bike,0.35
+W01838,22,South Delhi,Zomato,12,4877.35,9.0,1,Bicycle,0.1
+W01839,43,Saket,BigBasket,23,3935.61,12.3,0,EV Scooter,0.14
+W01840,34,Dwarka,Zomato,14,4157.19,10.7,0,Bike,0.22
+W01841,36,Saket,BigBasket,33,3823.5,9.4,0,Bike,0.14
+W01842,37,Gurgaon,BigBasket,18,3988.24,7.8,0,EV Scooter,0.3
+W01843,38,Gurgaon,BigBasket,41,5432.08,8.6,0,EV Scooter,0.3
+W01844,38,Lajpat Nagar,Zepto,9,3698.84,11.4,1,Bike,0.12
+W01845,31,West Delhi,Zomato,23,3467.48,8.2,1,Bike,0.25
+W01846,43,Noida,Zomato,10,4583.4,8.8,0,Bike,0.28
+W01847,24,East Delhi,Zepto,19,3075.66,8.7,0,Bicycle,0.35
+W01848,43,Rohini,Blinkit,47,3258.22,9.6,0,Bike,0.18
+W01849,35,Gurgaon,Swiggy,5,3263.32,8.3,0,Bike,0.3
+W01850,34,East Delhi,Zomato,47,3545.3,9.3,0,Bike,0.35
+W01851,34,Lajpat Nagar,Swiggy,23,3580.24,8.4,0,EV Scooter,0.12
+W01852,25,South Delhi,Instamart,30,4309.28,11.0,1,Bike,0.1
+W01853,31,Faridabad,Instamart,25,3476.11,8.0,1,Bike,0.32
+W01854,21,Saket,Zepto,28,4341.57,10.5,0,EV Scooter,0.14
+W01855,39,Noida,Instamart,34,4441.34,8.1,0,Bike,0.28
+W01856,28,North Delhi,Instamart,45,3227.19,7.7,1,Bike,0.2
+W01857,23,East Delhi,Blinkit,47,4424.16,7.9,0,Bicycle,0.35
+W01858,24,South Delhi,Blinkit,25,4496.73,6.4,0,Bike,0.1
+W01859,40,Rohini,Blinkit,10,2341.25,9.7,0,Bicycle,0.18
+W01860,27,Dwarka,Instamart,14,3984.78,7.3,0,Bike,0.22
+W01861,41,Saket,Zepto,42,3344.87,8.5,0,Bike,0.14
+W01862,29,North Delhi,BigBasket,46,4792.45,10.1,0,EV Scooter,0.2
+W01863,26,Saket,BigBasket,30,3336.72,10.1,1,Bike,0.14
+W01864,41,Lajpat Nagar,Swiggy,41,2678.41,6.9,0,Bicycle,0.12
+W01865,33,Dwarka,BigBasket,25,3726.15,9.5,1,Bike,0.22
+W01866,24,Saket,BigBasket,14,3032.42,10.7,1,Bike,0.14
+W01867,35,Rohini,Blinkit,35,4429.67,8.0,0,Bicycle,0.18
+W01868,34,South Delhi,Blinkit,34,3103.11,9.8,0,Bike,0.1
+W01869,24,Gurgaon,Instamart,10,3735.99,7.3,0,Bike,0.3
+W01870,22,Dwarka,Swiggy,35,4986.65,9.6,0,Bike,0.22
+W01871,42,Lajpat Nagar,Zomato,11,4628.82,9.2,0,Bike,0.12
+W01872,29,North Delhi,Swiggy,11,4132.27,10.0,0,Bicycle,0.2
+W01873,24,West Delhi,Swiggy,21,3647.94,9.9,0,Bicycle,0.25
+W01874,42,Connaught Place,Zepto,21,4056.32,7.0,0,Bicycle,0.15
+W01875,34,East Delhi,Instamart,22,4301.19,9.2,1,Bicycle,0.35
+W01876,37,Saket,Zepto,45,2960.72,11.2,0,Bike,0.14
+W01877,44,Gurgaon,Swiggy,7,4431.07,5.7,0,Bike,0.3
+W01878,27,Dwarka,Swiggy,17,2868.64,10.5,0,Bicycle,0.22
+W01879,40,Saket,Swiggy,2,4207.96,11.4,0,Bike,0.14
+W01880,21,Faridabad,BigBasket,12,2864.49,6.8,0,Bike,0.32
+W01881,41,East Delhi,Zepto,42,5320.24,8.0,0,EV Scooter,0.35
+W01882,27,West Delhi,Swiggy,18,4360.67,9.8,0,Bike,0.25
+W01883,42,Rohini,Blinkit,11,2505.18,7.7,0,Bike,0.18
+W01884,27,Connaught Place,Instamart,16,3749.26,11.0,0,Bike,0.15
+W01885,23,South Delhi,Instamart,18,3332.86,10.6,0,Bicycle,0.1
+W01886,38,Saket,Blinkit,35,3238.22,6.9,0,Bike,0.14
+W01887,42,West Delhi,Instamart,26,3867.68,7.9,0,Bike,0.25
+W01888,37,West Delhi,BigBasket,16,3007.61,10.2,1,EV Scooter,0.25
+W01889,40,Rohini,BigBasket,6,4359.17,10.1,0,Bicycle,0.18
+W01890,42,Noida,Zomato,44,4313.72,12.3,1,Bicycle,0.28
+W01891,20,Rohini,Zomato,43,4031.14,7.7,0,Bike,0.18
+W01892,39,Saket,Zomato,47,3734.4,11.2,0,Bike,0.14
+W01893,34,Noida,Instamart,47,4277.85,7.6,0,Bike,0.28
+W01894,37,Noida,BigBasket,42,4383.11,9.8,0,Bike,0.28
+W01895,41,Gurgaon,BigBasket,12,4113.93,10.3,0,Bike,0.3
+W01896,31,Gurgaon,BigBasket,13,2700.5,4.5,0,Bike,0.3
+W01897,20,North Delhi,Blinkit,4,3119.29,10.4,0,Bike,0.2
+W01898,26,Dwarka,BigBasket,39,3535.55,11.1,1,Bicycle,0.22
+W01899,38,Dwarka,Blinkit,2,2569.37,10.6,0,Bicycle,0.22
+W01900,20,Lajpat Nagar,Zomato,26,3929.2,12.1,0,Bike,0.12
+W01901,43,South Delhi,Zomato,27,4878.8,10.4,0,Bike,0.1
+W01902,26,Dwarka,Instamart,27,4751.35,8.2,0,Bike,0.22
+W01903,21,Gurgaon,Zomato,15,4341.7,10.9,0,Bike,0.3
+W01904,26,North Delhi,Instamart,8,4332.17,8.1,0,Bike,0.2
+W01905,38,North Delhi,Swiggy,7,5522.24,9.1,0,Bike,0.2
+W01906,32,Noida,Swiggy,47,4425.09,10.2,0,EV Scooter,0.28
+W01907,44,Lajpat Nagar,Zepto,46,4490.51,9.7,1,Bicycle,0.12
+W01908,43,Rohini,Instamart,40,2598.87,11.0,0,Bike,0.18
+W01909,24,South Delhi,Zepto,12,4816.26,12.7,1,EV Scooter,0.1
+W01910,42,Saket,Zepto,13,4068.8,7.3,0,Bicycle,0.14
+W01911,38,Noida,Swiggy,43,3686.17,8.5,0,Bicycle,0.28
+W01912,20,Rohini,Instamart,17,3487.89,9.5,0,Bike,0.18
+W01913,20,Dwarka,Swiggy,17,3311.12,8.3,0,Bike,0.22
+W01914,37,Lajpat Nagar,Zepto,36,4755.42,8.9,0,Bicycle,0.12
+W01915,43,Noida,Instamart,21,3727.31,10.2,0,Bike,0.28
+W01916,20,East Delhi,Zepto,8,3340.66,10.0,0,Bicycle,0.35
+W01917,24,Dwarka,BigBasket,5,3132.76,9.4,0,EV Scooter,0.22
+W01918,28,Rohini,Instamart,26,3886.48,9.2,0,Bicycle,0.18
+W01919,31,South Delhi,Instamart,16,3462.31,8.7,0,Bike,0.1
+W01920,28,Saket,Zepto,36,3279.8,11.1,0,Bike,0.14
+W01921,37,Rohini,BigBasket,28,2644.28,11.5,0,Bicycle,0.18
+W01922,42,Noida,Blinkit,29,4517.49,10.5,0,EV Scooter,0.28
+W01923,30,Noida,Swiggy,47,3639.58,7.3,0,Bike,0.28
+W01924,20,Saket,Zepto,12,2881.81,8.6,0,Bicycle,0.14
+W01925,38,West Delhi,Instamart,37,3533.01,9.3,0,EV Scooter,0.25
+W01926,41,South Delhi,Swiggy,30,4189.31,7.6,0,Bike,0.1
+W01927,44,Faridabad,Swiggy,23,3773.07,9.1,0,Bicycle,0.32
+W01928,29,Dwarka,Swiggy,16,3902.79,9.0,0,Bike,0.22
+W01929,21,North Delhi,Blinkit,14,3784.04,10.6,1,Bike,0.2
+W01930,26,Saket,Zomato,10,2728.52,8.3,1,Bike,0.14
+W01931,39,South Delhi,Zepto,7,4508.81,10.7,0,Bicycle,0.1
+W01932,21,North Delhi,Zomato,45,2383.4,7.6,0,Bicycle,0.2
+W01933,38,South Delhi,Zomato,37,4119.23,7.8,1,Bike,0.1
+W01934,25,South Delhi,Zomato,29,4242.46,8.4,0,EV Scooter,0.1
+W01935,29,Rohini,Swiggy,3,3574.13,9.1,0,Bicycle,0.18
+W01936,28,South Delhi,BigBasket,15,4032.74,5.4,0,Bicycle,0.1
+W01937,27,West Delhi,Swiggy,36,3528.29,9.7,0,Bike,0.25
+W01938,30,Faridabad,Swiggy,47,4042.4,11.6,0,Bike,0.32
+W01939,28,Noida,Instamart,46,4544.34,10.0,0,Bike,0.28
+W01940,39,Connaught Place,Instamart,19,3116.3,8.7,0,EV Scooter,0.15
+W01941,39,North Delhi,Zomato,13,4289.17,7.4,0,Bike,0.2
+W01942,28,Noida,Swiggy,42,5103.92,6.3,0,EV Scooter,0.28
+W01943,27,Connaught Place,Zomato,21,3961.65,6.5,0,Bicycle,0.15
+W01944,34,Faridabad,Instamart,37,3347.52,8.8,0,Bicycle,0.32
+W01945,21,Faridabad,BigBasket,27,5560.59,12.2,0,Bicycle,0.32
+W01946,43,North Delhi,Zepto,29,3820.96,4.9,0,Bike,0.2
+W01947,20,North Delhi,Zomato,20,3935.22,10.1,0,Bicycle,0.2
+W01948,28,Faridabad,BigBasket,25,3951.9,8.0,0,Bike,0.32
+W01949,28,Connaught Place,Zepto,6,4108.29,8.5,0,Bicycle,0.15
+W01950,32,Saket,Blinkit,36,3478.9,7.6,0,Bicycle,0.14
+W01951,27,South Delhi,Zomato,2,3901.99,6.9,0,Bicycle,0.1
+W01952,40,Dwarka,Zomato,22,4511.75,9.2,0,Bicycle,0.22
+W01953,24,Lajpat Nagar,Blinkit,32,3451.28,9.4,0,Bike,0.12
+W01954,22,East Delhi,Blinkit,16,3414.0,10.0,0,Bike,0.35
+W01955,40,Lajpat Nagar,Zomato,18,3516.33,6.5,0,Bicycle,0.12
+W01956,23,Noida,Blinkit,5,2871.78,10.3,0,Bike,0.28
+W01957,36,Rohini,Swiggy,36,3203.73,10.3,0,Bike,0.18
+W01958,35,Noida,Zepto,30,3171.14,9.6,0,Bike,0.28
+W01959,35,Rohini,Zepto,45,3749.58,8.4,0,Bike,0.18
+W01960,44,Connaught Place,Zepto,19,4418.92,9.5,0,Bike,0.15
+W01961,39,Rohini,Swiggy,23,4912.97,8.8,1,Bicycle,0.18
+W01962,22,North Delhi,Blinkit,34,3795.75,10.5,1,Bike,0.2
+W01963,25,Saket,BigBasket,13,4115.18,8.5,0,Bike,0.14
+W01964,20,Dwarka,Blinkit,43,3944.72,9.2,0,EV Scooter,0.22
+W01965,40,Dwarka,Zomato,29,2075.25,6.4,0,Bike,0.22
+W01966,35,North Delhi,Instamart,36,2831.69,9.5,0,Bike,0.2
+W01967,34,Saket,Zepto,22,4359.01,7.9,0,Bicycle,0.14
+W01968,26,West Delhi,Blinkit,47,4436.79,9.8,0,Bicycle,0.25
+W01969,21,Lajpat Nagar,BigBasket,36,4418.49,10.2,0,Bike,0.12
+W01970,29,Connaught Place,Zomato,9,3607.75,8.1,0,EV Scooter,0.15
+W01971,44,Lajpat Nagar,Swiggy,39,2154.13,9.0,0,EV Scooter,0.12
+W01972,34,West Delhi,Swiggy,19,2927.18,9.3,0,Bike,0.25
+W01973,25,West Delhi,BigBasket,38,3049.59,9.6,0,Bike,0.25
+W01974,21,Noida,Zomato,6,4253.01,10.2,0,Bicycle,0.28
+W01975,43,Faridabad,Zepto,47,3464.1,10.0,0,Bike,0.32
+W01976,43,Noida,Blinkit,15,5102.32,8.4,0,Bike,0.28
+W01977,36,Faridabad,Zomato,20,4924.11,11.4,0,Bicycle,0.32
+W01978,20,East Delhi,Swiggy,9,5088.96,10.1,0,Bike,0.35
+W01979,20,Rohini,BigBasket,32,3016.79,11.1,0,Bike,0.18
+W01980,23,Saket,BigBasket,4,4142.71,9.5,0,Bike,0.14
+W01981,39,Faridabad,Blinkit,18,3367.98,9.6,0,Bicycle,0.32
+W01982,35,Lajpat Nagar,BigBasket,5,4012.3,8.8,0,Bike,0.12
+W01983,27,North Delhi,BigBasket,20,3105.51,8.3,0,Bike,0.2
+W01984,20,Noida,Zomato,23,4730.93,10.5,0,Bike,0.28
+W01985,38,Saket,Zepto,11,3120.45,9.4,1,Bike,0.14
+W01986,30,Connaught Place,Blinkit,37,2192.21,8.8,0,EV Scooter,0.15
+W01987,36,Saket,Zomato,22,5377.02,7.5,0,EV Scooter,0.14
+W01988,44,Rohini,Zepto,4,4104.0,11.3,0,Bike,0.18
+W01989,29,East Delhi,Zomato,29,2894.7,9.2,1,Bicycle,0.35
+W01990,31,Faridabad,Instamart,44,3620.18,7.2,0,Bicycle,0.32
+W01991,28,East Delhi,Zomato,34,3288.51,9.1,0,Bicycle,0.35
+W01992,26,Connaught Place,BigBasket,13,3754.59,8.7,0,Bike,0.15
+W01993,31,West Delhi,Zepto,42,4392.22,8.6,1,Bike,0.25
+W01994,34,Dwarka,Blinkit,9,4266.62,9.9,0,Bicycle,0.22
+W01995,27,Connaught Place,Blinkit,42,3952.98,8.7,0,Bike,0.15
+W01996,36,Gurgaon,Zepto,31,3754.2,8.5,0,Bike,0.3
+W01997,24,Connaught Place,BigBasket,7,4612.94,11.0,0,Bike,0.15
+W01998,33,East Delhi,Swiggy,4,2209.63,6.4,1,EV Scooter,0.35
+W01999,21,Saket,Zomato,19,3150.85,8.9,0,Bike,0.14

@@ -4,7 +4,7 @@ import { User } from '../models/User'
 import { AppError } from '../middleware/errorHandler'
 import { authenticate, authorize } from '../middleware/auth'
 import { z } from 'zod'
-import { predictPremium, buildPricingInput } from '../services/MLService'
+
 
 const router = Router()
 
@@ -48,7 +48,7 @@ const calculatePremium = (zone: string, earnings: number, tier: string) => {
     loyaltyDiscount: 0,
     finalPremium: Math.round(finalPremium),
     tier,
-    maxCoverage: tier === 'basic' ? 1500 : tier === 'standard' ? 2500 : 4000,
+    maxCoverage: Math.round(finalPremium) * 20,
     eventsPerWeek: tier === 'basic' ? 2 : tier === 'standard' ? 3 : 5
   }
 }
@@ -64,25 +64,7 @@ router.get('/calculate-premium', authenticate, async (req, res, next) => {
 
     const tierMap: Record<string, number> = { basic: 0, standard: 1, premium: 2 }
 
-    // Build pricing inputs with zone/earnings overrides
     const user = await User.findById(req.user!.userId)
-    const tierIndex = tierMap[tier as string] ?? 1
-    const mlInput = {
-      ...buildPricingInput(user || {}, tierIndex),
-      avg_monthly_earnings: parseInt(earnings as string) || 15000,
-      // Rough zone → risk mapping
-      location_risk_score: (() => {
-        const riskMap: Record<string, number> = {
-          'South Delhi': 0.15, 'North Delhi': 0.20, 'East Delhi': 0.35,
-          'West Delhi': 0.25, 'Central Delhi': 0.30, 'Gurgaon': 0.25,
-          'Noida': 0.20, 'Faridabad': 0.30, 'Ghaziabad': 0.35,
-        }
-        return riskMap[zone as string] ?? 0.20
-      })(),
-      coverage_tier: tierIndex,
-    }
-
-    const { prediction, source } = await predictPremium(mlInput)
 
     // Legacy-compatible calculation also returned for backward compat
     const legacyCalc = calculatePremium(zone as string, parseInt(earnings as string), tier as string)
@@ -91,21 +73,21 @@ router.get('/calculate-premium', authenticate, async (req, res, next) => {
       success: true,
       data: {
         ...legacyCalc,
-        // ML enrichment
+        // Formula-based fallback
         ml: {
-          annual_premium: prediction.annual_premium,
-          monthly_premium: prediction.monthly_premium,
-          confidence_band_low: prediction.confidence_band_low,
-          confidence_band_high: prediction.confidence_band_high,
-          model: prediction.model,
-          source,
+          annual_premium: legacyCalc.finalPremium * 12,
+          monthly_premium: legacyCalc.finalPremium,
+          confidence_band_low: Math.round(legacyCalc.finalPremium * 0.92),
+          confidence_band_high: Math.round(legacyCalc.finalPremium * 1.08),
+          model: 'Fallback Formula',
+          source: 'fallback'
         },
         model_spec: {
-          algorithm: 'XGBoost Gradient Boosting',
-          features: 23,
-          training_records: '50,000',
-          accuracy: '92%',
-          retraining: 'Monthly',
+          algorithm: 'Formula Fallback',
+          features: 6,
+          training_records: 'N/A',
+          accuracy: 'N/A',
+          retraining: 'N/A',
         },
       },
     })

@@ -91,7 +91,7 @@
       "Properties": {
         "Code": {
           "S3Bucket": "serverless-framework-deployments-us-east-1-bdc3bd6d-394d",
-          "S3Key": "serverless/policypilotai-backend/dev/1774947553891-2026-03-31T08:59:13.891Z/policypilotai-backend.zip"
+          "S3Key": "serverless/policypilotai-backend/dev/1775197702542-2026-04-03T06:28:22.542Z/policypilotai-backend.zip"
         },
         "Handler": "dist/backend/src/handler.handler",
         "Runtime": "nodejs20.x",
@@ -126,14 +126,14 @@
         "ApiLogGroup"
       ]
     },
-    "ApiLambdaVersion8a2LGEtFjE50tOnyTQi31DlJie8afklQlGGjF4kqI": {
+    "ApiLambdaVersion9mVra1jhDZq0rvr4FOurJmhWNUodcMCsj6SrPJ9mJM": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "ApiLambdaFunction"
         },
-        "CodeSha256": "R0NguavrCStd7krBZmt168MlCY3sx+fAWhtm/0QG+L4="
+        "CodeSha256": "2vTdJTxdU07zpT/9r+SlXPWQ1zQ/kYe1YM4tcr/m5JY="
       }
     },
     "HttpApi": {
@@ -262,7 +262,7 @@
     "ApiLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "ApiLambdaVersion8a2LGEtFjE50tOnyTQi31DlJie8afklQlGGjF4kqI"
+        "Ref": "ApiLambdaVersion9mVra1jhDZq0rvr4FOurJmhWNUodcMCsj6SrPJ9mJM"
       },
       "Export": {
         "Name": "sls-policypilotai-backend-dev-ApiLambdaFunctionQualifiedArn"

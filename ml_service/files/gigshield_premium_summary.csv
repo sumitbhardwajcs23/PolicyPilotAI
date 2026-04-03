@@ -1,0 +1,241 @@
+worker_zone,season,trigger_type,avg_premium,avg_geo_risk,avg_temporal_risk,claim_count,fraud_rate
+Connaught Place,Monsoon,Extreme Heat,63.668,0.15,0.3,40,0.075
+Connaught Place,Monsoon,Flooding,63.385,0.15,0.3,43,0.14
+Connaught Place,Monsoon,Heavy Rainfall,63.199,0.15,0.3,40,0.05
+Connaught Place,Monsoon,Severe Pollution,63.633,0.15,0.3,35,0.143
+Connaught Place,Monsoon,Social Disruption,64.049,0.15,0.3,47,0.213
+Connaught Place,Post-Monsoon,Extreme Heat,55.091,0.15,0.1,37,0.216
+Connaught Place,Post-Monsoon,Flooding,54.098,0.15,0.1,41,0.073
+Connaught Place,Post-Monsoon,Heavy Rainfall,54.254,0.15,0.1,43,0.186
+Connaught Place,Post-Monsoon,Severe Pollution,55.321,0.15,0.1,32,0.125
+Connaught Place,Post-Monsoon,Social Disruption,55.127,0.15,0.1,38,0.211
+Connaught Place,Summer,Extreme Heat,59.371,0.15,0.2,34,0.176
+Connaught Place,Summer,Flooding,59.118,0.15,0.2,43,0.116
+Connaught Place,Summer,Heavy Rainfall,59.172,0.15,0.2,36,0.111
+Connaught Place,Summer,Severe Pollution,59.312,0.15,0.2,44,0.227
+Connaught Place,Summer,Social Disruption,58.777,0.15,0.2,37,0.189
+Connaught Place,Winter,Extreme Heat,53.326,0.15,0.05,45,0.133
+Connaught Place,Winter,Flooding,52.078,0.15,0.05,40,0.2
+Connaught Place,Winter,Heavy Rainfall,52.957,0.15,0.05,40,0.2
+Connaught Place,Winter,Severe Pollution,52.178,0.15,0.05,48,0.062
+Connaught Place,Winter,Social Disruption,52.786,0.15,0.05,39,0.154
+Dwarka,Monsoon,Extreme Heat,66.897,0.22,0.3,32,0.219
+Dwarka,Monsoon,Flooding,67.373,0.22,0.3,45,0.089
+Dwarka,Monsoon,Heavy Rainfall,67.078,0.22,0.3,44,0.205
+Dwarka,Monsoon,Severe Pollution,65.692,0.22,0.3,50,0.04
+Dwarka,Monsoon,Social Disruption,67.601,0.22,0.3,40,0.2
+Dwarka,Post-Monsoon,Extreme Heat,57.399,0.22,0.1,36,0.222
+Dwarka,Post-Monsoon,Flooding,58.818,0.22,0.1,29,0.138
+Dwarka,Post-Monsoon,Heavy Rainfall,57.987,0.22,0.1,44,0.114
+Dwarka,Post-Monsoon,Severe Pollution,58.665,0.22,0.1,59,0.22
+Dwarka,Post-Monsoon,Social Disruption,58.261,0.22,0.1,32,0.25
+Dwarka,Summer,Extreme Heat,62.386,0.22,0.2,41,0.244
+Dwarka,Summer,Flooding,62.448,0.22,0.2,37,0.189
+Dwarka,Summer,Heavy Rainfall,61.89,0.22,0.2,41,0.122
+Dwarka,Summer,Severe Pollution,61.537,0.22,0.2,36,0.139
+Dwarka,Summer,Social Disruption,61.817,0.22,0.2,52,0.192
+Dwarka,Winter,Extreme Heat,56.519,0.22,0.05,49,0.184
+Dwarka,Winter,Flooding,56.283,0.22,0.05,46,0.152
+Dwarka,Winter,Heavy Rainfall,55.913,0.22,0.05,53,0.189
+Dwarka,Winter,Severe Pollution,55.766,0.22,0.05,41,0.098
+Dwarka,Winter,Social Disruption,55.795,0.22,0.05,37,0.189
+East Delhi,Monsoon,Extreme Heat,72.119,0.35,0.3,50,0.22
+East Delhi,Monsoon,Flooding,72.058,0.35,0.3,55,0.109
+East Delhi,Monsoon,Heavy Rainfall,71.445,0.35,0.3,33,0.212
+East Delhi,Monsoon,Severe Pollution,73.392,0.35,0.3,41,0.244
+East Delhi,Monsoon,Social Disruption,72.009,0.35,0.3,55,0.2
+East Delhi,Post-Monsoon,Extreme Heat,62.905,0.35,0.1,46,0.109
+East Delhi,Post-Monsoon,Flooding,64.155,0.35,0.1,51,0.118
+East Delhi,Post-Monsoon,Heavy Rainfall,63.723,0.35,0.1,40,0.225
+East Delhi,Post-Monsoon,Severe Pollution,63.746,0.35,0.1,50,0.14
+East Delhi,Post-Monsoon,Social Disruption,63.195,0.35,0.1,40,0.2
+East Delhi,Summer,Extreme Heat,67.79,0.35,0.2,52,0.231
+East Delhi,Summer,Flooding,67.263,0.35,0.2,57,0.193
+East Delhi,Summer,Heavy Rainfall,68.7,0.35,0.2,36,0.25
+East Delhi,Summer,Severe Pollution,66.724,0.35,0.2,45,0.156
+East Delhi,Summer,Social Disruption,68.046,0.35,0.2,57,0.14
+East Delhi,Winter,Extreme Heat,62.039,0.35,0.05,42,0.238
+East Delhi,Winter,Flooding,61.659,0.35,0.05,39,0.128
+East Delhi,Winter,Heavy Rainfall,60.584,0.35,0.05,44,0.25
+East Delhi,Winter,Severe Pollution,60.891,0.35,0.05,50,0.16
+East Delhi,Winter,Social Disruption,61.055,0.35,0.05,55,0.236
+Faridabad,Monsoon,Extreme Heat,72.813,0.32,0.3,48,0.104
+Faridabad,Monsoon,Flooding,71.624,0.32,0.3,50,0.1
+Faridabad,Monsoon,Heavy Rainfall,72.61,0.32,0.3,56,0.196
+Faridabad,Monsoon,Severe Pollution,72.681,0.32,0.3,50,0.24
+Faridabad,Monsoon,Social Disruption,71.107,0.32,0.3,55,0.218
+Faridabad,Post-Monsoon,Extreme Heat,63.806,0.32,0.1,39,0.128
+Faridabad,Post-Monsoon,Flooding,62.551,0.32,0.1,49,0.265
+Faridabad,Post-Monsoon,Heavy Rainfall,63.436,0.32,0.1,44,0.227
+Faridabad,Post-Monsoon,Severe Pollution,64.163,0.32,0.1,37,0.162
+Faridabad,Post-Monsoon,Social Disruption,62.825,0.32,0.1,39,0.128
+Faridabad,Summer,Extreme Heat,66.862,0.32,0.2,42,0.19
+Faridabad,Summer,Flooding,67.449,0.32,0.2,49,0.184
+Faridabad,Summer,Heavy Rainfall,67.601,0.32,0.2,32,0.125
+Faridabad,Summer,Severe Pollution,67.053,0.32,0.2,39,0.231
+Faridabad,Summer,Social Disruption,67.171,0.32,0.2,36,0.278
+Faridabad,Winter,Extreme Heat,59.903,0.32,0.05,38,0.184
+Faridabad,Winter,Flooding,60.887,0.32,0.05,42,0.167
+Faridabad,Winter,Heavy Rainfall,60.65,0.32,0.05,36,0.194
+Faridabad,Winter,Severe Pollution,60.112,0.32,0.05,45,0.089
+Faridabad,Winter,Social Disruption,60.464,0.32,0.05,45,0.222
+Gurgaon,Monsoon,Extreme Heat,69.932,0.3,0.3,35,0.086
+Gurgaon,Monsoon,Flooding,70.235,0.3,0.3,44,0.205
+Gurgaon,Monsoon,Heavy Rainfall,71.562,0.3,0.3,39,0.179
+Gurgaon,Monsoon,Severe Pollution,70.684,0.3,0.3,39,0.179
+Gurgaon,Monsoon,Social Disruption,71.047,0.3,0.3,42,0.167
+Gurgaon,Post-Monsoon,Extreme Heat,61.478,0.3,0.1,45,0.289
+Gurgaon,Post-Monsoon,Flooding,61.116,0.3,0.1,38,0.184
+Gurgaon,Post-Monsoon,Heavy Rainfall,62.614,0.3,0.1,46,0.152
+Gurgaon,Post-Monsoon,Severe Pollution,60.597,0.3,0.1,49,0.102
+Gurgaon,Post-Monsoon,Social Disruption,61.191,0.3,0.1,43,0.279
+Gurgaon,Summer,Extreme Heat,66.584,0.3,0.2,45,0.133
+Gurgaon,Summer,Flooding,65.805,0.3,0.2,54,0.278
+Gurgaon,Summer,Heavy Rainfall,65.174,0.3,0.2,37,0.108
+Gurgaon,Summer,Severe Pollution,64.932,0.3,0.2,41,0.195
+Gurgaon,Summer,Social Disruption,66.135,0.3,0.2,47,0.234
+Gurgaon,Winter,Extreme Heat,60.127,0.3,0.05,43,0.14
+Gurgaon,Winter,Flooding,60.429,0.3,0.05,40,0.1
+Gurgaon,Winter,Heavy Rainfall,58.345,0.3,0.05,44,0.114
+Gurgaon,Winter,Severe Pollution,58.282,0.3,0.05,42,0.19
+Gurgaon,Winter,Social Disruption,60.473,0.3,0.05,52,0.308
+Lajpat Nagar,Monsoon,Extreme Heat,62.633,0.12,0.3,44,0.25
+Lajpat Nagar,Monsoon,Flooding,61.512,0.12,0.3,37,0.189
+Lajpat Nagar,Monsoon,Heavy Rainfall,62.29,0.12,0.3,34,0.206
+Lajpat Nagar,Monsoon,Severe Pollution,60.809,0.12,0.3,39,0.128
+Lajpat Nagar,Monsoon,Social Disruption,63.493,0.12,0.3,40,0.075
+Lajpat Nagar,Post-Monsoon,Extreme Heat,54.453,0.12,0.1,32,0.125
+Lajpat Nagar,Post-Monsoon,Flooding,53.317,0.12,0.1,32,0.094
+Lajpat Nagar,Post-Monsoon,Heavy Rainfall,53.128,0.12,0.1,36,0.139
+Lajpat Nagar,Post-Monsoon,Severe Pollution,54.728,0.12,0.1,31,0.065
+Lajpat Nagar,Post-Monsoon,Social Disruption,53.251,0.12,0.1,36,0.167
+Lajpat Nagar,Summer,Extreme Heat,56.833,0.12,0.2,35,0.2
+Lajpat Nagar,Summer,Flooding,57.87,0.12,0.2,35,0.171
+Lajpat Nagar,Summer,Heavy Rainfall,57.693,0.12,0.2,32,0.156
+Lajpat Nagar,Summer,Severe Pollution,58.771,0.12,0.2,42,0.119
+Lajpat Nagar,Summer,Social Disruption,57.614,0.12,0.2,45,0.267
+Lajpat Nagar,Winter,Extreme Heat,50.718,0.12,0.05,42,0.214
+Lajpat Nagar,Winter,Flooding,51.128,0.12,0.05,33,0.03
+Lajpat Nagar,Winter,Heavy Rainfall,51.009,0.12,0.05,28,0.179
+Lajpat Nagar,Winter,Severe Pollution,50.166,0.12,0.05,40,0.125
+Lajpat Nagar,Winter,Social Disruption,50.141,0.12,0.05,31,0.194
+Noida,Monsoon,Extreme Heat,70.406,0.28,0.3,46,0.087
+Noida,Monsoon,Flooding,68.158,0.28,0.3,42,0.214
+Noida,Monsoon,Heavy Rainfall,70.415,0.28,0.3,44,0.182
+Noida,Monsoon,Severe Pollution,70.505,0.28,0.3,44,0.136
+Noida,Monsoon,Social Disruption,68.267,0.28,0.3,32,0.281
+Noida,Post-Monsoon,Extreme Heat,61.825,0.28,0.1,49,0.184
+Noida,Post-Monsoon,Flooding,61.76,0.28,0.1,43,0.233
+Noida,Post-Monsoon,Heavy Rainfall,60.593,0.28,0.1,36,0.167
+Noida,Post-Monsoon,Severe Pollution,60.763,0.28,0.1,41,0.098
+Noida,Post-Monsoon,Social Disruption,61.312,0.28,0.1,28,0.214
+Noida,Summer,Extreme Heat,64.531,0.28,0.2,38,0.289
+Noida,Summer,Flooding,65.723,0.28,0.2,43,0.233
+Noida,Summer,Heavy Rainfall,65.584,0.28,0.2,36,0.167
+Noida,Summer,Severe Pollution,65.444,0.28,0.2,45,0.178
+Noida,Summer,Social Disruption,65.785,0.28,0.2,42,0.238
+Noida,Winter,Extreme Heat,58.8,0.28,0.05,38,0.158
+Noida,Winter,Flooding,59.658,0.28,0.05,33,0.212
+Noida,Winter,Heavy Rainfall,58.813,0.28,0.05,37,0.216
+Noida,Winter,Severe Pollution,59.406,0.28,0.05,36,0.222
+Noida,Winter,Social Disruption,57.147,0.28,0.05,44,0.182
+North Delhi,Monsoon,Extreme Heat,65.469,0.2,0.3,34,0.176
+North Delhi,Monsoon,Flooding,67.076,0.2,0.3,30,0.167
+North Delhi,Monsoon,Heavy Rainfall,67.943,0.2,0.3,36,0.083
+North Delhi,Monsoon,Severe Pollution,65.082,0.2,0.3,45,0.133
+North Delhi,Monsoon,Social Disruption,66.862,0.2,0.3,41,0.122
+North Delhi,Post-Monsoon,Extreme Heat,58.941,0.2,0.1,38,0.132
+North Delhi,Post-Monsoon,Flooding,57.417,0.2,0.1,53,0.132
+North Delhi,Post-Monsoon,Heavy Rainfall,56.983,0.2,0.1,38,0.211
+North Delhi,Post-Monsoon,Severe Pollution,57.371,0.2,0.1,41,0.195
+North Delhi,Post-Monsoon,Social Disruption,58.184,0.2,0.1,38,0.158
+North Delhi,Summer,Extreme Heat,61.365,0.2,0.2,44,0.136
+North Delhi,Summer,Flooding,62.184,0.2,0.2,45,0.244
+North Delhi,Summer,Heavy Rainfall,62.481,0.2,0.2,45,0.2
+North Delhi,Summer,Severe Pollution,61.901,0.2,0.2,43,0.163
+North Delhi,Summer,Social Disruption,63.699,0.2,0.2,40,0.225
+North Delhi,Winter,Extreme Heat,56.056,0.2,0.05,35,0.086
+North Delhi,Winter,Flooding,54.788,0.2,0.05,32,0.219
+North Delhi,Winter,Heavy Rainfall,55.888,0.2,0.05,46,0.174
+North Delhi,Winter,Severe Pollution,54.506,0.2,0.05,35,0.286
+North Delhi,Winter,Social Disruption,55.087,0.2,0.05,48,0.188
+Rohini,Monsoon,Extreme Heat,65.077,0.18,0.3,42,0.119
+Rohini,Monsoon,Flooding,64.692,0.18,0.3,34,0.118
+Rohini,Monsoon,Heavy Rainfall,64.688,0.18,0.3,36,0.167
+Rohini,Monsoon,Severe Pollution,64.184,0.18,0.3,37,0.27
+Rohini,Monsoon,Social Disruption,65.484,0.18,0.3,42,0.19
+Rohini,Post-Monsoon,Extreme Heat,56.372,0.18,0.1,33,0.242
+Rohini,Post-Monsoon,Flooding,57.744,0.18,0.1,38,0.184
+Rohini,Post-Monsoon,Heavy Rainfall,57.227,0.18,0.1,36,0.111
+Rohini,Post-Monsoon,Severe Pollution,56.582,0.18,0.1,29,0.207
+Rohini,Post-Monsoon,Social Disruption,55.009,0.18,0.1,29,0.069
+Rohini,Summer,Extreme Heat,59.507,0.18,0.2,40,0.2
+Rohini,Summer,Flooding,60.724,0.18,0.2,40,0.15
+Rohini,Summer,Heavy Rainfall,59.876,0.18,0.2,44,0.159
+Rohini,Summer,Severe Pollution,60.248,0.18,0.2,40,0.125
+Rohini,Summer,Social Disruption,60.979,0.18,0.2,31,0.129
+Rohini,Winter,Extreme Heat,54.669,0.18,0.05,32,0.188
+Rohini,Winter,Flooding,54.995,0.18,0.05,35,0.143
+Rohini,Winter,Heavy Rainfall,55.207,0.18,0.05,43,0.209
+Rohini,Winter,Severe Pollution,54.391,0.18,0.05,42,0.119
+Rohini,Winter,Social Disruption,53.968,0.18,0.05,58,0.172
+Saket,Monsoon,Extreme Heat,62.793,0.14,0.3,49,0.122
+Saket,Monsoon,Flooding,64.218,0.14,0.3,43,0.116
+Saket,Monsoon,Heavy Rainfall,63.453,0.14,0.3,57,0.123
+Saket,Monsoon,Severe Pollution,63.411,0.14,0.3,44,0.205
+Saket,Monsoon,Social Disruption,63.595,0.14,0.3,57,0.263
+Saket,Post-Monsoon,Extreme Heat,53.858,0.14,0.1,54,0.259
+Saket,Post-Monsoon,Flooding,54.448,0.14,0.1,45,0.089
+Saket,Post-Monsoon,Heavy Rainfall,54.855,0.14,0.1,43,0.116
+Saket,Post-Monsoon,Severe Pollution,53.857,0.14,0.1,49,0.163
+Saket,Post-Monsoon,Social Disruption,54.12,0.14,0.1,47,0.213
+Saket,Summer,Extreme Heat,58.652,0.14,0.2,47,0.106
+Saket,Summer,Flooding,58.974,0.14,0.2,40,0.05
+Saket,Summer,Heavy Rainfall,58.472,0.14,0.2,43,0.279
+Saket,Summer,Severe Pollution,58.718,0.14,0.2,33,0.091
+Saket,Summer,Social Disruption,58.374,0.14,0.2,42,0.167
+Saket,Winter,Extreme Heat,51.924,0.14,0.05,42,0.214
+Saket,Winter,Flooding,52.733,0.14,0.05,42,0.19
+Saket,Winter,Heavy Rainfall,51.988,0.14,0.05,51,0.039
+Saket,Winter,Severe Pollution,52.184,0.14,0.05,42,0.167
+Saket,Winter,Social Disruption,51.853,0.14,0.05,40,0.25
+South Delhi,Monsoon,Extreme Heat,63.075,0.1,0.3,39,0.205
+South Delhi,Monsoon,Flooding,61.957,0.1,0.3,46,0.152
+South Delhi,Monsoon,Heavy Rainfall,62.067,0.1,0.3,48,0.229
+South Delhi,Monsoon,Severe Pollution,62.001,0.1,0.3,47,0.149
+South Delhi,Monsoon,Social Disruption,62.005,0.1,0.3,56,0.214
+South Delhi,Post-Monsoon,Extreme Heat,52.72,0.1,0.1,63,0.206
+South Delhi,Post-Monsoon,Flooding,52.953,0.1,0.1,52,0.115
+South Delhi,Post-Monsoon,Heavy Rainfall,52.833,0.1,0.1,62,0.323
+South Delhi,Post-Monsoon,Severe Pollution,52.717,0.1,0.1,49,0.245
+South Delhi,Post-Monsoon,Social Disruption,52.453,0.1,0.1,45,0.156
+South Delhi,Summer,Extreme Heat,57.781,0.1,0.2,49,0.245
+South Delhi,Summer,Flooding,57.655,0.1,0.2,35,0.114
+South Delhi,Summer,Heavy Rainfall,56.577,0.1,0.2,46,0.109
+South Delhi,Summer,Severe Pollution,58.586,0.1,0.2,36,0.194
+South Delhi,Summer,Social Disruption,58.161,0.1,0.2,41,0.244
+South Delhi,Winter,Extreme Heat,51.808,0.1,0.05,36,0.139
+South Delhi,Winter,Flooding,50.701,0.1,0.05,41,0.122
+South Delhi,Winter,Heavy Rainfall,50.921,0.1,0.05,48,0.208
+South Delhi,Winter,Severe Pollution,50.425,0.1,0.05,43,0.163
+South Delhi,Winter,Social Disruption,50.853,0.1,0.05,51,0.157
+West Delhi,Monsoon,Extreme Heat,69.051,0.25,0.3,43,0.186
+West Delhi,Monsoon,Flooding,68.321,0.25,0.3,36,0.139
+West Delhi,Monsoon,Heavy Rainfall,67.158,0.25,0.3,29,0.034
+West Delhi,Monsoon,Severe Pollution,68.114,0.25,0.3,34,0.265
+West Delhi,Monsoon,Social Disruption,66.094,0.25,0.3,27,0.296
+West Delhi,Post-Monsoon,Extreme Heat,58.28,0.25,0.1,28,0.286
+West Delhi,Post-Monsoon,Flooding,58.437,0.25,0.1,38,0.237
+West Delhi,Post-Monsoon,Heavy Rainfall,59.1,0.25,0.1,40,0.175
+West Delhi,Post-Monsoon,Severe Pollution,58.799,0.25,0.1,34,0.235
+West Delhi,Post-Monsoon,Social Disruption,58.997,0.25,0.1,40,0.175
+West Delhi,Summer,Extreme Heat,62.909,0.25,0.2,43,0.279
+West Delhi,Summer,Flooding,64.193,0.25,0.2,46,0.13
+West Delhi,Summer,Heavy Rainfall,64.186,0.25,0.2,37,0.081
+West Delhi,Summer,Severe Pollution,62.598,0.25,0.2,24,0.125
+West Delhi,Summer,Social Disruption,63.682,0.25,0.2,40,0.225
+West Delhi,Winter,Extreme Heat,57.163,0.25,0.05,40,0.25
+West Delhi,Winter,Flooding,56.57,0.25,0.05,40,0.2
+West Delhi,Winter,Heavy Rainfall,56.645,0.25,0.05,48,0.104
+West Delhi,Winter,Severe Pollution,56.81,0.25,0.05,37,0.27
+West Delhi,Winter,Social Disruption,55.788,0.25,0.05,44,0.182

@@ -6,12 +6,6 @@ import {
   Shield, 
   Search, 
   Eye,
-  Download,
-  FileText,
-  Calendar,
-  IndianRupee,
-  ArrowRight,
-  AlertCircle,
   RefreshCw,
   XCircle
 } from 'lucide-react';
@@ -22,7 +16,6 @@ import {
   DialogTitle,
 } from '@/components/ui/dialog';
 import { cn } from '@/lib/utils';
-import toast from 'react-hot-toast';
 
 export function UserPolicies() {
   const { userPolicies, loading, fetchUserPolicies, cancelPolicy } = usePoliciesApi();
