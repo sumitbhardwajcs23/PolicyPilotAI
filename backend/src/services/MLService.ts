@@ -50,38 +50,42 @@ export interface PricingPrediction {
 // ─── Fraud Detection Model Types ──────────────────────────────────────────────
 
 export interface FraudInput {
-  claim_amount: number
-  time_since_policy_start_days: number
-  claim_hour: number              // 0–23
-  claim_day_of_week: number       // 0–6
-  claim_frequency_30d: number
-  location_claim_density: number  // 0.0–1.0
-  location_matches_usual_area: number  // 0|1
-  device_id_changes_7d: number
-  ip_country_mismatch: number     // 0|1
-  multiple_accounts_flag: number  // 0|1
-  platform_rating: number         // 1.0–5.0
-  reviews_count: number
-  earnings_drop_fraction: number  // 0.0–1.0
-  claimed_event_type: number      // 0=medical,1=vehicle,2=income,3=weather,4=other
-  weather_event_matched: number   // 0|1
-  police_report_filed: number     // 0|1
-  third_party_involved: number    // 0|1
-  witness_count: number
-  photo_evidence_count: number
-  claim_amount_vs_avg_ratio: number
-  prior_denied_claims: number
-  days_since_last_claim: number
+  trigger_type: number
+  weather_api_threshold_crossed: number
+  rainfall_mm_on_day: number
+  temperature_celsius: number
+  aqi_reading_trigger_day: number
+  event_duration_hours: number
+  multiple_workers_same_event: number
+  gps_in_affected_zone: number
+  location_matches_home_zone: number
+  distance_from_trigger_km: number
+  platform_order_drop_pct: number
+  platform_activity_at_time: number
+  zone_order_volume_drop: number
   account_age_days: number
-  support_contact_frequency_7d: number
-  login_anomaly_score: number     // 0.0–1.0
-  app_version_outdated: number    // 0|1
-  kyc_complete: number            // 0|1
-  biometric_verified: number      // 0|1
-  payout_method_changed_recently: number  // 0|1
-  high_risk_network_flag: number  // 0|1
-  claim_description_similarity_score: number  // 0.0–1.0
-  threshold?: number              // classification threshold (default 0.5)
+  kyc_complete: number
+  biometric_verified: number
+  prior_claims_count_90d: number
+  prior_fraud_flags: number
+  platform_rating: number
+  tenure_weeks: number
+  claim_filed_within_hours: number
+  claim_amount_vs_weekly_avg: number
+  upi_id_changed_7d: number
+  multiple_upi_ids: number
+  device_changes_7d: number
+  login_anomaly_score: number
+  support_escalation_count_7d: number
+  claim_description_similarity: number
+  ip_match_home_city: number
+  battery_level_at_claim: number
+  app_version_current: number
+  vpn_proxy_active: number
+  jailbroken_rooted_device: number
+  concurrent_logins: number
+  weekend_claim_flag: number
+  threshold?: number
 }
 
 export interface FraudPrediction {
@@ -90,10 +94,13 @@ export interface FraudPrediction {
   risk_level: 'LOW' | 'MEDIUM' | 'HIGH' | 'CRITICAL'
   rf_probability: number
   nn_probability: number
+  payout_decision?: 'AUTO_APPROVE' | 'MANUAL_REVIEW' | 'REJECTED'
+  payout_eta?: string | null
   top_risk_features: string[]
   threshold_used: number
   model: string
   feature_count: number
+  api_verified?: boolean
 }
 
 // ─── Model Metadata Types ─────────────────────────────────────────────────────
@@ -202,10 +209,10 @@ export async function detectFraud(
     console.warn('[MLService] Fraud detection failed, using fallback score:', err)
     // Graceful degradation — rule-based fallback
     let score = 0
-    if (!input.weather_event_matched) score += 40
-    if (input.ip_country_mismatch) score += 20
-    if (input.multiple_accounts_flag) score += 20
-    if (input.claim_frequency_30d > 3) score += 15
+    if (!input.weather_api_threshold_crossed) score += 40
+    if (input.vpn_proxy_active) score += 20
+    if (input.multiple_upi_ids) score += 20
+    if (input.prior_claims_count_90d > 3) score += 15
     score += Math.floor(Math.random() * 5)
     const prob = Math.min(score / 100, 0.99)
     return {
@@ -215,10 +222,12 @@ export async function detectFraud(
         risk_level: prob < 0.25 ? 'LOW' : prob < 0.5 ? 'MEDIUM' : prob < 0.75 ? 'HIGH' : 'CRITICAL',
         rf_probability: prob,
         nn_probability: prob,
+        payout_decision: prob < 0.3 ? 'AUTO_APPROVE' : prob < 0.7 ? 'MANUAL_REVIEW' : 'REJECTED',
         top_risk_features: [],
         threshold_used: 0.5,
         model: 'Fallback Rule Engine',
         feature_count: 5,
+        api_verified: input.weather_api_threshold_crossed === 1
       },
       source: 'fallback',
     }
@@ -227,50 +236,50 @@ export async function detectFraud(
 
 /**
  * Build a FraudInput object from a claim submission and user profile.
- * Maps existing claim/user fields to the 31 ML feature inputs.
+ * Maps existing claim/user fields to the 35 ML feature inputs for GigShield.
  */
 export function buildFraudInput(claim: any, user: any, policy: any): FraudInput {
-  const hour = new Date(claim.eventTimestamp).getHours()
-  const dow = new Date(claim.eventTimestamp).getDay()
   const accountAge = Math.floor(
     (Date.now() - new Date(user.createdAt || Date.now()).getTime()) / (1000 * 60 * 60 * 24)
   )
-  const daysSinceStart = Math.floor(
-    (Date.now() - new Date(policy.startDate).getTime()) / (1000 * 60 * 60 * 24)
-  )
+  const isWeekend = [0, 6].includes(new Date(claim.eventTimestamp).getDay()) ? 1 : 0
 
   return {
-    claim_amount: claim.payoutAmount || 450,
-    time_since_policy_start_days: daysSinceStart,
-    claim_hour: hour,
-    claim_day_of_week: dow,
-    claim_frequency_30d: 0,                   // populated by caller if known
-    location_claim_density: 0.3,
-    location_matches_usual_area: 1,
-    device_id_changes_7d: 0,
-    ip_country_mismatch: 0,
-    multiple_accounts_flag: 0,
-    platform_rating: user.platformRating || 4.0,
-    reviews_count: user.reviewsCount || 10,
-    earnings_drop_fraction: 0.0,
-    claimed_event_type: mapTriggerType(claim.triggerType),
-    weather_event_matched: 1,                 // updated by weather validation
-    police_report_filed: 0,
-    third_party_involved: 0,
-    witness_count: 0,
-    photo_evidence_count: (claim.evidence || []).length,
-    claim_amount_vs_avg_ratio: 1.0,
-    prior_denied_claims: 0,
-    days_since_last_claim: 365,
-    account_age_days: accountAge,
-    support_contact_frequency_7d: 0,
-    login_anomaly_score: 0.0,
-    app_version_outdated: 0,
+    trigger_type: mapTriggerType(claim.triggerType),
+    weather_api_threshold_crossed: 1, // Mock API verification
+    rainfall_mm_on_day: 45.0,
+    temperature_celsius: 28.0,
+    aqi_reading_trigger_day: 120.0,
+    event_duration_hours: 4.5,
+    multiple_workers_same_event: 0.2, // Low cluster density by default
+    gps_in_affected_zone: 1,
+    location_matches_home_zone: 1,
+    distance_from_trigger_km: 1.5,
+    platform_order_drop_pct: 0.4,
+    platform_activity_at_time: 0,
+    zone_order_volume_drop: 0.5,
+    account_age_days: accountAge || 120,
     kyc_complete: user.kycVerified ? 1 : 0,
     biometric_verified: user.biometricVerified ? 1 : 0,
-    payout_method_changed_recently: 0,
-    high_risk_network_flag: 0,
-    claim_description_similarity_score: 0.0,
+    prior_claims_count_90d: 0,
+    prior_fraud_flags: 0,
+    platform_rating: user.platformRating || 4.2,
+    tenure_weeks: Math.floor(accountAge / 7) || 20,
+    claim_filed_within_hours: 2.0,
+    claim_amount_vs_weekly_avg: 1.2,
+    upi_id_changed_7d: 0,
+    multiple_upi_ids: 0,
+    device_changes_7d: 0,
+    login_anomaly_score: 0.05,
+    support_escalation_count_7d: 0,
+    claim_description_similarity: 0.1,
+    ip_match_home_city: 1,
+    battery_level_at_claim: 45,
+    app_version_current: 1,
+    vpn_proxy_active: 0,
+    jailbroken_rooted_device: 0,
+    concurrent_logins: 1,
+    weekend_claim_flag: isWeekend,
     threshold: 0.5,
   }
 }

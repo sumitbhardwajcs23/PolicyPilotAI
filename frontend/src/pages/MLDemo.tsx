@@ -168,6 +168,13 @@ export function MLDemo() {
     login_anomaly_score: 0.05,
     support_escalation_count_7d: 0,
     claim_description_similarity: 0.05,
+    ip_match_home_city: 1,
+    battery_level_at_claim: 40,
+    app_version_current: 1,
+    vpn_proxy_active: 0,
+    jailbroken_rooted_device: 0,
+    concurrent_logins: 1,
+    weekend_claim_flag: 0,
     threshold: 0.5,
   })
   const [fResult, setFResult] = useState<FraudResult | null>(null)
@@ -194,9 +201,9 @@ export function MLDemo() {
   }
 
   const fraudPresets = {
-    genuine: { weather_api_threshold_crossed: 1, rainfall_mm_on_day: 90, gps_in_affected_zone: 1, location_matches_home_zone: 1, platform_order_drop_pct: 0.65, multiple_workers_same_event: 0.75, kyc_complete: 1, biometric_verified: 1, prior_fraud_flags: 0, claim_filed_within_hours: 1, login_anomaly_score: 0.03, upi_id_changed_7d: 0, claim_description_similarity: 0.04, prior_claims_count_90d: 0, account_age_days: 300, platform_rating: 4.5 },
-    suspicious: { weather_api_threshold_crossed: 0, rainfall_mm_on_day: 12, gps_in_affected_zone: 0, location_matches_home_zone: 0, platform_order_drop_pct: 0.05, multiple_workers_same_event: 0.02, kyc_complete: 1, biometric_verified: 0, prior_fraud_flags: 0, claim_filed_within_hours: 48, login_anomaly_score: 0.5, upi_id_changed_7d: 1, claim_description_similarity: 0.6, prior_claims_count_90d: 2, account_age_days: 40, platform_rating: 2.8 },
-    fraud: { weather_api_threshold_crossed: 0, rainfall_mm_on_day: 5, gps_in_affected_zone: 0, location_matches_home_zone: 0, platform_order_drop_pct: 0.0, multiple_workers_same_event: 0.01, kyc_complete: 0, biometric_verified: 0, prior_fraud_flags: 1, claim_filed_within_hours: 70, login_anomaly_score: 0.9, upi_id_changed_7d: 1, multiple_upi_ids: 1, claim_description_similarity: 0.92, prior_claims_count_90d: 6, account_age_days: 12, platform_rating: 1.2, device_changes_7d: 7 },
+    genuine: { weather_api_threshold_crossed: 1, rainfall_mm_on_day: 90, gps_in_affected_zone: 1, location_matches_home_zone: 1, platform_order_drop_pct: 0.65, multiple_workers_same_event: 0.75, kyc_complete: 1, biometric_verified: 1, prior_fraud_flags: 0, claim_filed_within_hours: 1, login_anomaly_score: 0.03, upi_id_changed_7d: 0, claim_description_similarity: 0.04, prior_claims_count_90d: 0, account_age_days: 300, platform_rating: 4.5, ip_match_home_city: 1, vpn_proxy_active: 0, jailbroken_rooted_device: 0, concurrent_logins: 1 },
+    suspicious: { weather_api_threshold_crossed: 0, rainfall_mm_on_day: 12, gps_in_affected_zone: 0, location_matches_home_zone: 0, platform_order_drop_pct: 0.05, multiple_workers_same_event: 0.02, kyc_complete: 1, biometric_verified: 0, prior_fraud_flags: 0, claim_filed_within_hours: 48, login_anomaly_score: 0.5, upi_id_changed_7d: 1, claim_description_similarity: 0.6, prior_claims_count_90d: 2, account_age_days: 40, platform_rating: 2.8, ip_match_home_city: 0, vpn_proxy_active: 1, jailbroken_rooted_device: 0, concurrent_logins: 2 },
+    fraud: { weather_api_threshold_crossed: 0, rainfall_mm_on_day: 5, gps_in_affected_zone: 0, location_matches_home_zone: 0, platform_order_drop_pct: 0.0, multiple_workers_same_event: 0.01, kyc_complete: 0, biometric_verified: 0, prior_fraud_flags: 1, claim_filed_within_hours: 70, login_anomaly_score: 0.9, upi_id_changed_7d: 1, multiple_upi_ids: 1, claim_description_similarity: 0.92, prior_claims_count_90d: 6, account_age_days: 12, platform_rating: 1.2, device_changes_7d: 7, ip_match_home_city: 0, vpn_proxy_active: 1, jailbroken_rooted_device: 1, concurrent_logins: 4 },
   }
 
   const setPreset = (p: keyof typeof fraudPresets) => {
@@ -475,7 +482,7 @@ export function MLDemo() {
                 </div>
                 <div>
                   <h3 className="font-bold text-white">Parametric Claim Verifier</h3>
-                  <p className="text-[11px] text-white/35">RF(60%) + NN(40%) ensemble · 28 signals · Zero-touch UPI</p>
+                  <p className="text-[11px] text-white/35">GigShield Random Forest · 35 signals · Zero-touch UPI</p>
                 </div>
               </div>
 
@@ -542,6 +549,8 @@ export function MLDemo() {
                   <Toggle label="UPI Changed (7d)" value={!!F.upi_id_changed_7d} onChange={v => setF(p => ({ ...p, upi_id_changed_7d: v ? 1 : 0 }))} />
                   <Toggle label="Prior Fraud Flag" value={!!F.prior_fraud_flags} onChange={v => setF(p => ({ ...p, prior_fraud_flags: v ? 1 : 0 }))} />
                   <Toggle label="Multiple UPI IDs" value={!!F.multiple_upi_ids} onChange={v => setF(p => ({ ...p, multiple_upi_ids: v ? 1 : 0 }))} />
+                  <Toggle label="VPN/Proxy Active" value={!!F.vpn_proxy_active} onChange={v => setF(p => ({ ...p, vpn_proxy_active: v ? 1 : 0 }))} />
+                  <Toggle label="Jailbroken Device" value={!!F.jailbroken_rooted_device} onChange={v => setF(p => ({ ...p, jailbroken_rooted_device: v ? 1 : 0 }))} />
                 </div>
               </div>
 
@@ -623,10 +632,10 @@ export function MLDemo() {
 
                     {/* RF vs NN bars */}
                     <div className="bg-white/4 rounded-xl p-4">
-                      <p className="text-[11px] text-white/35 mb-3">Ensemble Sub-models</p>
+                      <p className="text-[11px] text-white/35 mb-3">Model Components (Fallback visual)</p>
                       {[
-                        { label: 'Random Forest (60%)', val: fResult.rf_probability },
-                        { label: 'Neural Network (40%)', val: fResult.nn_probability },
+                        { label: 'Primary Feature Analysis', val: fResult.rf_probability },
+                        { label: 'Deep Pattern Analysis', val: fResult.nn_probability },
                       ].map(s => (
                         <div key={s.label} className="mb-2">
                           <div className="flex justify-between text-[11px] text-white/40 mb-1">
@@ -666,7 +675,7 @@ export function MLDemo() {
 
         {/* Footer */}
         <p className="text-center text-[11px] text-white/15 mt-10">
-          Real inference via Python/FastAPI microservice · XGBoost + RF/NN ensemble · India gig economy focus ·{' '}
+          Real inference via Python/FastAPI microservice · GigShield Random Forest · India gig economy focus ·{' '}
           <a href="https://policypilotai-2.onrender.com/docs" target="_blank" rel="noreferrer" className="text-violet-400/50 hover:text-violet-400 underline">Swagger →</a>
         </p>
       </div>
