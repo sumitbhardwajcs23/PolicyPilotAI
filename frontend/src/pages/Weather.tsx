@@ -13,7 +13,8 @@ import {
   AlertTriangle,
   MapPin,
   RefreshCw,
-  Users
+  Users,
+  CheckCircle2
 } from 'lucide-react';
 
 interface ParametricEvent {
