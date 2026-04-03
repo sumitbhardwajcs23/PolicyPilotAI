@@ -162,7 +162,12 @@ export function MLDemo() {
   const runFraud = async () => {
     setFLoading(true); setFResult(null)
     try {
-      const res = await mlDemoApi.predictFraud(F as any)
+      const input = {
+        ...F,
+        platform: F.platform || 'Swiggy',
+        worker_zone: F.worker_zone || 'Gurgaon'
+      };
+      const res = await mlDemoApi.predictFraud(input as any)
       if (res.prediction && (res.prediction.error || res.prediction.detail)) {
         setFResult({ error: res.prediction.error || res.prediction.detail } as any)
       } else {

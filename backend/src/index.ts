@@ -46,7 +46,7 @@ app.use(helmet({
       scriptSrc: ["'self'", "'unsafe-inline'", "'unsafe-eval'", "https://policypilotai.onrender.com", "https://policy-pilot-ai.vercel.app"],
       styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
       imgSrc: ["'self'", "data:", "https:", "blob:", "*.tile.openstreetmap.org"],
-      connectSrc: ["'self'", "https://policypilotai.onrender.com", "https://policy-pilot-ai-git-main-bhardwajdevid5-6389s-projects.vercel.app", "http://localhost:5000"],
+      connectSrc: ["'self'", "https://9qhkpunkii.execute-api.us-east-1.amazonaws.com", "https://policypilotai-2.onrender.com", "https://gigshield-fraud-api.onrender.com", "https://policy-pilot-ai-git-main-bhardwajdevid5-6389s-projects.vercel.app", "http://localhost:5000", "http://localhost:5001"],
       fontSrc: ["'self'", "https://fonts.gstatic.com"],
       objectSrc: ["'none'"],
       upgradeInsecureRequests: [],
