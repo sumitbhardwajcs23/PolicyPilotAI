@@ -161,10 +161,16 @@ export const mlDemoApi = {
     }
   },
   predictFraud: async (body: any) => {
+    // Inject safe defaults for mandatory features if missing
+    const preparedBody = {
+      ...body,
+      platform: body.platform || 'Swiggy',
+      worker_zone: body.worker_zone || 'Gurgaon'
+    }
     const r = await fetch(`${ML_URL}/predict`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(body),
+      body: JSON.stringify(preparedBody),
     })
     const data = await r.json()
     return { success: true, prediction: data }

@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: policypilotai-2
+    name: policypilotai-ml-service
     runtime: python
     rootDir: ml_service
     buildCommand: pip install -r requirements.txt
