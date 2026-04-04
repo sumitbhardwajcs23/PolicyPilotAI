@@ -144,21 +144,13 @@ export const mlDemoApi = {
     const r = await fetch(`${ML_URL}/schema`)
     return r.json()
   },
-  predictPremium: async (_body: any) => {
-    return {
-      success: true,
-      prediction: {
-        weekly_premium: 29 + Math.floor(Math.random() * 50),
-        monthly_estimate: 240,
-        annual_estimate: 2800,
-        tier_label: 'Standard' as 'Standard',
-        confidence_band_low: 25,
-        confidence_band_high: 85,
-        model: 'Pricing Fallback',
-        feature_count: 5,
-        coverage_note: 'Standard risk baseline'
-      }
-    }
+  predictPremium: async (body: any) => {
+    const r = await fetch(`${ML_URL}/predict/premium`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(body),
+    })
+    return r.json()
   },
   predictFraud: async (body: any) => {
     // Inject safe defaults for mandatory features if missing

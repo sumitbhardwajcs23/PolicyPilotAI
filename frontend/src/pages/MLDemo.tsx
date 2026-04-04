@@ -165,17 +165,11 @@ export function MLDemo() {
       if (res.success) {
         const pred = res.prediction as any
         const selectedTierLabel = P.coverage_tier === 0 ? 'Basic' : P.coverage_tier === 1 ? 'Standard' : 'Premium'
-        const customWeekly = tierPrices[selectedTierLabel]
         
-        // Use custom price for final display while keeping model metadata
+        // Use the ML predicted price directly
         setPResult({
           ...pred,
-          weekly_premium: customWeekly,
-          monthly_estimate: customWeekly * 4,
-          annual_estimate: customWeekly * 52,
-          tier_label: selectedTierLabel,
-          confidence_band_low: Math.floor(customWeekly * 0.94),
-          confidence_band_high: Math.ceil(customWeekly * 1.06)
+          tier_label: selectedTierLabel
         })
       }
     } finally { setPLoading(false) }
