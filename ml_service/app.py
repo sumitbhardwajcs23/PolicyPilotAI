@@ -8,7 +8,12 @@ from flask_cors import CORS
 from datetime import datetime
 
 app = Flask(__name__)
-CORS(app)
+# Explicitly allow all origins and common methods for all routes
+CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
+
+# Deployment version to track Render propagation
+APP_VERSION = "1.0.2"
+APP_BUILD_TIME = datetime.utcnow().isoformat()
 
 # ── Load model artifacts ──────────────────────────────────────────────────────
 # Artifacts are in the same directory as app.py
@@ -69,7 +74,8 @@ def encode_features(data: dict) -> np.ndarray:
 def index():
     return jsonify({
         "service": "GigShield Fraud Detection API",
-        "version": "1.0.0",
+        "version": APP_VERSION,
+        "build_time": APP_BUILD_TIME,
         "status": "healthy",
         "endpoints": {
             "POST /predict": "Score a single claim",
@@ -82,7 +88,11 @@ def index():
 
 @app.route("/health", methods=["GET"])
 def health():
-    return jsonify({"status": "ok", "timestamp": datetime.utcnow().isoformat()})
+    return jsonify({
+        "status": "ok", 
+        "version": APP_VERSION,
+        "timestamp": datetime.utcnow().isoformat()
+    })
 
 
 @app.route("/schema", methods=["GET"])
