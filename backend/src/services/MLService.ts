@@ -225,10 +225,26 @@ export async function detectFraud(
 }
 
 /**
+ * Helper to generate a deterministic pseudo-random float between min and max
+ * based on a seed string (e.g., claimId).
+ */
+function getPseudoRandom(seed: string, min: number, max: number): number {
+  let hash = 0
+  for (let i = 0; i < seed.length; i++) {
+    hash = (hash << 5) - hash + seed.charCodeAt(i)
+    hash |= 0 // Convert to 32bit integer
+  }
+  const norm = (Math.abs(hash) % 1000) / 1000
+  return parseFloat((min + norm * (max - min)).toFixed(4))
+}
+
+/**
  * Build a FraudInput object from a claim submission and user profile.
  * Maps existing claim/user fields to the 35 ML feature inputs for GigShield.
  */
 export function buildFraudInput(claim: any, user: any, policy: any): FraudInput {
+  const claimId = claim._id?.toString() || Math.random().toString(36)
+  
   const accountAge = Math.floor(
     (Date.now() - new Date(user.createdAt || Date.now()).getTime()) / (1000 * 60 * 60 * 24 * 30) // months
   )
@@ -245,42 +261,50 @@ export function buildFraudInput(claim: any, user: any, policy: any): FraudInput 
     return 'Social Disruption'
   }
 
+  // Determine season based on month
+  const month = new Date().getMonth()
+  let season = 'Summer'
+  if (month >= 6 && month <= 8) season = 'Monsoon'
+  else if (month >= 9 && month <= 10) season = 'Post-Monsoon'
+  else if (month >= 11 || month <= 1) season = 'Winter'
+
   return {
     worker_age: workerAge,
     worker_zone: claim.location?.zone || user.zone || 'Gurgaon',
     platform: user.platform || 'Swiggy', 
-    vehicle_type: 'Bike', 
+    vehicle_type: user.vehicleType || 'Bike', 
     months_active: accountAge || 12,
-    avg_weekly_earnings_inr: 3500, // Default if not in user model
-    work_hours_daily: 9,
-    multiplatform: 1,
-    season: 'Summer',
+    avg_weekly_earnings_inr: user.avgWeeklyEarnings || 3500, 
+    work_hours_daily: user.avgDailyHours || 9,
+    multiplatform: user.isMultiPlatform ? 1 : 0,
+    season: season,
     trigger_type: mapTriggerType(claim.triggerType),
-    geo_risk: 0.3,
-    temporal_risk: 0.2,
-    combined_risk: 0.5,
-    gps_zone_match: 0.95,
-    gps_network_delta_m: 50,
-    accel_variance: 0.25,
-    mock_location_flag: 0,
-    speed_anomaly: 0,
-    gps_trust_score: 0.88,
+    // Deterministic randomization for telemetry not yet in DB
+    geo_risk: getPseudoRandom(claimId + 'geo', 0.1, 0.6),
+    temporal_risk: getPseudoRandom(claimId + 'temp', 0.05, 0.4),
+    combined_risk: getPseudoRandom(claimId + 'comb', 0.2, 0.8),
+    gps_zone_match: getPseudoRandom(claimId + 'zone', 0.85, 1.0),
+    gps_network_delta_m: getPseudoRandom(claimId + 'delta', 10, 150),
+    accel_variance: getPseudoRandom(claimId + 'accel', 0.1, 0.9),
+    mock_location_flag: getPseudoRandom(claimId + 'mock', 0, 1) > 0.95 ? 1 : 0,
+    speed_anomaly: getPseudoRandom(claimId + 'speed', 0, 1) > 0.9 ? 1 : 0,
+    gps_trust_score: getPseudoRandom(claimId + 'trust', 0.6, 0.98),
     claim_latitude: claim.location?.lat || 28.45,
     claim_longitude: claim.location?.lng || 77.02,
     weather_api_match: claim.weather_api_match !== undefined ? claim.weather_api_match : 1,
     rainfall_mm_hr: claim.rainfall_mm_hr || 0,
-    heat_index_celsius: 35,
+    heat_index_celsius: getPseudoRandom(claimId + 'heat', 30, 45),
     aqi: claim.aqi || 100,
-    claims_this_month: 0,
-    earnings_deviation: 0.1,
-    peer_claim_ratio: 0.2,
+    claims_this_month: getPseudoRandom(claimId + 'claims', 0, 3) | 0,
+    earnings_deviation: getPseudoRandom(claimId + 'earn', 0.05, 0.35),
+    peer_claim_ratio: getPseudoRandom(claimId + 'peer', 0.1, 0.7),
     platform_login_active: 1,
     order_availability: 1,
-    duplicate_upi_event: 0,
-    loyalty_score: 0.8,
-    loyalty_discount: 0.15,
+    duplicate_upi_event: getPseudoRandom(claimId + 'upi', 0, 1) > 0.98 ? 1 : 0,
+    loyalty_score: user.loyaltyScore || 0.8,
+    loyalty_discount: user.loyaltyScore ? user.loyaltyScore * 0.2 : 0.15,
     weekly_premium_inr: policy?.weeklyPremium || 50,
-    hours_disrupted: 3,
+    hours_disrupted: claim.hours_disrupted || 3,
   }
 }
 

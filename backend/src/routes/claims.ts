@@ -31,6 +31,19 @@ const runFraudDetection = async (claim: any, user: any, policy: any) => {
   // 2. Build ML feature vector
   const fraudInput = buildFraudInput(claim, user, policy)
   fraudInput.weather_api_match = weatherEventMatched
+  
+  // Add real-time environmental data if available
+  if (claim.triggerType === 'heavy_rain') {
+    try {
+      const weather = await getWeatherData(claim.location.lat, claim.location.lng)
+      fraudInput.rainfall_mm_hr = weather.rainfall || 0
+    } catch {}
+  } else if (claim.triggerType === 'severe_pollution') {
+    try {
+      const aqData = await getAirQuality(claim.location.lat, claim.location.lng)
+      fraudInput.aqi = aqData.aqi || 100
+    } catch {}
+  }
 
   // 3. Run ML prediction (falls back to rule engine if ML service is down)
   const { prediction, source } = await detectFraud(fraudInput)
